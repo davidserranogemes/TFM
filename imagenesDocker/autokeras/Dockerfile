@@ -1,7 +1,6 @@
 # Use an official Python runtime as a parent image
 # Desbloquear la adecuada
-#FROM davidserranogemes/keras-tensorflow1.8-no-avx-python-2.7
-
+#FROM davidserranogemes/keras-tensorflow1.12-no-avx-python-3.6
 FROM python:3.6-slim
 
 
@@ -19,7 +18,5 @@ RUN apt-get install -y g++
 # Install any needed packages specified in requirements.txt
 RUN pip install tensorflow
 RUN pip install keras
-
-RUN pip install auto_ml
-
+RUN pip install autokeras
 

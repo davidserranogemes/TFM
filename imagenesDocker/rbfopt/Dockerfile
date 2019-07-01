@@ -1,13 +1,17 @@
 # Use an official Python runtime as a parent image
 # Desbloquear la adecuada
-FROM davidserranogemes/keras-tensorflow1.8-no-avx-python-2.7
+FROM python:2.7-slim
 #FROM python:3.6-slim
 
+RUN mkdir /app
 
 # Set the working directory to /app
 WORKDIR /app
 
 # Install any needed packages specified in requirements.txt
-RUN pip install Hyperas
+RUN pip install numpy
+RUN pip install scipy
+RUN pip install pyomo
+RUN pip install rbfopt
 
 

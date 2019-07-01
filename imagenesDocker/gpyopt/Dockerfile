@@ -1,4 +1,6 @@
-# Use an official Python runtime as a parent image
+# Use an official Python runtimefind '/var/lib/docker/volumes/' -mindepth 1 -maxdepth 1 -type d | grep -vFf <(
+  docker ps -aq | xargs docker inspect | jq -r '.[] | .Mounts | .[] | .Name | select(.)'
+) | xargs -r rm -fr as a parent image
 # Desbloquear la adecuada
 FROM python:2.7-slim
 #FROM python:3.6-slim

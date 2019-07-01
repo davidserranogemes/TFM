@@ -1,9 +1,8 @@
 # Use an official Python runtime as a parent image
 # Desbloquear la adecuada
-FROM python:2.7-slim
+FROM davidserranogemes/keras-tensorflow1.8-no-avx-python-2.7
 #FROM python:3.6-slim
 
-RUN mkdir /app
 
 # Set the working directory to /app
 WORKDIR /app
