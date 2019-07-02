@@ -3,9 +3,9 @@
 cd
 cd master/TFM
 echo "Launch Autokeras "
-#echo "Launch mnist Convolutional"
-#docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py mnist Convolutional > logs/autokeras_mnist_convolutional.txt
-#./acc_extractor.sh autokeras_mnist_convolutional.txt &
+echo "Launch mnist Convolutional"
+docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py mnist Convolutional > logs/autokeras_mnist_convolutional.txt
+./acc_extractor.sh autokeras_mnist_convolutional.txt &
 
 #echo "Launch fashion Convolutional"
 #docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py fashion Convolutional > logs/autokeras_fashion_convolutional.txt
@@ -35,16 +35,16 @@ echo "Launch Autokeras "
 #docker system prune -f
 
 
-echo "Launch Auto_ml"
+#echo "Launch Auto_ml"
 
-echo "Launch mnist Feedforward"
-docker run -v"$(pwd)":/app davidserranogemes/auto_ml python ficherosEjecuciones/ejecuciones_automl.py mnist Feedforward 
+#echo "Launch mnist Feedforward"
+#docker run -v"$(pwd)":/app davidserranogemes/auto_ml python ficherosEjecuciones/ejecuciones_automl.py mnist Feedforward 
 
-echo "Launch fashion Feedforward"
-docker run -v"$(pwd)":/app davidserranogemes/auto_ml python ficherosEjecuciones/ejecuciones_automl.py fashion Feedforward 
+#echo "Launch fashion Feedforward"
+#docker run -v"$(pwd)":/app davidserranogemes/auto_ml python ficherosEjecuciones/ejecuciones_automl.py fashion Feedforward 
 
-echo "Launch cifar10 Feedforward"
-docker run -v"$(pwd)":/app davidserranogemes/auto_ml python ficherosEjecuciones/ejecuciones_automl.py cifar10 Feedforward 
+#echo "Launch cifar10 Feedforward"
+#docker run -v"$(pwd)":/app davidserranogemes/auto_ml python ficherosEjecuciones/ejecuciones_automl.py cifar10 Feedforward 
 
 
 echo "Limpìando los residuos generados por docker...."
