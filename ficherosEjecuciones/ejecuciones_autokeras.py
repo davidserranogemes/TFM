@@ -50,7 +50,7 @@ if __name__=='__main__':
 
 
 
-	time_limit = 1*60*60
+	time_limit = 8*60*60
 
 	#Lectura de datos
 	print("Leyendo ",datasets)
