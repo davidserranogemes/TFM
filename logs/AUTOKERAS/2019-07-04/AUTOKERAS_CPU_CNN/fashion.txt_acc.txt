@@ -1,2 +1,2 @@
 Epoch1 0
-Epoch2 0.496
+Epoch2 0.474
