@@ -1,0 +1,11 @@
+Epoch1 0
+Epoch2 0.454
+Epoch3 0.638
+Epoch4 0.646
+Epoch5 0.666
+Epoch6 0.682
+Epoch7 0.67
+Epoch8 0.788
+Epoch9 0.788
+Epoch10 0.782
+Epoch11 0.796
