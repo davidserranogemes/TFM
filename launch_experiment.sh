@@ -1,53 +1,184 @@
 #!/bin/bash
 
+DATE=$(echo `date +%Y-%m-%d`)
+
+
+
+AUTOKERAS_CPU_CNN=true
+AUTOKERAS_CPU_MLP=true
+
+AUTOKERAS_GPU_CNN=true
+AUTOKERAS_GPU_MLP=true
+
+AUTOKERAS_GPU_CNN_MOD=true
+AUTOKERAS_GPU_MLP_MOD=false
+
+
+
 cd
 cd master/TFM
-echo "Launch Autokeras "
-echo "Launch mnist Convolutional"
-docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py mnist Convolutional > logs/autokeras_mnist_convolutional.txt
-./acc_extractor.sh autokeras_mnist_convolutional.txt &
 
-#echo "Launch fashion Convolutional"
-#docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py fashion Convolutional > logs/autokeras_fashion_convolutional.txt
-#./acc_extractor.sh autokeras_fashion_convolutional.txt &
+ALGORITHM="AUTOKERAS"
 
-#echo "Launch cifar10 Convolutional"
-#docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py cifar10 Convolutional > logs/autokeras_cifar10_convolutional.txt
-#./acc_extractor.sh autokeras_cifar10_convolutional.txt &
+mkdir "logs/$ALGORITHM"
+mkdir "logs/$ALGORITHM/$DATE"
 
-#Clean the system
-#echo "Limpìando los residuos generados por docker...."
-#docker system prune -f
+echo "PRUEBAS AUTOKERAS"
 
-#echo "Launch mnist Feedforward"
-#docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py mnist Feedforward > logs/autokeras_mnist_feedforward.txt
-#./acc_extractor.sh autokeras_mnist_feedforward.txt &
+if $AUTOKERAS_CPU_CNN; then
+	echo "Launch Autokeras CPU CNN "
+	mkdir "logs/$ALGORITHM/$DATE/AUTOKERAS_CPU_CNN"
+	MODE="AUTOKERAS_CPU_CNN"
 
-#echo "Launch fashion Feedforward"
-#docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py fashion Feedforward > logs/autokeras_fashion_feedforward.txt
-#./acc_extractor.sh autokeras_fashion_feedforward.txt &
+	echo "Launch mnist Convolutional"
+	docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py mnist Convolutional CPU NOMOD> logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
 
-#echo "Launch cifar10 Feedforward"
-#docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py cifar10 Feedforward > logs/autokeras_cifar10_feedforward.txt
-#./acc_extractor.sh autokeras_cifar10_feedforward.txt &
+	echo "Launch fashion Convolutional"
+	docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py fashion Convolutional CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
 
-#echo "Limpìando los residuos generados por docker...."
-#docker system prune -f
+	echo "Launch cifar10 Convolutional"
+	docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py cifar10 Convolutional CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/cifar10.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/cifar10.txt &
 
 
-#echo "Launch Auto_ml"
+	#Clean the system
+	echo "Limpìando los residuos generados por docker...."
+	docker system prune -f
+fi
 
-#echo "Launch mnist Feedforward"
-#docker run -v"$(pwd)":/app davidserranogemes/auto_ml python ficherosEjecuciones/ejecuciones_automl.py mnist Feedforward 
+if $AUTOKERAS_CPU_MLP ; then
+	echo "Launch Autokeras CPU MLP "
+	mkdir "logs/$ALGORITHM/$DATE/AUTOKERAS_CPU_MLP"
+	MODE="AUTOKERAS_CPU_MLP"
 
-#echo "Launch fashion Feedforward"
-#docker run -v"$(pwd)":/app davidserranogemes/auto_ml python ficherosEjecuciones/ejecuciones_automl.py fashion Feedforward 
+	echo "Launch mnist Feedforward"
+	docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py mnist Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
 
-#echo "Launch cifar10 Feedforward"
-#docker run -v"$(pwd)":/app davidserranogemes/auto_ml python ficherosEjecuciones/ejecuciones_automl.py cifar10 Feedforward 
+	echo "Launch fashion Feedforward"
+	docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py fashion Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
+
+	echo "Launch cifar10 Feedforward"
+	docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py cifar10 Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/cifar10.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/cifar10.txt &
 
 
-echo "Limpìando los residuos generados por docker...."
-docker system prune -f
+	#Clean the system
+	echo "Limpìando los residuos generados por docker...."
+	docker system prune -f
+fi
 
-#
+
+
+if $AUTOKERAS_GPU_CNN; then
+	echo "Launch Autokeras GPU CNN "
+	mkdir "logs/$ALGORITHM/$DATE/AUTOKERAS_GPU_CNN"
+	MODE="AUTOKERAS_GPU_CNN"
+
+	echo "Launch Autokeras GPU"
+	source ~/anaconda3/etc/profile.d/conda.sh
+	conda activate autokeras-gpu
+
+
+	echo "Launch mnist Convolutional"
+	python ficherosEjecuciones/ejecuciones_autokeras.py mnist Convolutional GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
+
+	echo "Launch fashion Convolutional"
+	python ficherosEjecuciones/ejecuciones_autokeras.py fashion Convolutional GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
+
+	echo "Launch cifar10 Convolutional"
+	python ficherosEjecuciones/ejecuciones_autokeras.py cifar10 Convolutional GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/cifar10.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/cifar10.txt &
+
+	conda deactivate
+
+fi
+
+
+if $AUTOKERAS_GPU_MLP; then
+	echo "Launch Autokeras GPU MLP "
+	mkdir "logs/$ALGORITHM/$DATE/AUTOKERAS_GPU_MLP"
+	MODE="AUTOKERAS_GPU_MLP"
+
+	echo "Launch Autokeras GPU"
+	source ~/anaconda3/etc/profile.d/conda.sh
+	conda activate autokeras-gpu
+
+
+	echo "Launch mnist Convolutional"
+	python ficherosEjecuciones/ejecuciones_autokeras.py mnist Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
+
+	echo "Launch fashion Convolutional"
+	python ficherosEjecuciones/ejecuciones_autokeras.py fashion Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
+
+	echo "Launch cifar10 Convolutional"
+	python ficherosEjecuciones/ejecuciones_autokeras.py cifar10 Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/cifar10.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/cifar10.txt &
+
+	conda deactivate
+
+fi
+
+
+
+
+
+if $AUTOKERAS_GPU_CNN_MOD; then
+	echo "Launch Autokeras GPU CNN Modified "
+	mkdir "logs/$ALGORITHM/$DATE/AUTOKERAS_GPU_CNN_MOD"
+	MODE="AUTOKERAS_GPU_CNN_MOD"
+
+	echo "Launch Autokeras GPU"
+	source ~/anaconda3/etc/profile.d/conda.sh
+	conda activate autokeras-modified-gpu
+
+
+	echo "Launch mnist Convolutional"
+	python ficherosEjecuciones/ejecuciones_autokeras_mod.py mnist Convolutional GPU MOD> logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
+
+	echo "Launch fashion Convolutional"
+	python ficherosEjecuciones/ejecuciones_autokeras_mod.py fashion Convolutional GPU MOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
+
+	echo "Launch cifar10 Convolutional"
+	python ficherosEjecuciones/ejecuciones_autokeras_mod.py cifar10 Convolutional GPU MOD > logs/$ALGORITHM/$DATE/$MODE/cifar10.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/cifar10.txt &
+
+	conda deactivate
+
+fi
+
+
+if $AUTOKERAS_GPU_MLP_MOD; then
+	echo "Launch Autokeras GPU MLP Modified"
+	mkdir "logs/$ALGORITHM/$DATE/AUTOKERAS_GPU_MLP_MOD"
+	MODE="AUTOKERAS_GPU_MLP_MOD"
+
+	echo "Launch Autokeras GPU"
+	source ~/anaconda3/etc/profile.d/conda.sh
+	conda activate autokeras-modified-gpu
+
+
+	echo "Launch mnist Convolutional"
+	python ficherosEjecuciones/ejecuciones_autokeras_mod.py mnist Feedforward GPU MOD > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
+
+	echo "Launch fashion Convolutional"
+	python ficherosEjecuciones/ejecuciones_autokeras_mod.py fashion Feedforward GPU MOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
+
+	echo "Launch cifar10 Convolutional"
+	python ficherosEjecuciones/ejecuciones_autokeras_mod.py cifar10 Feedforward GPU MOD > logs/$ALGORITHM/$DATE/$MODE/cifar10.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/cifar10.txt &
+
+	conda deactivate
+
+fi
