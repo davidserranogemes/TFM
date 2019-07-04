@@ -69,7 +69,7 @@ if __name__=='__main__':
 		start_time = time.time()
 		clf = ImageClassifier(verbose=True,augment= False)
 
-		clf.fit(x_train,y_train, time_limit = time_limit)
+		clf.fit(x_train,y_train, time_limit = time_limit, max_iter_num=8)
 
 
 		print("--- %s seconds ---" % (time.time() - start_time))
