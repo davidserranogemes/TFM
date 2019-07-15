@@ -3,7 +3,7 @@ cd
 cd master/TFM/
 
 
-VALUE="acc_$1"
+VALUE="$1_acc.txt"
 
 #Dont collapse same values
 #cat -A logs/$1.txt | grep "Epoch"  | tr -dc '0-9.: ' | tr -s " " "\n" | grep :$ | tr ":" " "
