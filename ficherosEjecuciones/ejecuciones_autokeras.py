@@ -1,6 +1,7 @@
 from keras.datasets import mnist
 from keras.datasets import fashion_mnist
 from keras.datasets import cifar10
+from keras.datasets import imdb
 from keras import backend as K
 
 
@@ -17,14 +18,53 @@ import sys
 import time
 
 
+import urllib.request
+import os
+from sklearn.model_selection import StratifiedKFold
+
+
+
+def load_letters():
+	seed = 7
+
+	dirname = 'letters.csv'
+	url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/letter-recognition/letter-recognition.data'
+	local_filename, headers = urllib.request.urlretrieve(url, dirname)  
+
+	n_cols= 17
+	n_rows=20000
+
+	X = np.genfromtxt(local_filename, delimiter= ',',usecols = range(1,n_cols))
+	y = np.genfromtxt(local_filename, delimiter= ',',usecols = 0, dtype=None)
+
+
+	skf = StratifiedKFold(n_splits=2, random_state = seed)
+	for train_index, test_index in skf.split(X, y):
+		X_train, X_test = X[train_index], X[test_index]
+		y_train, y_test = y[train_index], y[test_index]
+
+	return (X_train, y_train), (X_test, y_test)
+
+
+
+
+
+
+
 def load_datasets(name):
 	if name=="mnist":
 		return mnist.load_data()
 	if name=="cifar10":
-		return cifar10.load_data()
+		sys.exit("Cifar consume demasiada memoria. No se permite su uso")
 	if name=="fashion":
 		return fashion_mnist.load_data()
+	if name=="imdb":
+		return imdb.load_data()
+	if name=="letters":
+		return	load_letters()
+
 	sys.exit("Wrong dataset name.")
+
 
 
 def transform_y(y_train):

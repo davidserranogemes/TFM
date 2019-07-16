@@ -4,13 +4,13 @@ DATE=$(echo `date +%Y-%m-%d`)
 
 
 
-AUTOKERAS_CPU_CNN=true
+AUTOKERAS_CPU_CNN=false
 AUTOKERAS_CPU_MLP=true
 
-AUTOKERAS_GPU_CNN=true
+AUTOKERAS_GPU_CNN=false
 AUTOKERAS_GPU_MLP=true
 
-AUTOKERAS_GPU_CNN_MOD=true
+AUTOKERAS_GPU_CNN_MOD=false
 AUTOKERAS_GPU_MLP_MOD=false
 
 
@@ -60,13 +60,23 @@ if $AUTOKERAS_CPU_MLP; then
 	mkdir "logs/$ALGORITHM/$DATE/AUTOKERAS_CPU_MLP"
 	MODE="AUTOKERAS_CPU_MLP"
 
-	echo "Launch mnist Feedforward CPU"
-	docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py mnist Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
-	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
+	#echo "Launch mnist Feedforward CPU"
+	#docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py mnist Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+	#./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
 
-	echo "Launch fashion Feedforward CPU"
-	docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py fashion Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
-	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
+	#echo "Launch fashion Feedforward CPU"
+	#docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py fashion Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+	#./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
+
+	echo "Launch imdb Feedforward CPU"
+	docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py imdb Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt &
+
+	echo "Launch letters Feedforward CPU"
+	docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py letters Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/letters.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/letters.txt &
+
+
 
 	echo "Launch cifar10 Feedforward CPU"
 	#docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py cifar10 Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/cifar10.txt
@@ -130,17 +140,27 @@ if $AUTOKERAS_GPU_MLP; then
 	conda activate autokeras-gpu
 
 
-	echo "Launch mnist Feedforward GPU"
-	python ficherosEjecuciones/ejecuciones_autokeras.py mnist Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
-	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
+	#echo "Launch mnist Feedforward GPU"
+	#python ficherosEjecuciones/ejecuciones_autokeras.py mnist Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+	#./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
 
-	echo "Launch fashion Feedforward GPU"
-	python ficherosEjecuciones/ejecuciones_autokeras.py fashion Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
-	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
+	#echo "Launch fashion Feedforward GPU"
+	#python ficherosEjecuciones/ejecuciones_autokeras.py fashion Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+	#./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
 
-	echo "Launch cifar10 Feedforward GPU"
+	#echo "Launch cifar10 Feedforward GPU"
 	#python ficherosEjecuciones/ejecuciones_autokeras.py cifar10 Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/cifar10.txt
 	#./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/cifar10.txt &
+
+
+	echo "Launch imdb Feedforward CPU"
+	python ficherosEjecuciones/ejecuciones_autokeras.py imdb Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt &
+
+	echo "Launch letters Feedforward CPU"
+	docker run -v"$(pwd)":/app davidserranogemes/autokeras python ficherosEjecuciones/ejecuciones_autokeras.py letters Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/letters.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/letters.txt &
+
 
 	conda deactivate
 
