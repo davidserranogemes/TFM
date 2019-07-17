@@ -59,7 +59,22 @@ def load_datasets(name):
 	if name=="fashion":
 		return fashion_mnist.load_data()
 	if name=="imdb":
-		return imdb.load_data()
+		num_words=10000
+		skip_top= 20
+		(x_train, y_train), (x_test, y_test) = imdb.load_data(num_words=num_words,skip_top =skip_top)
+
+		X_train = np.zeros((len(x_train),num_words))
+		X_test= np.zeros((len(x_test),num_words))
+
+		for i in range(1,len(x_train)):
+			X_train[i,np.unique(x_train[i])[1:]] = True
+		for i in range(1,len(x_train)):
+			X_test[i,np.unique(x_test[i])[1:]] = True
+
+		return (X_train, y_train), (X_test, y_test) 
+
+
+
 	if name=="letters":
 		return	load_letters()
 
