@@ -12,7 +12,7 @@ import sys
 import time
 
 
-import urllib
+import urllib.request
 import os
 from sklearn.model_selection import StratifiedKFold
 
@@ -22,7 +22,7 @@ from sklearn.model_selection import StratifiedKFold
 from hyperopt import Trials, STATUS_OK, tpe
 from keras.layers.core import Dense, Dropout, Activation, Flatten
 from keras.layers.convolutional import Convolution2D, MaxPooling2D
-from keras.optimizers import SGD
+from keras.optimizers import SGD, Adam
 
 from keras.models import Sequential
 from keras.utils import np_utils
@@ -33,8 +33,47 @@ from hyperas.distributions import choice, uniform
 
 
 #Hyperas need that you define de model with the boundaries where Hyperas search
+def create_model_feedforward(X_train,y_train,X_test,y_test):
+	num_epoch=1*1000
+	nb_classes = y_train.shape[1]
+
+	model = Sequential()
+	model.add(Dense(512, input_shape=X_train.shape[1:]))
+	model.add(Activation('relu'))
+	model.add(Dropout({{uniform(0, 1)}}))
+	model.add(Dense({{choice([256, 512, 1024])}}))
+	model.add(Activation({{choice(['relu', 'sigmoid'])}}))
+	model.add(Dropout({{uniform(0, 1)}}))
+
+	# If we choose 'four', add an additional fourth layer
+	if {{choice(['three', 'four'])}} == 'four':
+		model.add(Dense(100))
+
+		# We can also choose between complete sets of layers
+
+		model.add({{choice([Dropout(0.5), Activation('linear')])}})
+		model.add(Activation('relu'))
+
+	model.add(Dense(nb_classes))
+	model.add(Activation('softmax'))
+
+	model.compile(loss='categorical_crossentropy', metrics=['accuracy'],
+	 					 optimizer={{choice(['rmsprop', 'adam', 'sgd'])}})
+
+	result = model.fit(X_train, y_train,
+				batch_size={{choice([64, 128])}},
+				epochs=num_epoch,
+				verbose=2,
+				validation_split=0.1)
+	#get the highest validation accuracy of the training epochs
+	validation_acc = np.amax(result.history['val_acc']) 
+	print('Best validation acc of epoch:', validation_acc)
+	return {'loss': -validation_acc, 'status': STATUS_OK, 'model': model}
+
 def create_model_convolutional(X_train,y_train,X_test,y_test):
 	nb_classes = y_train.shape[1]
+
+	num_epoch=1*1000
 
 	model = Sequential()
 
@@ -62,18 +101,20 @@ def create_model_convolutional(X_train,y_train,X_test,y_test):
 	model.add(Activation('softmax'))
 
 	 # let's train the model using SGD + momentum (how original).
-	sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+	#sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+	
 	model.compile(loss='categorical_crossentropy',
-	              optimizer=sgd,
+	              optimizer={{choice(['rmsprop', 'adam', 'sgd'])}},
 	              metrics=['accuracy'])
 
-	model.fit(X_train, y_train,
+	result = model.fit(X_train, y_train,
 	          batch_size={{choice([64, 128])}},
-	          nb_epoch=100,
+	          nb_epoch=num_epoch,
 	          verbose=2,
-	          validation_data=(X_test, y_test))
-	score, acc = model.evaluate(X_test, y_test, verbose=0)
-	return {'loss': -acc, 'status': STATUS_OK, 'model': model}
+	          validation_split=0.1)
+	validation_acc = np.amax(result.history['val_acc']) 
+	print('Best validation acc of epoch:', validation_acc)
+	return {'loss': -validation_acc, 'status': STATUS_OK, 'model': model}
 
 
 
@@ -84,11 +125,6 @@ def data_mnist():
 	X_test = X_test.reshape(X_test.shape+(1,))
 
 	nb_classes = len(np.unique(y_train))
-
-	print("---------------")
-	print(nb_classes)
-	print("---------------")
-
 	y_train = np_utils.to_categorical(y_train, nb_classes)
 	y_test = np_utils.to_categorical(y_test, nb_classes)
 
@@ -101,28 +137,48 @@ def data_mnist_feed():
 
 	X_train = np.squeeze(X_train.reshape((X_train.shape[0], -1)))
 	X_test = np.squeeze(X_test.reshape((X_test.shape[0], -1)))
-	y_train, y_encoder = transform_y(y_train)
-	y_test, _ = transform_y(y_test)
+	
+	X_train = X_train.astype('float32')
+	X_test = X_test.astype('float32')
+
+	X_train /= 255
+	X_test /= 255
+
+	nb_classes = len(np.unique(y_train))
+	y_train = np_utils.to_categorical(y_train, nb_classes)
+	y_test = np_utils.to_categorical(y_test, nb_classes)
 
 	return (X_train, y_train), (X_test, y_test)
 
 
 def data_fashion():
-	(X_train, y_train), (X_test, y_test) = fashion.load_data()
+	(X_train, y_train), (X_test, y_test) = fashion_mnist.load_data()
 	
 	X_train = X_train.reshape(X_train.shape+(1,))
 	X_test = X_test.reshape(X_test.shape+(1,))
+	nb_classes = len(np.unique(y_train))
+
+	y_train = np_utils.to_categorical(y_train, nb_classes)
+	y_test = np_utils.to_categorical(y_test, nb_classes)
 
 	return (X_train, y_train), (X_test, y_test)
 	
 
 def data_fashion_feed():
-	(X_train, y_train), (X_test, y_test) = fashion.load_data()
+	(X_train, y_train), (X_test, y_test) = fashion_mnist.load_data()
 
 	X_train = np.squeeze(X_train.reshape((X_train.shape[0], -1)))
 	X_test = np.squeeze(X_test.reshape((X_test.shape[0], -1)))
-	y_train, y_encoder = transform_y(y_train)
-	y_test, _ = transform_y(y_test)
+	
+	X_train = X_train.astype('float32')
+	X_test = X_test.astype('float32')
+
+	X_train /= 255
+	X_test /= 255
+
+	nb_classes = len(np.unique(y_train))
+	y_train = np_utils.to_categorical(y_train, nb_classes)
+	y_test = np_utils.to_categorical(y_test, nb_classes)
 
 	return (X_train, y_train), (X_test, y_test)
 
@@ -139,6 +195,10 @@ def data_imdb():
 	for i in range(1,len(x_train)):
 		X_test[i,np.unique(x_test[i])[1:]] = True
 
+	nb_classes = len(np.unique(y_train))
+	y_train = np_utils.to_categorical(y_train, nb_classes)
+	y_test = np_utils.to_categorical(y_test, nb_classes)		
+
 	return (X_train, y_train), (X_test, y_test) 
 
 
@@ -148,7 +208,7 @@ def data_letters():
 
 	dirname = 'letters.csv'
 	url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/letter-recognition/letter-recognition.data'
-	local_filename, headers = urllib.urlretrieve(url, dirname)  
+	local_filename, headers = urllib.request.urlretrieve(url, dirname)  
 
 	n_cols= 17
 	n_rows=20000
@@ -162,19 +222,17 @@ def data_letters():
 		X_train, X_test = X[train_index], X[test_index]
 		y_train, y_test = y[train_index], y[test_index]
 
+	nb_classes = len(np.unique(y_train))
+
+	y_train = [ord(char.lower()) - 97 for char in y_train]
+	y_test = [ord(char.lower()) - 97 for char in y_test]
+
+	y_train = np_utils.to_categorical(y_train, nb_classes)
+	y_test = np_utils.to_categorical(y_test, nb_classes)
+
 	return (X_train, y_train), (X_test, y_test)
 
 
-
-
-
-
-def transform_y(y_train):
-    # Transform y_train.
-    y_encoder = OneHotEncoder()
-    y_encoder.fit(y_train)
-    y_train = y_encoder.transform(y_train)
-    return y_train, y_encoder
 
 
 
@@ -191,7 +249,7 @@ if __name__=='__main__':
 
 	print("Leyendo ",datasets)
 	
-
+	num_epoch=1*1000
 
 
 	if mode == "Convolutional":
@@ -207,7 +265,7 @@ if __name__=='__main__':
                                       trials=Trials())
 			print("--- %s seconds ---" % (time.time() - start_time))
 
-			X_train, Y_train, X_test, Y_test = data_mnist()
+			(X_train, Y_train), (X_test, Y_test) = data_mnist()
 
 		if datasets=="fashion":
 			best_run, best_model = optim.minimize(model=create_model_convolutional,
@@ -217,7 +275,7 @@ if __name__=='__main__':
                                       trials=Trials())
 			print("--- %s seconds ---" % (time.time() - start_time))
 
-			X_train, Y_train, X_test, Y_test = data_fashion()
+			(X_train, Y_train), (X_test, Y_test) = data_fashion()
 		
 		print("Evalutation of best performing model:")
 		print(best_model.evaluate(X_test, Y_test))
@@ -234,46 +292,58 @@ if __name__=='__main__':
 			start_time = time.time()
 
 			if datasets=="mnist":
-				best_run, best_model = optim.minimize(model=model,
+				best_run, best_model = optim.minimize(model=create_model_feedforward,
 	                                      data=data_mnist_feed,
 	                                      algo=tpe.suggest,
 	                                      max_evals=10,
 	                                      trials=Trials())
+				
+				print("--- %s seconds ---" % (time.time() - start_time))
+
+				(X_train, Y_train), (X_test, Y_test) = data_mnist()
 
 
 			if datasets=="fashion":
-				best_run, best_model = optim.minimize(model=model,
+				best_run, best_model = optim.minimize(model=create_model_feedforward,
 	                                      data=data_fashion_feed,
 	                                      algo=tpe.suggest,
 	                                      max_evals=5,
 	                                      trials=Trials())
+
+				print("--- %s seconds ---" % (time.time() - start_time))
+
+				(X_train, Y_train), (X_test, Y_test) = data_mnist()
 			
 			if datasets=="imdb":
-				best_run, best_model = optim.minimize(model=model,
+				best_run, best_model = optim.minimize(model=create_model_feedforward,
 	                                      data=data_imdb,
 	                                      algo=tpe.suggest,
 	                                      max_evals=5,
 	                                      trials=Trials())
 
+				print("--- %s seconds ---" % (time.time() - start_time))
+
+				(X_train, Y_train), (X_test, Y_test) = data_mnist()
+
 			if datasets=="letters":
-				best_run, best_model = optim.minimize(model=model,
+				best_run, best_model = optim.minimize(model=create_model_feedforward,
 	                                      data=data_letters,
 	                                      algo=tpe.suggest,
 	                                      max_evals=5,
 	                                      trials=Trials())
-			
+
+				print("--- %s seconds ---" % (time.time() - start_time))
+
+				(X_train, Y_train), (X_test, Y_test) = data_mnist()
 
 
-
-			print("--- %s seconds ---" % (time.time() - start_time))
-
-			X_train, Y_train, X_test, Y_test = data()
 			print("Evalutation of best performing model:")
 			print(best_model.evaluate(X_test, Y_test))
 
 			#Calculate final ACC
 			print("Accuracy final:", y*100)
 			print("Time consumed: ",time_limit/3600," hours")
+
 
 
 
