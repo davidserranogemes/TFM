@@ -1,0 +1,229 @@
+Leyendo  letters
+Executing  letters with  Feedforward  arquitecture.
+
+>>> Imports:
+#coding=utf-8
+
+try:
+    from keras.datasets import mnist
+except:
+    pass
+
+try:
+    from keras.datasets import fashion_mnist
+except:
+    pass
+
+try:
+    from keras.datasets import cifar10
+except:
+    pass
+
+try:
+    from keras.datasets import imdb
+except:
+    pass
+
+try:
+    from keras import backend as K
+except:
+    pass
+
+try:
+    import numpy as np
+except:
+    pass
+
+try:
+    import sys
+except:
+    pass
+
+try:
+    import time
+except:
+    pass
+
+try:
+    import urllib.request
+except:
+    pass
+
+try:
+    import os
+except:
+    pass
+
+try:
+    from sklearn.model_selection import StratifiedKFold
+except:
+    pass
+
+try:
+    from hyperopt import Trials, STATUS_OK, tpe
+except:
+    pass
+
+try:
+    from keras.layers.core import Dense, Dropout, Activation, Flatten
+except:
+    pass
+
+try:
+    from keras.layers.convolutional import Convolution2D, MaxPooling2D
+except:
+    pass
+
+try:
+    from keras.optimizers import SGD, Adam
+except:
+    pass
+
+try:
+    from keras.models import Sequential
+except:
+    pass
+
+try:
+    from keras.utils import np_utils
+except:
+    pass
+
+try:
+    from hyperas import optim
+except:
+    pass
+
+try:
+    from hyperas.distributions import choice, uniform
+except:
+    pass
+
+>>> Hyperas search space:
+
+def get_space():
+    return {
+        'Dropout': hp.uniform('Dropout', 0, 1),
+        'Dense': hp.choice('Dense', [256, 512, 1024]),
+        'Activation': hp.choice('Activation', ['relu', 'sigmoid']),
+        'Dropout_1': hp.uniform('Dropout_1', 0, 1),
+        'Dropout_2': hp.choice('Dropout_2', ['three', 'four']),
+        'add': hp.choice('add', [Dropout(0.5), Activation('linear')]),
+        'optimizer': hp.choice('optimizer', ['rmsprop', 'adam', 'sgd']),
+        'batch_size': hp.choice('batch_size', [64, 128]),
+    }
+
+>>> Data
+  1: 
+  2: seed = 7
+  3: 
+  4: dirname = 'letters.csv'
+  5: url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/letter-recognition/letter-recognition.data'
+  6: local_filename, headers = urllib.request.urlretrieve(url, dirname)  
+  7: 
+  8: n_cols= 17
+  9: n_rows=20000
+ 10: 
+ 11: X = np.genfromtxt(local_filename, delimiter= ',',usecols = range(1,n_cols))
+ 12: y = np.genfromtxt(local_filename, delimiter= ',',usecols = 0, dtype=None)
+ 13: 
+ 14: 
+ 15: skf = StratifiedKFold(n_splits=2, random_state = seed)
+ 16: for train_index, test_index in skf.split(X, y):
+ 17: 	X_train, X_test = X[train_index], X[test_index]
+ 18: 	y_train, y_test = y[train_index], y[test_index]
+ 19: 
+ 20: nb_classes = len(np.unique(y_train))
+ 21: 
+ 22: y_train = [ord(char.lower()) - 97 for char in y_train]
+ 23: y_test = [ord(char.lower()) - 97 for char in y_test]
+ 24: 
+ 25: y_train = np_utils.to_categorical(y_train, nb_classes)
+ 26: y_test = np_utils.to_categorical(y_test, nb_classes)
+ 27: 
+ 28: 
+ 29: 
+ 30: 
+>>> Resulting replaced keras model:
+
+   1: def keras_fmin_fnct(space):
+   2: 
+   3: 	num_epoch=1*1
+   4: 	nb_classes = y_train.shape[1]
+   5: 
+   6: 	model = Sequential()
+   7: 	model.add(Dense(512, input_shape=X_train.shape[1:]))
+   8: 	model.add(Activation('relu'))
+   9: 	model.add(Dropout(space['Dropout']))
+  10: 	model.add(Dense(space['Dense']))
+  11: 	model.add(Activation(space['Activation']))
+  12: 	model.add(Dropout(space['Dropout_1']))
+  13: 
+  14: 	# If we choose 'four', add an additional fourth layer
+  15: 	if space['Dropout_2'] == 'four':
+  16: 		model.add(Dense(100))
+  17: 
+  18: 		# We can also choose between complete sets of layers
+  19: 
+  20: 		model.add(space['add'])
+  21: 		model.add(Activation('relu'))
+  22: 
+  23: 	model.add(Dense(nb_classes))
+  24: 	model.add(Activation('softmax'))
+  25: 
+  26: 	model.compile(loss='categorical_crossentropy', metrics=['accuracy'],
+  27: 	 					 optimizer=space['optimizer'])
+  28: 
+  29: 	result = model.fit(X_train, y_train,
+  30: 				batch_size=space['batch_size'],
+  31: 				epochs=num_epoch,
+  32: 				verbose=2,
+  33: 				validation_split=0.1)
+  34: 	#get the highest validation accuracy of the training epochs
+  35: 	validation_acc = np.amax(result.history['val_acc']) 
+  36: 	print('Best validation acc of epoch:', validation_acc)
+  37: 	return {'loss': -validation_acc, 'status': STATUS_OK, 'model': model}
+  38: 
+  0%|          | 0/5 [00:00<?, ?it/s, best loss: ?]                                                   Train on 9006 samples, validate on 1001 samples
+  0%|          | 0/5 [00:00<?, ?it/s, best loss: ?]                                                   Epoch 1/1
+  0%|          | 0/5 [00:00<?, ?it/s, best loss: ?]                                                    - 71s - loss: 3.7092 - acc: 0.0621 - val_loss: 2.9942 - val_acc: 0.2957
+
+  0%|          | 0/5 [01:11<?, ?it/s, best loss: ?]                                                   Best validation acc of epoch:
+  0%|          | 0/5 [01:11<?, ?it/s, best loss: ?]                                                   0.29570429601690745
+  0%|          | 0/5 [01:11<?, ?it/s, best loss: ?] 20%|██        | 1/5 [01:11<04:46, 71.70s/it, best loss: -0.29570429601690745]                                                                              Train on 9006 samples, validate on 1001 samples
+ 20%|██        | 1/5 [01:12<04:46, 71.70s/it, best loss: -0.29570429601690745]                                                                              Epoch 1/1
+ 20%|██        | 1/5 [01:12<04:46, 71.70s/it, best loss: -0.29570429601690745]                                                                               - 1s - loss: 4.9222 - acc: 0.0369 - val_loss: 3.1909 - val_acc: 0.1299
+
+ 20%|██        | 1/5 [01:12<04:46, 71.70s/it, best loss: -0.29570429601690745]                                                                              Best validation acc of epoch:
+ 20%|██        | 1/5 [01:12<04:46, 71.70s/it, best loss: -0.29570429601690745]                                                                              0.12987012987012986
+ 20%|██        | 1/5 [01:12<04:46, 71.70s/it, best loss: -0.29570429601690745] 40%|████      | 2/5 [01:12<02:31, 50.52s/it, best loss: -0.29570429601690745]                                                                              Train on 9006 samples, validate on 1001 samples
+ 40%|████      | 2/5 [01:13<02:31, 50.52s/it, best loss: -0.29570429601690745]                                                                              Epoch 1/1
+ 40%|████      | 2/5 [01:13<02:31, 50.52s/it, best loss: -0.29570429601690745]                                                                               - 1s - loss: 3.8480 - acc: 0.0411 - val_loss: 3.2553 - val_acc: 0.0719
+
+ 40%|████      | 2/5 [01:14<02:31, 50.52s/it, best loss: -0.29570429601690745]                                                                              Best validation acc of epoch:
+ 40%|████      | 2/5 [01:14<02:31, 50.52s/it, best loss: -0.29570429601690745]                                                                              0.07192807192807193
+ 40%|████      | 2/5 [01:14<02:31, 50.52s/it, best loss: -0.29570429601690745] 60%|██████    | 3/5 [01:14<01:11, 35.78s/it, best loss: -0.29570429601690745]                                                                              Train on 9006 samples, validate on 1001 samples
+ 60%|██████    | 3/5 [01:14<01:11, 35.78s/it, best loss: -0.29570429601690745]                                                                              Epoch 1/1
+ 60%|██████    | 3/5 [01:14<01:11, 35.78s/it, best loss: -0.29570429601690745]                                                                               - 1s - loss: 3.2691 - acc: 0.0721 - val_loss: 2.9779 - val_acc: 0.1828
+
+ 60%|██████    | 3/5 [01:15<01:11, 35.78s/it, best loss: -0.29570429601690745]                                                                              Best validation acc of epoch:
+ 60%|██████    | 3/5 [01:15<01:11, 35.78s/it, best loss: -0.29570429601690745]                                                                              0.18281718306280637
+ 60%|██████    | 3/5 [01:15<01:11, 35.78s/it, best loss: -0.29570429601690745] 80%|████████  | 4/5 [01:15<00:25, 25.34s/it, best loss: -0.29570429601690745]                                                                              Train on 9006 samples, validate on 1001 samples
+ 80%|████████  | 4/5 [01:15<00:25, 25.34s/it, best loss: -0.29570429601690745]                                                                              Epoch 1/1
+ 80%|████████  | 4/5 [01:15<00:25, 25.34s/it, best loss: -0.29570429601690745]                                                                               - 1s - loss: 3.2219 - acc: 0.0704 - val_loss: 3.0083 - val_acc: 0.1858
+
+ 80%|████████  | 4/5 [01:16<00:25, 25.34s/it, best loss: -0.29570429601690745]                                                                              Best validation acc of epoch:
+ 80%|████████  | 4/5 [01:16<00:25, 25.34s/it, best loss: -0.29570429601690745]                                                                              0.1858141860672525
+ 80%|████████  | 4/5 [01:16<00:25, 25.34s/it, best loss: -0.29570429601690745]100%|██████████| 5/5 [01:16<00:00, 18.08s/it, best loss: -0.29570429601690745]
+--- 80.74805974960327 seconds ---
+Evalutation of best performing model:
+(10007, 16)
+(9993, 16)
+
+  32/9993 [..............................] - ETA: 0s
+2208/9993 [=====>........................] - ETA: 0s
+4544/9993 [============>.................] - ETA: 0s
+6976/9993 [===================>..........] - ETA: 0s
+9472/9993 [===========================>..] - ETA: 0s
+9993/9993 [==============================] - 0s 21us/step
+[2.977349372426872, 0.3048133693674979]
