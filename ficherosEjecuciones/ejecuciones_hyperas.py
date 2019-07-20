@@ -34,7 +34,7 @@ from hyperas.distributions import choice, uniform
 
 #Hyperas need that you define de model with the boundaries where Hyperas search
 def create_model_feedforward(X_train,y_train,X_test,y_test):
-	num_epoch=1*1
+	num_epoch=1*500
 	nb_classes = y_train.shape[1]
 
 	model = Sequential()
@@ -73,7 +73,7 @@ def create_model_feedforward(X_train,y_train,X_test,y_test):
 def create_model_convolutional(X_train,y_train,X_test,y_test):
 	nb_classes = y_train.shape[1]
 
-	num_epoch=1*1
+	num_epoch=1*500
 
 	model = Sequential()
 
@@ -249,7 +249,7 @@ if __name__=='__main__':
 
 	print("Leyendo ",datasets)
 	
-	num_epoch=1*1000
+	MAX_EVALS = 20
 
 
 	if mode == "Convolutional":
@@ -261,7 +261,7 @@ if __name__=='__main__':
 			best_run, best_model = optim.minimize(model=create_model_convolutional,
                                       data=data_mnist,
                                       algo=tpe.suggest,
-                                      max_evals=10,
+                                      max_evals=MAX_EVALS,
                                       trials=Trials())
 			print("--- %s seconds ---" % (time.time() - start_time))
 
@@ -271,7 +271,7 @@ if __name__=='__main__':
 			best_run, best_model = optim.minimize(model=create_model_convolutional,
                                       data=data_fashion,
                                       algo=tpe.suggest,
-                                      max_evals=10,
+                                      max_evals=MAX_EVALS,
                                       trials=Trials())
 			print("--- %s seconds ---" % (time.time() - start_time))
 
@@ -294,7 +294,7 @@ if __name__=='__main__':
 				best_run, best_model = optim.minimize(model=create_model_feedforward,
 	                                      data=data_mnist_feed,
 	                                      algo=tpe.suggest,
-	                                      max_evals=10,
+	                                      max_evals=MAX_EVALS,
 	                                      trials=Trials())
 				
 				print("--- %s seconds ---" % (time.time() - start_time))
@@ -306,7 +306,7 @@ if __name__=='__main__':
 				best_run, best_model = optim.minimize(model=create_model_feedforward,
 	                                      data=data_fashion_feed,
 	                                      algo=tpe.suggest,
-	                                      max_evals=10,
+	                                      max_evals=MAX_EVALS,
 	                                      trials=Trials())
 
 				print("--- %s seconds ---" % (time.time() - start_time))
@@ -317,7 +317,7 @@ if __name__=='__main__':
 				best_run, best_model = optim.minimize(model=create_model_feedforward,
 	                                      data=data_imdb,
 	                                      algo=tpe.suggest,
-	                                      max_evals=10,
+	                                      max_evals=MAX_EVALS,
 	                                      trials=Trials())
 
 				print("--- %s seconds ---" % (time.time() - start_time))
@@ -328,7 +328,7 @@ if __name__=='__main__':
 				best_run, best_model = optim.minimize(model=create_model_feedforward,
 	                                      data=data_letters,
 	                                      algo=tpe.suggest,
-	                                      max_evals=10,
+	                                      max_evals=MAX_EVALS,
 	                                      trials=Trials())
 
 				print("--- %s seconds ---" % (time.time() - start_time))

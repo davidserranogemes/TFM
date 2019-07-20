@@ -1,249 +1,0 @@
-Leyendo  mnist
-Executing  mnist with  Feedforward  arquitecture.
-
->>> Imports:
-#coding=utf-8
-
-try:
-    from keras.datasets import mnist
-except:
-    pass
-
-try:
-    from keras.datasets import fashion_mnist
-except:
-    pass
-
-try:
-    from keras.datasets import cifar10
-except:
-    pass
-
-try:
-    from keras.datasets import imdb
-except:
-    pass
-
-try:
-    from keras import backend as K
-except:
-    pass
-
-try:
-    import numpy as np
-except:
-    pass
-
-try:
-    import sys
-except:
-    pass
-
-try:
-    import time
-except:
-    pass
-
-try:
-    import urllib.request
-except:
-    pass
-
-try:
-    import os
-except:
-    pass
-
-try:
-    from sklearn.model_selection import StratifiedKFold
-except:
-    pass
-
-try:
-    from hyperopt import Trials, STATUS_OK, tpe
-except:
-    pass
-
-try:
-    from keras.layers.core import Dense, Dropout, Activation, Flatten
-except:
-    pass
-
-try:
-    from keras.layers.convolutional import Convolution2D, MaxPooling2D
-except:
-    pass
-
-try:
-    from keras.optimizers import SGD, Adam
-except:
-    pass
-
-try:
-    from keras.models import Sequential
-except:
-    pass
-
-try:
-    from keras.utils import np_utils
-except:
-    pass
-
-try:
-    from hyperas import optim
-except:
-    pass
-
-try:
-    from hyperas.distributions import choice, uniform
-except:
-    pass
-
->>> Hyperas search space:
-
-def get_space():
-    return {
-        'Dropout': hp.uniform('Dropout', 0, 1),
-        'Dense': hp.choice('Dense', [256, 512, 1024]),
-        'Activation': hp.choice('Activation', ['relu', 'sigmoid']),
-        'Dropout_1': hp.uniform('Dropout_1', 0, 1),
-        'Dropout_2': hp.choice('Dropout_2', ['three', 'four']),
-        'add': hp.choice('add', [Dropout(0.5), Activation('linear')]),
-        'optimizer': hp.choice('optimizer', ['rmsprop', 'adam', 'sgd']),
-        'batch_size': hp.choice('batch_size', [64, 128]),
-    }
-
->>> Data
-  1: 
-  2: (X_train, y_train), (X_test, y_test) = mnist.load_data()
-  3: 
-  4: 
-  5: X_train = np.squeeze(X_train.reshape((X_train.shape[0], -1)))
-  6: X_test = np.squeeze(X_test.reshape((X_test.shape[0], -1)))
-  7: 
-  8: X_train = X_train.astype('float32')
-  9: X_test = X_test.astype('float32')
- 10: 
- 11: X_train /= 255
- 12: X_test /= 255
- 13: 
- 14: nb_classes = len(np.unique(y_train))
- 15: y_train = np_utils.to_categorical(y_train, nb_classes)
- 16: y_test = np_utils.to_categorical(y_test, nb_classes)
- 17: 
- 18: 
- 19: 
- 20: 
->>> Resulting replaced keras model:
-
-   1: def keras_fmin_fnct(space):
-   2: 
-   3: 	num_epoch=1*1
-   4: 	nb_classes = y_train.shape[1]
-   5: 
-   6: 	model = Sequential()
-   7: 	model.add(Dense(512, input_shape=X_train.shape[1:]))
-   8: 	model.add(Activation('relu'))
-   9: 	model.add(Dropout(space['Dropout']))
-  10: 	model.add(Dense(space['Dense']))
-  11: 	model.add(Activation(space['Activation']))
-  12: 	model.add(Dropout(space['Dropout_1']))
-  13: 
-  14: 	# If we choose 'four', add an additional fourth layer
-  15: 	if space['Dropout_2'] == 'four':
-  16: 		model.add(Dense(100))
-  17: 
-  18: 		# We can also choose between complete sets of layers
-  19: 
-  20: 		model.add(space['add'])
-  21: 		model.add(Activation('relu'))
-  22: 
-  23: 	model.add(Dense(nb_classes))
-  24: 	model.add(Activation('softmax'))
-  25: 
-  26: 	model.compile(loss='categorical_crossentropy', metrics=['accuracy'],
-  27: 	 					 optimizer=space['optimizer'])
-  28: 
-  29: 	result = model.fit(X_train, y_train,
-  30: 				batch_size=space['batch_size'],
-  31: 				epochs=num_epoch,
-  32: 				verbose=2,
-  33: 				validation_split=0.1)
-  34: 	#get the highest validation accuracy of the training epochs
-  35: 	validation_acc = np.amax(result.history['val_acc']) 
-  36: 	print('Best validation acc of epoch:', validation_acc)
-  37: 	return {'loss': -validation_acc, 'status': STATUS_OK, 'model': model}
-  38: 
-  0%|          | 0/10 [00:00<?, ?it/s, best loss: ?]                                                    Train on 54000 samples, validate on 6000 samples
-  0%|          | 0/10 [00:00<?, ?it/s, best loss: ?]                                                    Epoch 1/1
-  0%|          | 0/10 [00:00<?, ?it/s, best loss: ?]                                                     - 3s - loss: 1.7318 - acc: 0.4199 - val_loss: 0.8057 - val_acc: 0.8438
-
-  0%|          | 0/10 [00:03<?, ?it/s, best loss: ?]                                                    Best validation acc of epoch:
-  0%|          | 0/10 [00:03<?, ?it/s, best loss: ?]                                                    0.8438333330154419
-  0%|          | 0/10 [00:03<?, ?it/s, best loss: ?] 10%|█         | 1/10 [00:03<00:30,  3.38s/it, best loss: -0.8438333330154419]                                                                              Train on 54000 samples, validate on 6000 samples
- 10%|█         | 1/10 [00:03<00:30,  3.38s/it, best loss: -0.8438333330154419]                                                                              Epoch 1/1
- 10%|█         | 1/10 [00:03<00:30,  3.38s/it, best loss: -0.8438333330154419]                                                                               - 4s - loss: 2.2315 - acc: 0.2790 - val_loss: 0.7229 - val_acc: 0.7670
-
- 10%|█         | 1/10 [00:07<00:30,  3.38s/it, best loss: -0.8438333330154419]                                                                              Best validation acc of epoch:
- 10%|█         | 1/10 [00:07<00:30,  3.38s/it, best loss: -0.8438333330154419]                                                                              0.767
- 10%|█         | 1/10 [00:07<00:30,  3.38s/it, best loss: -0.8438333330154419] 20%|██        | 2/10 [00:07<00:28,  3.55s/it, best loss: -0.8438333330154419]                                                                              Train on 54000 samples, validate on 6000 samples
- 20%|██        | 2/10 [00:07<00:28,  3.55s/it, best loss: -0.8438333330154419]                                                                              Epoch 1/1
- 20%|██        | 2/10 [00:07<00:28,  3.55s/it, best loss: -0.8438333330154419]                                                                               - 3s - loss: 2.0286 - acc: 0.2892 - val_loss: 0.7904 - val_acc: 0.8603
-
- 20%|██        | 2/10 [00:11<00:28,  3.55s/it, best loss: -0.8438333330154419]                                                                              Best validation acc of epoch:
- 20%|██        | 2/10 [00:11<00:28,  3.55s/it, best loss: -0.8438333330154419]                                                                              0.8603333331743876
- 20%|██        | 2/10 [00:11<00:28,  3.55s/it, best loss: -0.8438333330154419] 30%|███       | 3/10 [00:11<00:25,  3.63s/it, best loss: -0.8603333331743876]                                                                              Train on 54000 samples, validate on 6000 samples
- 30%|███       | 3/10 [00:11<00:25,  3.63s/it, best loss: -0.8603333331743876]                                                                              Epoch 1/1
- 30%|███       | 3/10 [00:11<00:25,  3.63s/it, best loss: -0.8603333331743876]                                                                               - 2s - loss: 0.7698 - acc: 0.7501 - val_loss: 0.1772 - val_acc: 0.9480
-
- 30%|███       | 3/10 [00:13<00:25,  3.63s/it, best loss: -0.8603333331743876]                                                                              Best validation acc of epoch:
- 30%|███       | 3/10 [00:13<00:25,  3.63s/it, best loss: -0.8603333331743876]                                                                              0.9479999996821086
- 30%|███       | 3/10 [00:13<00:25,  3.63s/it, best loss: -0.8603333331743876] 40%|████      | 4/10 [00:13<00:19,  3.31s/it, best loss: -0.9479999996821086]                                                                              Train on 54000 samples, validate on 6000 samples
- 40%|████      | 4/10 [00:14<00:19,  3.31s/it, best loss: -0.9479999996821086]                                                                              Epoch 1/1
- 40%|████      | 4/10 [00:14<00:19,  3.31s/it, best loss: -0.9479999996821086]                                                                               - 3s - loss: 0.5638 - acc: 0.8296 - val_loss: 0.1496 - val_acc: 0.9573
-
- 40%|████      | 4/10 [00:16<00:19,  3.31s/it, best loss: -0.9479999996821086]                                                                              Best validation acc of epoch:
- 40%|████      | 4/10 [00:16<00:19,  3.31s/it, best loss: -0.9479999996821086]                                                                              0.9573333336512247
- 40%|████      | 4/10 [00:16<00:19,  3.31s/it, best loss: -0.9479999996821086] 50%|█████     | 5/10 [00:16<00:16,  3.22s/it, best loss: -0.9573333336512247]                                                                              Train on 54000 samples, validate on 6000 samples
- 50%|█████     | 5/10 [00:16<00:16,  3.22s/it, best loss: -0.9573333336512247]                                                                              Epoch 1/1
- 50%|█████     | 5/10 [00:16<00:16,  3.22s/it, best loss: -0.9573333336512247]                                                                               - 2s - loss: 2.7255 - acc: 0.1133 - val_loss: 2.1646 - val_acc: 0.4777
-
- 50%|█████     | 5/10 [00:18<00:16,  3.22s/it, best loss: -0.9573333336512247]                                                                              Best validation acc of epoch:
- 50%|█████     | 5/10 [00:18<00:16,  3.22s/it, best loss: -0.9573333336512247]                                                                              0.47766666634877525
- 50%|█████     | 5/10 [00:18<00:16,  3.22s/it, best loss: -0.9573333336512247] 60%|██████    | 6/10 [00:18<00:11,  2.83s/it, best loss: -0.9573333336512247]                                                                              Train on 54000 samples, validate on 6000 samples
- 60%|██████    | 6/10 [00:18<00:11,  2.83s/it, best loss: -0.9573333336512247]                                                                              Epoch 1/1
- 60%|██████    | 6/10 [00:18<00:11,  2.83s/it, best loss: -0.9573333336512247]                                                                               - 2s - loss: 0.2925 - acc: 0.9119 - val_loss: 0.0998 - val_acc: 0.9698
-
- 60%|██████    | 6/10 [00:20<00:11,  2.83s/it, best loss: -0.9573333336512247]                                                                              Best validation acc of epoch:
- 60%|██████    | 6/10 [00:20<00:11,  2.83s/it, best loss: -0.9573333336512247]                                                                              0.969833333015442
- 60%|██████    | 6/10 [00:20<00:11,  2.83s/it, best loss: -0.9573333336512247] 70%|███████   | 7/10 [00:20<00:08,  2.69s/it, best loss: -0.969833333015442]                                                                              Train on 54000 samples, validate on 6000 samples
- 70%|███████   | 7/10 [00:21<00:08,  2.69s/it, best loss: -0.969833333015442]                                                                             Epoch 1/1
- 70%|███████   | 7/10 [00:21<00:08,  2.69s/it, best loss: -0.969833333015442]                                                                              - 2s - loss: 2.2594 - acc: 0.1666 - val_loss: 2.0895 - val_acc: 0.4125
-
- 70%|███████   | 7/10 [00:23<00:08,  2.69s/it, best loss: -0.969833333015442]                                                                             Best validation acc of epoch:
- 70%|███████   | 7/10 [00:23<00:08,  2.69s/it, best loss: -0.969833333015442]                                                                             0.4124999998410543
- 70%|███████   | 7/10 [00:23<00:08,  2.69s/it, best loss: -0.969833333015442] 80%|████████  | 8/10 [00:23<00:05,  2.65s/it, best loss: -0.969833333015442]                                                                             Train on 54000 samples, validate on 6000 samples
- 80%|████████  | 8/10 [00:23<00:05,  2.65s/it, best loss: -0.969833333015442]                                                                             Epoch 1/1
- 80%|████████  | 8/10 [00:23<00:05,  2.65s/it, best loss: -0.969833333015442]                                                                              - 2s - loss: 0.4788 - acc: 0.8470 - val_loss: 0.1453 - val_acc: 0.9558
-
- 80%|████████  | 8/10 [00:26<00:05,  2.65s/it, best loss: -0.969833333015442]                                                                             Best validation acc of epoch:
- 80%|████████  | 8/10 [00:26<00:05,  2.65s/it, best loss: -0.969833333015442]                                                                             0.9558333328564962
- 80%|████████  | 8/10 [00:26<00:05,  2.65s/it, best loss: -0.969833333015442] 90%|█████████ | 9/10 [00:26<00:02,  2.67s/it, best loss: -0.969833333015442]                                                                             Train on 54000 samples, validate on 6000 samples
- 90%|█████████ | 9/10 [00:26<00:02,  2.67s/it, best loss: -0.969833333015442]                                                                             Epoch 1/1
- 90%|█████████ | 9/10 [00:26<00:02,  2.67s/it, best loss: -0.969833333015442]                                                                              - 5s - loss: 0.3132 - acc: 0.9030 - val_loss: 0.1115 - val_acc: 0.9663
-
- 90%|█████████ | 9/10 [00:31<00:02,  2.67s/it, best loss: -0.969833333015442]                                                                             Best validation acc of epoch:
- 90%|█████████ | 9/10 [00:31<00:02,  2.67s/it, best loss: -0.969833333015442]                                                                             0.9663333333333334
- 90%|█████████ | 9/10 [00:31<00:02,  2.67s/it, best loss: -0.969833333015442]100%|██████████| 10/10 [00:31<00:00,  3.51s/it, best loss: -0.969833333015442]
---- 32.31508922576904 seconds ---
-Evalutation of best performing model:
-(60000, 784)
-(10000, 784)
-
-   32/10000 [..............................] - ETA: 0s
- 1920/10000 [====>.........................] - ETA: 0s
- 4256/10000 [===========>..................] - ETA: 0s
- 6528/10000 [==================>...........] - ETA: 0s
- 8768/10000 [=========================>....] - ETA: 0s
-10000/10000 [==============================] - 0s 23us/step
-[0.1160210540253669, 0.9639]
