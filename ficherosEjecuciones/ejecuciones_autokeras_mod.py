@@ -152,8 +152,9 @@ if __name__=='__main__':
 
 
 			#mlpModule.export_autokeras_model(datasets+"_"+mode+"_"+arquitecture+"_"+modified)
-			y = mlpModule.evaluate(x_test,y_test)
-			print("Accuracy final:", y*100)
+			#y_hat = mlpModule.predict(x_test)
+
+			#print("Accuracy final:", np.sum(y_test==y_hat)/len(y_hat)*100)
 			print("Time consumed: ",time_limit/3600," hours")
 
 
