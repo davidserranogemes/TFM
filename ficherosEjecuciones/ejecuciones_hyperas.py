@@ -34,7 +34,7 @@ from hyperas.distributions import choice, uniform
 
 #Hyperas need that you define de model with the boundaries where Hyperas search
 def create_model_feedforward(X_train,y_train,X_test,y_test):
-	num_epoch=1*1000
+	num_epoch=1*1
 	nb_classes = y_train.shape[1]
 
 	model = Sequential()
@@ -73,7 +73,7 @@ def create_model_feedforward(X_train,y_train,X_test,y_test):
 def create_model_convolutional(X_train,y_train,X_test,y_test):
 	nb_classes = y_train.shape[1]
 
-	num_epoch=1*1000
+	num_epoch=1*100
 
 	model = Sequential()
 
@@ -281,7 +281,6 @@ if __name__=='__main__':
 		print(best_model.evaluate(X_test, Y_test))
 
 		#Calculate final ACC
-		print("Accuracy final:", y*100)
 		print("Time consumed: ",time_limit/3600," hours")
 
 
@@ -300,7 +299,7 @@ if __name__=='__main__':
 				
 				print("--- %s seconds ---" % (time.time() - start_time))
 
-				(X_train, Y_train), (X_test, Y_test) = data_mnist()
+				(X_train, Y_train), (X_test, Y_test) = data_mnist_feed()
 
 
 			if datasets=="fashion":
@@ -312,7 +311,7 @@ if __name__=='__main__':
 
 				print("--- %s seconds ---" % (time.time() - start_time))
 
-				(X_train, Y_train), (X_test, Y_test) = data_mnist()
+				(X_train, Y_train), (X_test, Y_test) = data_fashion_feed()
 			
 			if datasets=="imdb":
 				best_run, best_model = optim.minimize(model=create_model_feedforward,
@@ -323,7 +322,7 @@ if __name__=='__main__':
 
 				print("--- %s seconds ---" % (time.time() - start_time))
 
-				(X_train, Y_train), (X_test, Y_test) = data_mnist()
+				(X_train, Y_train), (X_test, Y_test) = data_imdb()
 
 			if datasets=="letters":
 				best_run, best_model = optim.minimize(model=create_model_feedforward,
@@ -334,14 +333,16 @@ if __name__=='__main__':
 
 				print("--- %s seconds ---" % (time.time() - start_time))
 
-				(X_train, Y_train), (X_test, Y_test) = data_mnist()
+				(X_train, Y_train), (X_test, Y_test) = data_letters()
 
 
 			print("Evalutation of best performing model:")
+			print(X_train.shape)
+			print(X_test.shape)
+
 			print(best_model.evaluate(X_test, Y_test))
 
 			#Calculate final ACC
-			print("Accuracy final:", y*100)
 			print("Time consumed: ",time_limit/3600," hours")
 
 
