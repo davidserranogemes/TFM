@@ -261,7 +261,7 @@ if __name__=='__main__':
 			best_run, best_model = optim.minimize(model=create_model_convolutional,
                                       data=data_mnist,
                                       algo=tpe.suggest,
-                                      max_evals=5,
+                                      max_evals=10,
                                       trials=Trials())
 			print("--- %s seconds ---" % (time.time() - start_time))
 
@@ -271,7 +271,7 @@ if __name__=='__main__':
 			best_run, best_model = optim.minimize(model=create_model_convolutional,
                                       data=data_fashion,
                                       algo=tpe.suggest,
-                                      max_evals=5,
+                                      max_evals=10,
                                       trials=Trials())
 			print("--- %s seconds ---" % (time.time() - start_time))
 
@@ -306,7 +306,7 @@ if __name__=='__main__':
 				best_run, best_model = optim.minimize(model=create_model_feedforward,
 	                                      data=data_fashion_feed,
 	                                      algo=tpe.suggest,
-	                                      max_evals=5,
+	                                      max_evals=10,
 	                                      trials=Trials())
 
 				print("--- %s seconds ---" % (time.time() - start_time))
@@ -317,7 +317,7 @@ if __name__=='__main__':
 				best_run, best_model = optim.minimize(model=create_model_feedforward,
 	                                      data=data_imdb,
 	                                      algo=tpe.suggest,
-	                                      max_evals=5,
+	                                      max_evals=10,
 	                                      trials=Trials())
 
 				print("--- %s seconds ---" % (time.time() - start_time))
@@ -328,7 +328,7 @@ if __name__=='__main__':
 				best_run, best_model = optim.minimize(model=create_model_feedforward,
 	                                      data=data_letters,
 	                                      algo=tpe.suggest,
-	                                      max_evals=5,
+	                                      max_evals=10,
 	                                      trials=Trials())
 
 				print("--- %s seconds ---" % (time.time() - start_time))
