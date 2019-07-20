@@ -4,21 +4,6 @@ DATE=$(echo `date +%Y-%m-%d`)
 
 
 
-AUTOKERAS_CPU_CNN=false
-AUTOKERAS_CPU_MLP=false
-
-AUTOKERAS_GPU_CNN=false
-AUTOKERAS_GPU_MLP=true
-
-AUTOKERAS_GPU_CNN_MOD=false
-
-
-HYPERAS_CPU_CNN=true
-HYPERAS_CPU_MLP=false
-
-HYPERAS_GPU_CNN=true
-HYPERAS_GPU_MLP=true
-
 
 
 
@@ -36,6 +21,14 @@ cd master/TFM
 #########																							##########
 ##############################################################################################################
 ##############################################################################################################
+
+AUTOKERAS_CPU_CNN=false
+AUTOKERAS_CPU_MLP=false
+
+AUTOKERAS_GPU_CNN=false
+AUTOKERAS_GPU_MLP=false
+
+AUTOKERAS_GPU_CNN_MOD=false
 
 
 
@@ -152,17 +145,17 @@ if $AUTOKERAS_GPU_MLP; then
 	conda activate autokeras-gpu
 
 
-	echo "Launch mnist Feedforward GPU"
-	python ficherosEjecuciones/ejecuciones_autokeras.py mnist Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
-	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
+	#echo "Launch mnist Feedforward GPU"
+	#python ficherosEjecuciones/ejecuciones_autokeras.py mnist Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+	#./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
 
-	echo "Launch fashion Feedforward GPU"
-	python ficherosEjecuciones/ejecuciones_autokeras.py fashion Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
-	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
+	#echo "Launch fashion Feedforward GPU"
+	#python ficherosEjecuciones/ejecuciones_autokeras.py fashion Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+	#./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
 
-	echo "Launch imdb Feedforward CPU"
-	python ficherosEjecuciones/ejecuciones_autokeras.py imdb Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
-	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt &
+	#echo "Launch imdb Feedforward CPU"
+	#python ficherosEjecuciones/ejecuciones_autokeras.py imdb Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	#./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt &
 
 	echo "Launch letters Feedforward CPU"
 	python ficherosEjecuciones/ejecuciones_autokeras.py letters Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/letters.txt
@@ -222,6 +215,13 @@ fi
 #########																							##########
 ##############################################################################################################
 ##############################################################################################################
+
+
+HYPERAS_CPU_CNN=false
+HYPERAS_CPU_MLP=false
+
+HYPERAS_GPU_CNN=true
+HYPERAS_GPU_MLP=true
 
 
 ALGORITHM="HYPERAS"
