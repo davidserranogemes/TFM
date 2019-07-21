@@ -34,8 +34,7 @@ from hyperas.distributions import choice, uniform
 
 #Hyperas need that you define de model with the boundaries where Hyperas search
 def create_model_feedforward(X_train,y_train,X_test,y_test):
-	num_epoch=1*1
-	#num_epoch=1*500
+	num_epoch=1*200
 	nb_classes = y_train.shape[1]
 
 	model = Sequential()
@@ -74,7 +73,7 @@ def create_model_feedforward(X_train,y_train,X_test,y_test):
 def create_model_convolutional(X_train,y_train,X_test,y_test):
 	nb_classes = y_train.shape[1]
 
-	num_epoch=1*500
+	num_epoch=1*100
 
 	model = Sequential()
 
@@ -257,7 +256,7 @@ if __name__=='__main__':
 
 	print("Leyendo ",datasets)
 	
-	MAX_EVALS = 20
+	MAX_EVALS = 10
 
 
 	if mode == "Convolutional":
