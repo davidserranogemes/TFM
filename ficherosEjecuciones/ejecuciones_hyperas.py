@@ -83,15 +83,22 @@ def create_model_convolutional(X_train,y_train,X_test,y_test):
 	model.add(Convolution2D(32, 3, 3))
 	model.add(Activation('relu'))
 	model.add(MaxPooling2D(pool_size=(2, 2)))
-	model.add(Dropout({{uniform(0, 1)}}))
+	model.add(Dropout({{uniform(0, 0.5)}}))
 
 	model.add(Convolution2D(64, 3, 3, border_mode='same'))
 	model.add(Activation('relu'))
 	model.add(Convolution2D(64, 3, 3))
 	model.add(Activation('relu'))
 	model.add(MaxPooling2D(pool_size=(2, 2)))
-	model.add(Dropout({{uniform(0, 1)}}))
+	model.add(Dropout({{uniform(0, 0.5)}}))
 
+	if {{choice(['two','three'])}} == 'three':
+		model.add(Convolution2D(128, 3, 3, border_mode='same'))
+		model.add(Activation('relu'))
+		model.add(Convolution2D(128, 3, 3))
+		model.add(Activation('relu'))
+		model.add(MaxPooling2D(pool_size=(2, 2)))
+		model.add(Dropout({{uniform(0, 0.5)}}))
 
 	model.add(Flatten())
 	model.add(Dense(512))
