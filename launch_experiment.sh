@@ -26,7 +26,8 @@ AUTOKERAS_CPU_CNN=false
 AUTOKERAS_CPU_MLP=false
 
 AUTOKERAS_GPU_CNN=false
-AUTOKERAS_GPU_MLP=true
+#AUTOKERAS_GPU_MLP=true
+AUTOKERAS_GPU_MLP=false
 
 AUTOKERAS_GPU_CNN_MOD=false
 
@@ -217,11 +218,11 @@ fi
 ##############################################################################################################
 
 
-HYPERAS_CPU_CNN=false
+HYPERAS_CPU_CNN=true
 HYPERAS_CPU_MLP=false
 
-HYPERAS_GPU_CNN=true
-HYPERAS_GPU_MLP=true
+HYPERAS_GPU_CNN=false
+HYPERAS_GPU_MLP=false
 
 
 ALGORITHM="HYPERAS"
