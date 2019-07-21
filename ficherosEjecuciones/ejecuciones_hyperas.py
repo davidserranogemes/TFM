@@ -34,16 +34,17 @@ from hyperas.distributions import choice, uniform
 
 #Hyperas need that you define de model with the boundaries where Hyperas search
 def create_model_feedforward(X_train,y_train,X_test,y_test):
-	num_epoch=1*500
+	num_epoch=1*1
+	#num_epoch=1*500
 	nb_classes = y_train.shape[1]
 
 	model = Sequential()
 	model.add(Dense(512, input_shape=X_train.shape[1:]))
 	model.add(Activation('relu'))
-	model.add(Dropout({{uniform(0, 1)}}))
+	model.add(Dropout({{uniform(0, 0.5)}}))
 	model.add(Dense({{choice([256, 512, 1024])}}))
 	model.add(Activation({{choice(['relu', 'sigmoid'])}}))
-	model.add(Dropout({{uniform(0, 1)}}))
+	model.add(Dropout({{uniform(0, 0.5)}}))
 
 	# If we choose 'four', add an additional fourth layer
 	if {{choice(['three', 'four'])}} == 'four':
@@ -350,7 +351,7 @@ if __name__=='__main__':
 			print(best_model.evaluate(X_test, Y_test))
 
 			#Calculate final ACC
-			print("Time consumed: ",time_limit/3600," hours")
+			print("Time consumed: ",(time.time() - start_time)/3600," hours")
 
 
 
