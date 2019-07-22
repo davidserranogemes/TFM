@@ -15,13 +15,30 @@ RUN apt-get update && \
 RUN apt-get install -y gcc
 RUN apt-get install -y g++
 
+#RUN apt-get install -y software-properties-common
+
 #Install Java
-RUN apt-get install -y openjdk-8-jdk && \
+#RUN add-apt-repository -y ppa:webupd8team/java
+RUN apt-get update -y
+
+#RUN apt-get install -y openjdk-8-jdk && \
+
+RUN apt-get install openjdk-9-jdk && \
     apt-get install -y ant && \
     apt-get clean;
 
 
 # Install any needed packages specified in requirements.txt
+RUN pip install tensorflow
+RUN pip install keras
+
+RUN pip install numpy
+RUN pip install SciPy
+
+RUN pip install scikit-learn==0.20
+
+
+
 RUN pip install -U request
 RUN pip install -U tabulate
 RUN pip install -U "colorama>=0.3.8"
