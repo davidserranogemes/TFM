@@ -380,7 +380,7 @@ echo "PRUEBAS H2O"
 
 if $H2O_AUTHOMATIC; then
 	echo "Launch H2O AUTHOMATIC "
-	mkdir "logs/$ALGORITHM/$DATE/H2O_GUIDED"
+	mkdir "logs/$ALGORITHM/$DATE/H2O_AUTHOMATIC"
 	MODE="H2O_AUTHOMATIC"
 
 	echo "Launch H2O authomatic"
