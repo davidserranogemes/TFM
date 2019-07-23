@@ -456,4 +456,4 @@ fi
 
 
 #Aparagamos el ordenador
-poweroff
+#poweroff
