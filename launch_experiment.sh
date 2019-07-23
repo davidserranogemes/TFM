@@ -396,9 +396,9 @@ if $H2O_AUTHOMATIC; then
 	python ficherosEjecuciones/ejecuciones_h2o.py fashion Authomatic CPU  > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
 	./res_h2o_model_log_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt
 
-	echo "Launch imdb Authomatic"
-	python ficherosEjecuciones/ejecuciones_h2o.py imdb Authomatic CPU  > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
-	./res_h2o_model_log_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	#echo "Launch imdb Authomatic"
+	#python ficherosEjecuciones/ejecuciones_h2o.py imdb Authomatic CPU  > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	#./res_h2o_model_log_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt
 
 	echo "Launch letters Authomatic"
 	python ficherosEjecuciones/ejecuciones_h2o.py letters Authomatic CPU  > logs/$ALGORITHM/$DATE/$MODE/letters.txt
@@ -432,9 +432,9 @@ if $H2O_GUIDED; then
 	python ficherosEjecuciones/ejecuciones_h2o.py fashion Guided CPU  > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
 	./res_h2o_model_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt
 
-	echo "Launch imdb Guided"
-	python ficherosEjecuciones/ejecuciones_h2o.py imdb Guided CPU  > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
-	./res_h2o_model_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	#echo "Launch imdb Guided"
+	#python ficherosEjecuciones/ejecuciones_h2o.py imdb Guided CPU  > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	#./res_h2o_model_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt
 
 	echo "Launch letters Guided"
 	python ficherosEjecuciones/ejecuciones_h2o.py letters Guided CPU  > logs/$ALGORITHM/$DATE/$MODE/letters.txt
