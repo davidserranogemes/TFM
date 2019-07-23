@@ -2,12 +2,6 @@
 
 DATE=$(echo `date +%Y-%m-%d`)
 
-
-
-
-
-
-
 cd
 cd master/TFM
 
@@ -26,13 +20,9 @@ AUTOKERAS_CPU_CNN=false
 AUTOKERAS_CPU_MLP=false
 
 AUTOKERAS_GPU_CNN=false
-AUTOKERAS_GPU_MLP=true
+AUTOKERAS_GPU_MLP=false
 
 AUTOKERAS_GPU_CNN_MOD=false
-
-
-
-
 
 
 ALGORITHM="AUTOKERAS"
@@ -145,20 +135,20 @@ if $AUTOKERAS_GPU_MLP; then
 	conda activate autokeras-gpu
 
 
-	#echo "Launch mnist Feedforward GPU"
-	#python ficherosEjecuciones/ejecuciones_autokeras.py mnist Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
-	#./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
+	echo "Launch mnist Feedforward GPU"
+	python ficherosEjecuciones/ejecuciones_autokeras.py mnist Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt &
 
-	#echo "Launch fashion Feedforward GPU"
-	#python ficherosEjecuciones/ejecuciones_autokeras.py fashion Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
-	#./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
+	echo "Launch fashion Feedforward GPU"
+	python ficherosEjecuciones/ejecuciones_autokeras.py fashion Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
 
-	#echo "Launch imdb Feedforward CPU"
-	#python ficherosEjecuciones/ejecuciones_autokeras.py imdb Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
-	#./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt &
+	echo "Launch imdb Feedforward CPU"
+	python ficherosEjecuciones/ejecuciones_autokeras.py imdb Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt &
 
 	echo "Launch letters Feedforward CPU"
-	python ficherosEjecuciones/ejecuciones_autokeras.py letters Feedforward CPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/letters.txt
+	python ficherosEjecuciones/ejecuciones_autokeras.py letters Feedforward GPU NOMOD > logs/$ALGORITHM/$DATE/$MODE/letters.txt
 	./acc_autokeras_extractor.sh logs/$ALGORITHM/$DATE/$MODE/letters.txt &
 
 
@@ -218,10 +208,10 @@ fi
 
 
 HYPERAS_CPU_CNN=false
-HYPERAS_CPU_MLP=false
+HYPERAS_CPU_MLP=true
 
-HYPERAS_GPU_CNN=false
-HYPERAS_GPU_MLP=false
+HYPERAS_GPU_CNN=true
+HYPERAS_GPU_MLP=true
 
 
 ALGORITHM="HYPERAS"
@@ -342,11 +332,11 @@ if $HYPERAS_GPU_MLP; then
 	./acc_hyperas_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt &
 
 	echo "Launch imdb Feedforward CPU"
-	python ficherosEjecuciones/ejecuciones_hyperas.py imdb Feedforward CPU  > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	python ficherosEjecuciones/ejecuciones_hyperas.py imdb Feedforward GPU  > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
 	./acc_hyperas_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt &
 
 	echo "Launch letters Feedforward CPU"
-	python ficherosEjecuciones/ejecuciones_hyperas.py letters Feedforward CPU  > logs/$ALGORITHM/$DATE/$MODE/letters.txt
+	python ficherosEjecuciones/ejecuciones_hyperas.py letters Feedforward GPU  > logs/$ALGORITHM/$DATE/$MODE/letters.txt
 	./acc_hyperas_extractor.sh logs/$ALGORITHM/$DATE/$MODE/letters.txt &
 
 
@@ -361,6 +351,105 @@ if $HYPERAS_GPU_MLP; then
 fi
 
 
+
+
+##############################################################################################################
+##############################################################################################################
+#########																							##########
+#########																							##########
+#########											HYPERAS											##########
+#########																							##########
+#########																							##########
+##############################################################################################################
+##############################################################################################################
+
+
+
+H2O_AUTHOMATIC=true
+H2O_GUIDED=true
+
+
+ALGORITHM="H2O"
+
+mkdir "logs/$ALGORITHM"
+mkdir "logs/$ALGORITHM/$DATE"
+
+echo "PRUEBAS H2O"
+
+
+
+if $H2O_AUTHOMATIC; then
+	echo "Launch H2O AUTHOMATIC "
+	mkdir "logs/$ALGORITHM/$DATE/H2O_GUIDED"
+	MODE="H2O_AUTHOMATIC"
+
+	echo "Launch H2O authomatic"
+	source ~/anaconda3/etc/profile.d/conda.sh
+	conda activate h2o-cpu
+
+
+	echo "Launch mnist Authomatic"
+	python ficherosEjecuciones/ejecuciones_h2o.py mnist Authomatic CPU  > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+	./res_h2o_model_log_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+
+	echo "Launch fashion Authomatic"
+	python ficherosEjecuciones/ejecuciones_h2o.py fashion Authomatic CPU  > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+	./res_h2o_model_log_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+
+	echo "Launch imdb Authomatic"
+	python ficherosEjecuciones/ejecuciones_h2o.py imdb Authomatic CPU  > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	./res_h2o_model_log_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+
+	echo "Launch letters Authomatic"
+	python ficherosEjecuciones/ejecuciones_h2o.py letters Authomatic CPU  > logs/$ALGORITHM/$DATE/$MODE/letters.txt
+	./res_h2o_model_log_extractor.sh logs/$ALGORITHM/$DATE/$MODE/letters.txt
+
+	conda deactivate
+
+	echo "Subiendo los resultados a github"
+	git pull --force
+	git add logs/$ALGORITHM/$DATE/$MODE/
+	git commit -m" Resultados logs/$ALGORITHM/$DATE/$MODE/*"
+	git push
+
+fi
+
+if $H2O_GUIDED; then
+	echo "Launch H2O GUIDED "
+	mkdir "logs/$ALGORITHM/$DATE/H2O_GUIDED"
+	MODE="H2O_GUIDED"
+
+	echo "Launch H2O authomatic"
+	source ~/anaconda3/etc/profile.d/conda.sh
+	conda activate h2o-cpu
+
+
+	echo "Launch mnist Guided"
+	python ficherosEjecuciones/ejecuciones_h2o.py mnist Guided CPU  > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+	./res_h2o_model_extractor.sh logs/$ALGORITHM/$DATE/$MODE/mnist.txt
+
+	echo "Launch fashion Guided"
+	python ficherosEjecuciones/ejecuciones_h2o.py fashion Guided CPU  > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+	./res_h2o_model_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt
+
+	echo "Launch imdb Guided"
+	python ficherosEjecuciones/ejecuciones_h2o.py imdb Guided CPU  > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	./res_h2o_model_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+
+	echo "Launch letters Guided"
+	python ficherosEjecuciones/ejecuciones_h2o.py letters Guided CPU  > logs/$ALGORITHM/$DATE/$MODE/letters.txt
+	./res_h2o_model_extractor.sh logs/$ALGORITHM/$DATE/$MODE/letters.txt
+
+
+	conda deactivate
+
+	echo "Subiendo los resultados a github"
+	git pull --force
+	git add logs/$ALGORITHM/$DATE/$MODE/
+	git commit -m" Resultados logs/$ALGORITHM/$DATE/$MODE/*"
+	git push
+
+fi
 
 
 
