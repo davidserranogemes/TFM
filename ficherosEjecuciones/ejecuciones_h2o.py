@@ -66,7 +66,7 @@ def data_fashion_feed():
 	return (X_train, y_train), (X_test, y_test)
 
 def data_imdb():
-	num_words=10000
+	num_words=5000
 	skip_top= 20
 	(x_train, y_train), (x_test, y_test) = imdb.load_data(num_words=num_words,skip_top =skip_top)
 
