@@ -1,0 +1,243 @@
+Starting H2O
+Checking whether there is an H2O instance running at http://localhost:54321 ..... not found.
+Attempting to start a local H2O server...
+  Java Version: openjdk version "10.0.2" 2018-07-17; OpenJDK Runtime Environment (build 10.0.2+13-Ubuntu-1ubuntu0.18.04.4); OpenJDK 64-Bit Server VM (build 10.0.2+13-Ubuntu-1ubuntu0.18.04.4, mixed mode)
+  Starting server from /home/davidserranogemes/anaconda3/envs/h2o-cpu/lib/python3.7/site-packages/h2o/backend/bin/h2o.jar
+  Ice root: /tmp/tmpveahb1hj
+  JVM stdout: /tmp/tmpveahb1hj/h2o_davidserranogemes_started_from_python.out
+  JVM stderr: /tmp/tmpveahb1hj/h2o_davidserranogemes_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321 ... successful.
+--------------------------  ---------------------------------------------------
+H2O cluster uptime:         03 secs
+H2O cluster timezone:       Europe/Madrid
+H2O data parsing timezone:  UTC
+H2O cluster version:        3.26.0.1
+H2O cluster version age:    7 days and 15 hours
+H2O cluster name:           H2O_from_python_davidserranogemes_o1dhpw
+H2O cluster total nodes:    1
+H2O cluster free memory:    1.922 Gb
+H2O cluster total cores:    8
+H2O cluster allowed cores:  8
+H2O cluster status:         accepting new members, healthy
+H2O connection url:         http://127.0.0.1:54321
+H2O connection proxy:
+H2O internal security:      False
+H2O API Extensions:         Amazon S3, XGBoost, Algos, AutoML, Core V3, Core V4
+Python version:             3.7.3 final
+--------------------------  ---------------------------------------------------
+Leyendo  mnist
+Parse progress: |█████████████████████████████████████████████████████████| 100%
+Parse progress: |█████████████████████████████████████████████████████████| 100%
+Executing  mnist with  Authomatic  mode.
+
+AutoML progress: |
+13:02:15.496: Project: automl_py_3_sid_8334
+13:02:15.496: AutoML job created: 2019.07.23 13:02:15.488
+13:02:15.498: Disabling Algo: DRF as requested by the user.
+13:02:15.498: Disabling Algo: XGBoost as requested by the user.
+13:02:15.498: Disabling Algo: GLM as requested by the user.
+13:02:15.498: Disabling Algo: StackedEnsemble as requested by the user.
+13:02:15.498: Disabling Algo: GBM as requested by the user.
+13:02:15.499: Build control seed: 1
+13:02:16.190: training frame: Frame key: automl_training_py_3_sid_8334    cols: 785    rows: 44994  chunks: 77    size: 61539864  checksum: -6817421744094962530
+13:02:16.472: validation frame: Frame key: py_4_sid_8334    cols: 785    rows: 15006  chunks: 77    size: 26133464  checksum: -3659770589560635126
+13:02:16.472: leaderboard frame: NULL
+13:02:16.472: response column: C785
+13:02:16.472: fold column: null
+13:02:16.473: weights column: null
+13:02:16.729: Setting stopping tolerance adaptively based on the training frame: 0.004714359509021305
+13:02:16.768: AutoML build started: 2019.07.23 13:02:16.767
+
+████████████████
+13:03:42.867: New leader: DeepLearning_1_AutoML_20190723_130215, mean_per_class_error: 0.0857029395021691
+13:03:42.867: AutoML: starting DeepLearning hyperparameter search
+
+███████████████
+13:05:03.935: New leader: DeepLearning_grid_1_AutoML_20190723_130215_model_1, mean_per_class_error: 0.06987886026369705
+13:05:03.935: AutoML: starting DeepLearning hyperparameter search
+
+███████████████
+13:06:25.983: New leader: DeepLearning_grid_1_AutoML_20190723_130215_model_2, mean_per_class_error: 0.06416286131934484
+13:06:25.983: AutoML: starting DeepLearning hyperparameter search
+
+██████████| 100%
+
+13:07:17.997: StackedEnsemble builds skipped due to the exclude_algos option.
+13:07:17.997: AutoML build stopped: 2019.07.23 13:07:17.997
+13:07:17.997: AutoML build done: built 3 models
+13:07:17.997: AutoML duration:  5 min  1.230 sec
+
+--- 308.63319730758667 seconds ---
+Evalutation of best performing model:
+Model Details
+=============
+H2ODeepLearningEstimator :  Deep Learning
+Model Key:  DeepLearning_grid_1_AutoML_20190723_130215_model_2
+
+Status of Neuron Layers: predicting C785, 10-class classification, multinomial distribution, CrossEntropy loss, 38,710 weights/biases, 587.9 KB, 156,119 training samples, mini-batch size 1
+
+    layer    units    type              dropout    l1    l2    mean_rate              rate_rms               momentum    mean_weight           weight_rms           mean_bias            bias_rms
+--  -------  -------  ----------------  ---------  ----  ----  ---------------------  ---------------------  ----------  --------------------  -------------------  -------------------  -------------------
+    1        712      Input             15.0
+    2        50       RectifierDropout  20.0       0.0   0.0   0.11601019656563111    0.23097586631774902    0.0         0.07352329953245018   0.16388356685638428  -0.0924046301192745  0.1705896258354187
+    3        50       RectifierDropout  20.0       0.0   0.0   0.0007888206958625233  0.0004195502260699868  0.0         -0.05483167046939488  0.12382933497428894  0.8628210091274926   0.0751466155052185
+    4        10       Softmax                      0.0   0.0   0.01371315321396105    0.03274001181125641    0.0         -0.23926957560679876  0.740562915802002    -0.616997917679384   0.39354634284973145
+
+
+ModelMetricsMultinomial: deeplearning
+** Reported on train data. **
+
+MSE: 0.04547028961622078
+RMSE: 0.21323763649088961
+LogLoss: 0.15839937987825473
+Mean Per-Class Error: 0.050803285336988704
+Confusion Matrix: Row labels: Actual class; Column labels: Predicted class
+
+0    1     2     3     4    5    6    7     8    9    Error      Rate
+---  ----  ----  ----  ---  ---  ---  ----  ---  ---  ---------  -----------
+951  0     1     1     0    0    6    4     5    0    0.017562   17 / 968
+0    1107  11    4     2    0    0    5     3    0    0.0220848  25 / 1,132
+3    1     952   8     1    0    7    23    4    3    0.0499002  50 / 1,002
+1    2     21    972   1    18   1    14    6    5    0.0662824  69 / 1,041
+0    1     9     0     947  4    10   7     1    19   0.0511022  51 / 998
+1    0     3     23    3    884  4    5     13   2    0.0575693  54 / 938
+6    1     2     0     2    12   908  18    2    0    0.0452156  43 / 951
+4    4     9     2     6    0    0    987   0    11   0.0351906  36 / 1,023
+4    14    9     15    2    24   3    2     871  2    0.0792812  75 / 946
+0    2     0     11    17   13   2    29    8    896  0.0838446  82 / 978
+970  1132  1017  1036  981  955  941  1094  913  938  0.0503157  502 / 9,977
+Top-10 Hit Ratios: 
+k    hit_ratio
+---  -----------
+1    0.949684
+2    0.979753
+3    0.988273
+4    0.993886
+5    0.995189
+6    0.996993
+7    0.998497
+8    0.998998
+9    0.999499
+10   1
+
+ModelMetricsMultinomial: deeplearning
+** Reported on validation data. **
+
+MSE: 0.055778167531174296
+RMSE: 0.2361740195939729
+LogLoss: 0.21767904414653805
+Mean Per-Class Error: 0.06238123558000027
+Confusion Matrix: Row labels: Actual class; Column labels: Predicted class
+
+0     1     2     3     4     5     6     7     8     9     Error      Rate
+----  ----  ----  ----  ----  ----  ----  ----  ----  ----  ---------  ------------
+1476  0     3     4     0     5     9     4     6     0     0.0205707  31 / 1,507
+0     1633  21    6     5     5     1     14    6     5     0.0371462  63 / 1,696
+5     4     1369  12    8     2     21    35    9     3     0.0674387  99 / 1,468
+3     2     34    1335  1     29    3     31    17    5     0.0856164  125 / 1,460
+3     3     11    0     1411  8     21    6     2     48    0.0674157  102 / 1,513
+7     2     4     33    3     1259  15    20    12    5     0.0742647  101 / 1,360
+12    2     8     0     2     18    1422  12    8     0     0.041779   62 / 1,484
+3     3     14    5     10    0     1     1491  0     20    0.0361991  56 / 1,547
+6     11    13    36    3     45    11    15    1315  14    0.104833   154 / 1,469
+4     1     3     18    30    18    2     48    9     1369  0.0885486  133 / 1,502
+1519  1661  1480  1449  1473  1389  1506  1676  1384  1469  0.0617086  926 / 15,006
+Top-10 Hit Ratios: 
+k    hit_ratio
+---  -----------
+1    0.938291
+2    0.974077
+3    0.985739
+4    0.99087
+5    0.993736
+6    0.995602
+7    0.997135
+8    0.998267
+9    0.999534
+10   1
+
+ModelMetricsMultinomial: deeplearning
+** Reported on cross-validation data. **
+
+MSE: 0.05623547923069172
+RMSE: 0.23714021006714936
+LogLoss: 0.21863703101974577
+Mean Per-Class Error: 0.06416286131934484
+Confusion Matrix: Row labels: Actual class; Column labels: Predicted class
+
+0     1     2     3     4     5     6     7     8     9     Error      Rate
+----  ----  ----  ----  ----  ----  ----  ----  ----  ----  ---------  --------------
+4282  1     27    4     3     23    49    7     18    2     0.0303442  134 / 4,416
+1     4896  39    25    4     18    3     17    35    8     0.0297265  150 / 5,046
+31    11    4183  68    15    51    39    46    34    12    0.0683742  307 / 4,490
+8     2     91    4264  2     164   7     58    51    24    0.0871334  407 / 4,671
+4     11    42    3     4021  25    55    14    16    138   0.0711481  308 / 4,329
+21    3     31    92    8     3804  48    15    27    12    0.0632849  257 / 4,061
+29    4     54    0     9     63    4260  1     14    0     0.0392422  174 / 4,434
+10    27    71    21    26    63    3     4429  12    56    0.0612548  289 / 4,718
+17    57    70    71    19    122   32    20    3916  58    0.106344   466 / 4,382
+19    8     24    51    84    61    3     97    30    4070  0.0847763  377 / 4,447
+4422  5020  4632  4599  4191  4394  4499  4704  4153  4380  0.0637641  2,869 / 44,994
+Top-10 Hit Ratios: 
+k    hit_ratio
+---  -----------
+1    0.936236
+2    0.973374
+3    0.985109
+4    0.990488
+5    0.99351
+6    0.995822
+7    0.997711
+8    0.998711
+9    0.999444
+10   1
+Cross-Validation Metrics Summary: 
+                         mean       sd           cv_1_valid    cv_2_valid    cv_3_valid    cv_4_valid    cv_5_valid
+-----------------------  ---------  -----------  ------------  ------------  ------------  ------------  ------------
+accuracy                 0.933702   0.00326992   0.93866       0.937882      0.933882      0.92577       0.932318
+err                      0.0662978  0.00326992   0.0613402     0.062118      0.0661185     0.0742305     0.0676817
+err_count                596.6      29.4231      552           559           595           668           609
+logloss                  0.226229   0.00648056   0.222779      0.217573      0.220924      0.243693      0.226174
+max_per_class_error      0.110349   0.00717813   0.0972919     0.117714      0.101415      0.124864      0.110458
+mean_per_class_accuracy  0.933351   0.00323936   0.938663      0.93728       0.93306       0.925625      0.932129
+mean_per_class_error     0.0666486  0.00323936   0.0613367     0.0627197     0.0669401     0.0743754     0.0678709
+mse                      0.0582999  0.00259559   0.052732      0.0565685     0.0581626     0.0637067     0.0603295
+r2                       0.993004   0.000319143  0.993636      0.99332       0.993017      0.992355      0.992691
+rmse                     0.241334   0.00538496   0.229634      0.237841      0.241169      0.252402      0.245621
+Scoring History: 
+    timestamp            duration          training_speed    epochs    iterations    samples    training_rmse    training_logloss    training_r2    training_classification_error    validation_rmse    validation_logloss    validation_r2    validation_classification_error
+--  -------------------  ----------------  ----------------  --------  ------------  ---------  ---------------  ------------------  -------------  -------------------------------  -----------------  --------------------  ---------------  ---------------------------------
+    2019-07-23 13:06:11  0.000 sec                           0         0             0          nan              nan                 nan            nan                              nan                nan                   nan              nan
+    2019-07-23 13:06:13  1 min  9.851 sec  10804 obs/sec     0.347002  1             15613      0.292581         0.305625            0.989639       0.093916                         0.296664           0.330105              0.989507         0.0956951
+    2019-07-23 13:06:19  1 min 16.576 sec  12353 obs/sec     2.08199   6             93677      0.228261         0.181645            0.993694       0.0579332                        0.243806           0.227892              0.992913         0.0663068
+    2019-07-23 13:06:25  1 min 21.823 sec  12734 obs/sec     3.46977   10            156119     0.213238         0.158399            0.994497       0.0503157                        0.236174           0.217679              0.99335          0.0617086
+Variable Importances: 
+variable    relative_importance    scaled_importance    percentage
+----------  ---------------------  -------------------  ---------------------
+C81         1.0                    1.0                  0.003756906665761951
+C364        0.9917861819267273     0.9917861819267273   0.003726048117891117
+C224        0.9766844511032104     0.9766844511032104   0.003669312324695704
+C779        0.9720554947853088     0.9720554947853088   0.0036519217678494583
+C116        0.9686518907546997     0.9686518907546997   0.0036391347451792486
+---         ---                    ---                  ---
+C665        0.14261071383953094    0.14261071383953094  0.000535775141432804
+C681        0.1424790322780609     0.1424790322780609   0.0005352804260967593
+C445        0.14156658947467804    0.14156658947467804  0.0005318524636466036
+C690        0.1356901377439499     0.1356901377439499   0.0005097751829684027
+C693        0.13058534264564514    0.13058534264564514  0.0004905969442362326
+
+See the whole table with table.as_data_frame()
+
+model_id                                              mean_per_class_error    logloss      rmse        mse
+--------------------------------------------------  ----------------------  ---------  --------  ---------
+DeepLearning_grid_1_AutoML_20190723_130215_model_2               0.0641629   0.218637  0.23714   0.0562355
+DeepLearning_grid_1_AutoML_20190723_130215_model_1               0.0698789   0.642172  0.252375  0.0636932
+DeepLearning_1_AutoML_20190723_130215                            0.0857029   0.335786  0.276935  0.0766928
+
+[3 rows x 5 columns]
+
+deeplearning prediction progress: |███████████████████████████████████████| 100%
+Final acc, selected model:  94.21000000000001
+Time consumed:  0.08591623259915246  hours
+H2O session _sid_8334 closed.
