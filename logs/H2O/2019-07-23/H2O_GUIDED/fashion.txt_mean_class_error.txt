@@ -1,0 +1,2 @@
+DL_random_grid_model_1 0.2759697504263842$
+DL_random_grid_model_2 0.768222415325264$
