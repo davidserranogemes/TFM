@@ -1,0 +1,175 @@
+Starting H2O
+Checking whether there is an H2O instance running at http://localhost:54321 ..... not found.
+Attempting to start a local H2O server...
+  Java Version: openjdk version "10.0.2" 2018-07-17; OpenJDK Runtime Environment (build 10.0.2+13-Ubuntu-1ubuntu0.18.04.4); OpenJDK 64-Bit Server VM (build 10.0.2+13-Ubuntu-1ubuntu0.18.04.4, mixed mode)
+  Starting server from /home/davidserranogemes/anaconda3/envs/h2o-cpu/lib/python3.7/site-packages/h2o/backend/bin/h2o.jar
+  Ice root: /tmp/tmp0rsixbke
+  JVM stdout: /tmp/tmp0rsixbke/h2o_davidserranogemes_started_from_python.out
+  JVM stderr: /tmp/tmp0rsixbke/h2o_davidserranogemes_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321 ... successful.
+--------------------------  ---------------------------------------------------
+H2O cluster uptime:         01 secs
+H2O cluster timezone:       Europe/Madrid
+H2O data parsing timezone:  UTC
+H2O cluster version:        3.26.0.1
+H2O cluster version age:    8 days
+H2O cluster name:           H2O_from_python_davidserranogemes_lm3nnl
+H2O cluster total nodes:    1
+H2O cluster free memory:    3.900 Gb
+H2O cluster total cores:    8
+H2O cluster allowed cores:  8
+H2O cluster status:         accepting new members, healthy
+H2O connection url:         http://127.0.0.1:54321
+H2O connection proxy:
+H2O internal security:      False
+H2O API Extensions:         Amazon S3, XGBoost, Algos, AutoML, Core V3, Core V4
+Python version:             3.7.3 final
+--------------------------  ---------------------------------------------------
+Leyendo  imdb
+Parse progress: |█████████████████████████████████████████████████████████| 100%
+Parse progress: |█████████████████████████████████████████████████████████| 100%
+Executing  imdb with  Guided  mode.
+
+deeplearning Grid Build progress: |███████████████████████████████████████| 100%
+deeplearning prediction progress: |███████████████████████████████████████| 100%
+Model Details
+=============
+H2ODeepLearningEstimator :  Deep Learning
+Model Key:  DL_random_grid_model_1
+
+Status of Neuron Layers: predicting C5001, 2-class classification, bernoulli distribution, CrossEntropy loss, 1,275,650 weights/biases, 15.5 MB, 63,319 training samples, mini-batch size 1
+
+    layer    units    type              dropout    l1    l2    mean_rate              rate_rms                momentum    mean_weight            weight_rms            mean_bias               bias_rms
+--  -------  -------  ----------------  ---------  ----  ----  ---------------------  ----------------------  ----------  ---------------------  --------------------  ----------------------  --------------------
+    1        4980     Input             0.0
+    2        256      RectifierDropout  25.0       0.0   0.0   0.10747487093457778    0.22094076871871948     0.0         0.032049140657042265   0.041326239705085754  0.3395010057633835      0.08702567219734192
+    3        2        Softmax                      0.0   0.0   6.109146235644403e-05  5.2051080274395645e-05  0.0         -0.004338408066246302  0.2670973539352417    -9.494752180548571e-05  0.005215777084231377
+
+
+ModelMetricsBinomial: deeplearning
+** Reported on train data. **
+
+MSE: 0.0559883585315197
+RMSE: 0.23661859295397666
+LogLoss: 0.4850676078703627
+Mean Per-Class Error: 0.06621974007888354
+AUC: 0.9633792187031083
+pr_auc: 0.5075879147944361
+Gini: 0.9267584374062166
+Confusion Matrix (Act/Pred) for max f1 @ threshold = 0.39139484755496917: 
+       0     1     Error    Rate
+-----  ----  ----  -------  ---------------
+0      4631  412   0.0817   (412.0/5043.0)
+1      253   4733  0.0507   (253.0/4986.0)
+Total  4884  5145  0.0663   (665.0/10029.0)
+Maximum Metrics: Maximum metrics at their respective thresholds
+
+metric                       threshold    value     idx
+---------------------------  -----------  --------  -----
+max f1                       0.391395     0.93436   238
+max f2                       0.171352     0.949701  305
+max f0point5                 0.692944     0.935017  152
+max accuracy                 0.468142     0.933692  214
+max precision                0.975027     0.961312  28
+max recall                   1.25675e-05  1         399
+max specificity              0.999982     0.98136   0
+max absolute_mcc             0.391395     0.86784   238
+max min_per_class_accuracy   0.525544     0.932411  201
+max mean_per_class_accuracy  0.391395     0.93378   238
+Gains/Lift Table: Avg response rate: 49.72 %, avg score: 49.36 %
+
+    group    cumulative_data_fraction    lower_threshold    lift       cumulative_lift    response_rate    score        cumulative_response_rate    cumulative_score    capture_rate    cumulative_capture_rate    gain      cumulative_gain
+--  -------  --------------------------  -----------------  ---------  -----------------  ---------------  -----------  --------------------------  ------------------  --------------  -------------------------  --------  -----------------
+    1        0.12414                     1                  1.98397    1.98397            0.986345         1            0.986345                    1                   0.24629         0.24629                    98.3967   98.3967
+    2        0.150065                    1                  1.86444    1.96332            0.926923         1            0.97608                     1                   0.0483353       0.294625                   86.4443   96.3318
+    3        0.20002                     0.999995           1.87493    1.94124            0.932136         1            0.965105                    1                   0.0936623       0.388287                   87.4928   94.1242
+    4        0.30003                     0.994157           1.90514    1.92921            0.947159         0.99855      0.959123                    0.999517            0.190533        0.578821                   90.5145   92.921
+    5        0.40004                     0.928703           1.92319    1.92771            0.956132         0.972104     0.958375                    0.992663            0.192339        0.771159                   92.3194   92.7706
+    6        0.50005                     0.486701           1.64645    1.87145            0.818544         0.767202     0.930409                    0.947571            0.164661        0.93582                    64.6446   87.1454
+    7        0.59996                     0.0298807          0.413528   1.62867            0.205589         0.188312     0.809706                    0.821133            0.0413157       0.977136                   -58.6472  62.8668
+    8        0.69997                     0.00100519         0.0842275  1.408              0.0418744        0.00899005   0.7                         0.705096            0.00842359      0.98556                    -91.5773  40.8002
+    9        0.79998                     1.41487e-06        0.0621679  1.23975            0.0309073        0.000213133  0.616353                    0.616975            0.00621741      0.991777                   -93.7832  23.9752
+    10       0.89999                     8.02235e-19        0.0661787  1.10934            0.0329013        9.81685e-08  0.551518                    0.548414            0.00661853      0.998396                   -93.3821  10.9341
+    11       1                           1.69394e-142       0.0160433  1                  0.00797607       1.73413e-20  0.497158                    0.493568            0.00160449      1                          -98.3957  0
+
+
+ModelMetricsBinomial: deeplearning
+** Reported on validation data. **
+
+MSE: 0.05760204279770884
+RMSE: 0.24000425579082726
+LogLoss: 0.5592664336613591
+Mean Per-Class Error: 0.06662880119178727
+AUC: 0.9602899026052734
+pr_auc: 0.524528844833196
+Gini: 0.9205798052105467
+Confusion Matrix (Act/Pred) for max f1 @ threshold = 0.5320358998510002: 
+       0     1     Error    Rate
+-----  ----  ----  -------  --------------
+0      2942  186   0.0595   (186.0/3128.0)
+1      225   2824  0.0738   (225.0/3049.0)
+Total  3167  3010  0.0665   (411.0/6177.0)
+Maximum Metrics: Maximum metrics at their respective thresholds
+
+metric                       threshold    value     idx
+---------------------------  -----------  --------  -----
+max f1                       0.532036     0.932167  200
+max f2                       0.194591     0.944365  296
+max f0point5                 0.694032     0.937521  151
+max accuracy                 0.535888     0.933463  199
+max precision                0.971217     0.961091  31
+max recall                   4.37527e-06  1         399
+max specificity              0.999995     0.980179  0
+max absolute_mcc             0.535888     0.866958  199
+max min_per_class_accuracy   0.467775     0.932109  214
+max mean_per_class_accuracy  0.532036     0.933371  200
+Gains/Lift Table: Avg response rate: 49.36 %, avg score: 48.76 %
+
+    group    cumulative_data_fraction    lower_threshold    lift       cumulative_lift    response_rate    score        cumulative_response_rate    cumulative_score    capture_rate    cumulative_capture_rate    gain      cumulative_gain
+--  -------  --------------------------  -----------------  ---------  -----------------  ---------------  -----------  --------------------------  ------------------  --------------  -------------------------  --------  -----------------
+    1        0.125789                    1                  1.98419    1.98419            0.979408         1            0.979408                    1                   0.24959         0.24959                    98.4193   98.4193
+    2        0.150073                    1                  1.90436    1.97127            0.94             1            0.973031                    1                   0.0462447       0.295835                   90.4356   97.1274
+    3        0.200097                    0.999996           1.85545    1.94232            0.915858         1            0.958738                    1                   0.0928173       0.388652                   85.5445   94.2317
+    4        0.299984                    0.994686           1.93069    1.93845            0.952998         0.99878      0.956827                    0.999594            0.19285         0.581502                   93.0689   93.8445
+    5        0.400032                    0.928577           1.95707    1.9431             0.966019         0.972768     0.959126                    0.992885            0.195802        0.777304                   95.7069   94.3103
+    6        0.500081                    0.415942           1.59647    1.87375            0.788026         0.745385     0.924895                    0.943369            0.159724        0.937029                   59.647    87.3754
+    7        0.599968                    0.0247538          0.380884   1.62521            0.188006         0.150563     0.802213                    0.811377            0.0380453       0.975074                   -61.9116  62.5211
+    8        0.700016                    0.000972317        0.0753979  1.40371            0.0372168        0.00776192   0.692877                    0.696522            0.00754346      0.982617                   -92.4602  40.3706
+    9        0.799903                    1.56747e-06        0.0591027  1.2358             0.0291734        0.000209854  0.609998                    0.609571            0.00590357      0.988521                   -94.0897  23.5801
+    10       0.899951                    2.69806e-18        0.0917888  1.10862            0.0453074        1.10718e-07  0.547221                    0.541804            0.00918334      0.997704                   -90.8211  10.862
+    11       1                           1.01368e-134       0.0229472  1                  0.0113269        5.30422e-20  0.493605                    0.487598            0.00229583      1                          -97.7053  0
+
+Scoring History: 
+    timestamp            duration          training_speed    epochs    iterations    samples    training_rmse    training_logloss    training_r2    training_auc    training_pr_auc    training_lift    training_classification_error    validation_rmse    validation_logloss    validation_r2    validation_auc    validation_pr_auc    validation_lift    validation_classification_error
+--  -------------------  ----------------  ----------------  --------  ------------  ---------  ---------------  ------------------  -------------  --------------  -----------------  ---------------  -------------------------------  -----------------  --------------------  ---------------  ----------------  -------------------  -----------------  ---------------------------------
+    2019-07-24 14:03:35  0.000 sec                           0         0             0          nan              nan                 nan            nan             nan                nan              nan                              nan                nan                   nan              nan               nan                  nan                nan
+    2019-07-24 14:03:55  28.459 sec        541 obs/sec       0.36292   1             9073       0.346182         1.13754             0.520617       0.899717        0.479814           1.93045          0.137102                         0.340918           1.09146               0.535023         0.903567          0.504391             1.94674            0.129027
+    2019-07-24 14:05:26  1 min 58.283 sec  632 obs/sec       2.53276   7             63319      0.236619         0.485068            0.776039       0.963379        0.507588           1.98397          0.0663077                        0.240004           0.559266              0.769554         0.96029           0.524529             1.98419            0.0665372
+Variable Importances: 
+variable    relative_importance    scaled_importance    percentage
+----------  ---------------------  -------------------  ---------------------
+C3493       1.0                    1.0                  0.0005687354354916179
+C4973       0.9875563979148865     0.9875563979148865   0.0005616583180406565
+C4963       0.9822524189949036     0.9822524189949036   0.0005586417572797616
+C4274       0.9726837277412415     0.9726837277412415   0.0005531997034925253
+C3273       0.9504988193511963     0.9504988193511963   0.0005405823599579713
+---         ---                    ---                  ---
+C813        0.17025414109230042    0.17025414109230042  9.682956307838083e-05
+C978        0.17013420164585114    0.17013420164585114  9.676134926507188e-05
+C1139       0.1694272756576538     0.1694272756576538   9.635929540531413e-05
+C522        0.16554252803325653    0.16554252803325653  9.414990177337751e-05
+C444        0.16462749242782593    0.16462749242782593  9.362948859983261e-05
+
+See the whole table with table.as_data_frame()
+[]
+               activation  ...               model_ids             logloss
+0    RectifierWithDropout  ...  DL_random_grid_model_1  0.5592664336613591
+
+[1 rows x 7 columns]
+
+--- 146.3165123462677 seconds ---
+Evalutation of best performing model:
+Final acc, selected model:  85.69600000000001
+Time consumed:  0.040715179840723675  hours
+H2O session _sid_91f3 closed.
