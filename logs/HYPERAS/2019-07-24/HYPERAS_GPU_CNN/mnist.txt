@@ -1,0 +1,187 @@
+Leyendo  mnist
+Executing  mnist with  Convolutional  arquitecture.
+
+>>> Imports:
+#coding=utf-8
+
+try:
+    from keras.datasets import mnist
+except:
+    pass
+
+try:
+    from keras.datasets import fashion_mnist
+except:
+    pass
+
+try:
+    from keras.datasets import cifar10
+except:
+    pass
+
+try:
+    from keras.datasets import imdb
+except:
+    pass
+
+try:
+    from keras import backend as K
+except:
+    pass
+
+try:
+    import numpy as np
+except:
+    pass
+
+try:
+    import sys
+except:
+    pass
+
+try:
+    import time
+except:
+    pass
+
+try:
+    import urllib.request
+except:
+    pass
+
+try:
+    import os
+except:
+    pass
+
+try:
+    from sklearn.model_selection import StratifiedKFold
+except:
+    pass
+
+try:
+    from hyperopt import Trials, STATUS_OK, tpe
+except:
+    pass
+
+try:
+    from keras.layers.core import Dense, Dropout, Activation, Flatten
+except:
+    pass
+
+try:
+    from keras.layers.convolutional import Convolution2D, MaxPooling2D
+except:
+    pass
+
+try:
+    from keras.optimizers import SGD, Adam
+except:
+    pass
+
+try:
+    from keras.models import Sequential
+except:
+    pass
+
+try:
+    from keras.utils import np_utils
+except:
+    pass
+
+try:
+    from hyperas import optim
+except:
+    pass
+
+try:
+    from hyperas.distributions import choice, uniform
+except:
+    pass
+
+>>> Hyperas search space:
+
+def get_space():
+    return {
+        'Dropout': hp.uniform('Dropout', 0, 0.5),
+        'Dropout_1': hp.uniform('Dropout_1', 0, 0.5),
+        'Dropout_2': hp.choice('Dropout_2', ['two','three']),
+        'Dropout_3': hp.uniform('Dropout_3', 0, 0.5),
+        'optimizer': hp.choice('optimizer', ['rmsprop', 'adam', 'sgd']),
+        'batch_size': hp.choice('batch_size', [64, 128]),
+    }
+
+>>> Data
+  1: 
+  2: (X_train, y_train), (X_test, y_test) = mnist.load_data()
+  3: 
+  4: X_train = X_train.reshape(X_train.shape+(1,))
+  5: X_test = X_test.reshape(X_test.shape+(1,))
+  6: 
+  7: nb_classes = len(np.unique(y_train))
+  8: y_train = np_utils.to_categorical(y_train, nb_classes)
+  9: y_test = np_utils.to_categorical(y_test, nb_classes)
+ 10: 
+ 11: 
+ 12: 
+ 13: 
+>>> Resulting replaced keras model:
+
+   1: def keras_fmin_fnct(space):
+   2: 
+   3: 	nb_classes = y_train.shape[1]
+   4: 
+   5: 	num_epoch=1*100
+   6: 	num_epoch=1*1
+   7: 
+   8: 	model = Sequential()
+   9: 
+  10: 	model.add(Convolution2D(32, 3, 3, border_mode='same',
+  11: 	                        input_shape=X_train.shape[1:]))
+  12: 	model.add(Activation('relu'))
+  13: 	model.add(Convolution2D(32, 3, 3))
+  14: 	model.add(Activation('relu'))
+  15: 	model.add(MaxPooling2D(pool_size=(2, 2)))
+  16: 	model.add(Dropout(space['Dropout']))
+  17: 
+  18: 	model.add(Convolution2D(64, 3, 3, border_mode='same'))
+  19: 	model.add(Activation('relu'))
+  20: 	model.add(Convolution2D(64, 3, 3))
+  21: 	model.add(Activation('relu'))
+  22: 	model.add(MaxPooling2D(pool_size=(2, 2)))
+  23: 	model.add(Dropout(space['Dropout_1']))
+  24: 
+  25: 	if space['Dropout_2'] == 'three':
+  26: 		model.add(Convolution2D(128, 3, 3, border_mode='same'))
+  27: 		model.add(Activation('relu'))
+  28: 		model.add(Convolution2D(128, 3, 3))
+  29: 		model.add(Activation('relu'))
+  30: 		model.add(MaxPooling2D(pool_size=(2, 2)))
+  31: 		model.add(Dropout(space['Dropout_3']))
+  32: 
+  33: 	model.add(Flatten())
+  34: 	model.add(Dense(512))
+  35: 	model.add(Activation('relu'))
+  36: 	model.add(Dropout(0.5))
+  37: 	model.add(Dense(nb_classes))
+  38: 	model.add(Activation('softmax'))
+  39: 
+  40: 	 # let's train the model using SGD + momentum (how original).
+  41: 	#sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+  42: 	
+  43: 	model.compile(loss='categorical_crossentropy',
+  44: 	              optimizer=space['optimizer'],
+  45: 	              metrics=['accuracy'])
+  46: 
+  47: 	result = model.fit(X_train, y_train,
+  48: 	          batch_size=space['batch_size'],
+  49: 	          nb_epoch=num_epoch,
+  50: 	          verbose=2,
+  51: 	          validation_split=0.1)
+  52: 	validation_acc = np.amax(result.history['val_acc']) 
+  53: 	print('Best validation acc of epoch:', validation_acc)
+  54: 	return {'loss': -validation_acc, 'status': STATUS_OK, 'model': model}
+  55: 
+  0%|          | 0/10 [00:00<?, ?it/s, best loss: ?]                                                    Train on 54000 samples, validate on 6000 samples
+  0%|          | 0/10 [00:00<?, ?it/s, best loss: ?]                                                    Epoch 1/1
+  0%|          | 0/10 [00:00<?, ?it/s, best loss: ?]
