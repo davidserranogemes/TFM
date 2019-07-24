@@ -207,11 +207,11 @@ fi
 ##############################################################################################################
 
 
-HYPERAS_CPU_CNN=false
-HYPERAS_CPU_MLP=false
+HYPERAS_CPU_CNN=true
+HYPERAS_CPU_MLP=true
 
-HYPERAS_GPU_CNN=false
-HYPERAS_GPU_MLP=false
+HYPERAS_GPU_CNN=true
+HYPERAS_GPU_MLP=true
 
 
 ALGORITHM="HYPERAS"
