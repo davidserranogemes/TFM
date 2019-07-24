@@ -1,0 +1,156 @@
+Starting H2O
+Checking whether there is an H2O instance running at http://localhost:54321 ..... not found.
+Attempting to start a local H2O server...
+  Java Version: openjdk version "10.0.2" 2018-07-17; OpenJDK Runtime Environment (build 10.0.2+13-Ubuntu-1ubuntu0.18.04.4); OpenJDK 64-Bit Server VM (build 10.0.2+13-Ubuntu-1ubuntu0.18.04.4, mixed mode)
+  Starting server from /home/davidserranogemes/anaconda3/envs/h2o-cpu/lib/python3.7/site-packages/h2o/backend/bin/h2o.jar
+  Ice root: /tmp/tmpw3w2g94h
+  JVM stdout: /tmp/tmpw3w2g94h/h2o_davidserranogemes_started_from_python.out
+  JVM stderr: /tmp/tmpw3w2g94h/h2o_davidserranogemes_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321 ... successful.
+--------------------------  ---------------------------------------------------
+H2O cluster uptime:         01 secs
+H2O cluster timezone:       Europe/Madrid
+H2O data parsing timezone:  UTC
+H2O cluster version:        3.26.0.1
+H2O cluster version age:    8 days
+H2O cluster name:           H2O_from_python_davidserranogemes_hiqtfk
+H2O cluster total nodes:    1
+H2O cluster free memory:    1.922 Gb
+H2O cluster total cores:    8
+H2O cluster allowed cores:  8
+H2O cluster status:         accepting new members, healthy
+H2O connection url:         http://127.0.0.1:54321
+H2O connection proxy:
+H2O internal security:      False
+H2O API Extensions:         Amazon S3, XGBoost, Algos, AutoML, Core V3, Core V4
+Python version:             3.7.3 final
+--------------------------  ---------------------------------------------------
+Leyendo  fashion
+Parse progress: |█████████████████████████████████████████████████████████| 100%
+Parse progress: |█████████████████████████████████████████████████████████| 100%
+Executing  fashion with  Guided  mode.
+
+deeplearning Grid Build progress: |███████████████████████████████████████| 100%
+deeplearning prediction progress: |███████████████████████████████████████| 100%
+Model Details
+=============
+H2ODeepLearningEstimator :  Deep Learning
+Model Key:  DL_random_grid_model_1
+
+Status of Neuron Layers: predicting C785, 10-class classification, multinomial distribution, CrossEntropy loss, 203,530 weights/biases, 2.5 MB, 312,676 training samples, mini-batch size 1
+
+    layer    units    type              dropout    l1    l2    mean_rate              rate_rms              momentum    mean_weight            weight_rms           mean_bias              bias_rms
+--  -------  -------  ----------------  ---------  ----  ----  ---------------------  --------------------  ----------  ---------------------  -------------------  ---------------------  -------------------
+    1        784      Input             0.0
+    2        256      RectifierDropout  25.0       0.0   0.0   0.004037900805132074   0.011757045984268188  0.0         0.015182301309152524   0.07144594192504883  0.16824590391590394    0.09500205516815186
+    3        10       Softmax                      0.0   0.0   0.0017555035706273258  0.015608280897140503  0.0         -0.020268570879608205  0.29361557960510254  -0.058069917723740636  0.11525043845176697
+
+
+ModelMetricsMultinomial: deeplearning
+** Reported on train data. **
+
+MSE: 0.07955093374234322
+RMSE: 0.2820477508195079
+LogLoss: 0.36070707818827036
+Mean Per-Class Error: 0.09568552228820984
+Confusion Matrix: Row labels: Actual class; Column labels: Predicted class
+
+0     1    2     3    4     5     6    7     8     9    Error      Rate
+----  ---  ----  ---  ----  ----  ---  ----  ----  ---  ---------  -----------
+904   2    14    15   3     0     52   0     6     0    0.0923695  92 / 996
+2     930  0     9    2     0     1    0     0     0    0.0148305  14 / 944
+14    1    854   12   90    0     44   0     7     0    0.164384   168 / 1,022
+31    3    5     917  43    0     6    0     1     0    0.0884692  89 / 1,006
+2     0    63    14   861   0     50   0     5     0    0.134673   134 / 995
+0     0    0     2    0     982   0    22    1     7    0.0315582  32 / 1,014
+139   1    94    19   67    0     682  0     4     0    0.322068   324 / 1,006
+0     0    0     0    0     10    0    957   1     13   0.0244648  24 / 981
+4     1    3     2    1     5     12   5     1005  0    0.0317919  33 / 1,038
+1     0    0     0    0     11    0    37    1     907  0.0522466  50 / 957
+1097  938  1033  990  1067  1008  847  1021  1031  927  0.0963952  960 / 9,959
+Top-10 Hit Ratios: 
+k    hit_ratio
+---  -----------
+1    0.903605
+2    0.977608
+3    0.993875
+4    0.997189
+5    0.999197
+6    0.999598
+7    0.999699
+8    0.9999
+9    1
+10   1
+
+ModelMetricsMultinomial: deeplearning
+** Reported on validation data. **
+
+MSE: 0.07584264270752683
+RMSE: 0.27539542971430525
+LogLoss: 0.34645132876019386
+Mean Per-Class Error: 0.09149429705233891
+Confusion Matrix: Row labels: Actual class; Column labels: Predicted class
+
+0     1     2     3     4     5     6     7     8     9     Error      Rate
+----  ----  ----  ----  ----  ----  ----  ----  ----  ----  ---------  --------------
+1375  0     11    24    3     0     81    0     7     1     0.0845539  127 / 1,502
+3     1489  2     23    2     0     0     0     0     0     0.0197498  30 / 1,519
+18    1     1269  9     130   0     65    0     5     0     0.152305   228 / 1,497
+29    2     6     1336  53    0     14    0     3     0     0.0741511  107 / 1,443
+6     1     105   21    1327  0     63    0     8     0     0.133246   204 / 1,531
+0     0     0     0     0     1442  1     48    4     8     0.0405855  61 / 1,503
+208   1     105   26    103   0     1040  0     7     0     0.302013   450 / 1,490
+0     0     0     0     0     17    0     1491  1     33    0.0330739  51 / 1,542
+9     0     4     5     3     3     18    3     1451  2     0.0313752  47 / 1,498
+0     0     0     0     0     24    0     41    0     1416  0.0438893  65 / 1,481
+1648  1494  1502  1444  1621  1486  1282  1583  1486  1460  0.0912968  1,370 / 15,006
+Top-10 Hit Ratios: 
+k    hit_ratio
+---  -----------
+1    0.908703
+2    0.980475
+3    0.994735
+4    0.997534
+5    0.999067
+6    0.999733
+7    0.999867
+8    1
+9    1
+10   1
+Scoring History: 
+    timestamp            duration          training_speed    epochs    iterations    samples    training_rmse    training_logloss    training_r2    training_classification_error    validation_rmse    validation_logloss    validation_r2    validation_classification_error
+--  -------------------  ----------------  ----------------  --------  ------------  ---------  ---------------  ------------------  -------------  -------------------------------  -----------------  --------------------  ---------------  ---------------------------------
+    2019-07-24 13:07:00  0.000 sec                           0         0             0          nan              nan                 nan            nan                              nan                nan                   nan              nan
+    2019-07-24 13:07:15  18.294 sec        2711 obs/sec      0.651     1             39060      0.358459         0.713469            0.984275       0.152927                         0.354273           0.726533              0.984776         0.145342
+    2019-07-24 13:07:49  51.574 sec        2549 obs/sec      1.9534    3             117204     0.319826         0.490544            0.987482       0.122301                         0.314345           0.462956              0.988015         0.117286
+    2019-07-24 13:08:20  1 min 23.120 sec  2572 obs/sec      3.25272   5             195163     0.302019         0.448223            0.988837       0.110152                         0.300075           0.444428              0.989078         0.10729
+    2019-07-24 13:08:51  1 min 53.559 sec  2612 obs/sec      4.5591    7             273546     0.292816         0.416317            0.989507       0.106436                         0.286273           0.393446              0.99006          0.0963615
+    2019-07-24 13:09:07  2 min  9.885 sec  2618 obs/sec      5.21127   8             312676     0.282048         0.360707            0.990264       0.0963952                        0.275395           0.346451              0.990801         0.0912968
+Variable Importances: 
+variable    relative_importance    scaled_importance    percentage
+----------  ---------------------  -------------------  ---------------------
+C1          1.0                    1.0                  0.006650563146336183
+C28         0.7801546454429626     0.7801546454429626   0.005188467733425939
+C29         0.6395470499992371     0.6395470499992371   0.00425334804107295
+C225        0.5391897559165955     0.5391897559165955   0.0035859155195809116
+C169        0.5390917658805847     0.5390917658805847   0.0035852638306587106
+---         ---                    ---                  ---
+C61         0.13031287491321564    0.13031287491321564  0.0008666540033909489
+C62         0.12982502579689026    0.12982502579689026  0.0008634095320369426
+C89         0.1284683793783188     0.1284683793783188   0.0008543870693629822
+C34         0.1257696896791458     0.1257696896791458   0.0008364392631062653
+C33         0.11965025216341019    0.11965025216341019  0.000795741557487807
+
+See the whole table with table.as_data_frame()
+[]
+               activation  ...               model_ids              logloss
+0    RectifierWithDropout  ...  DL_random_grid_model_1  0.34645132876019386
+
+[1 rows x 7 columns]
+
+--- 132.74324870109558 seconds ---
+Evalutation of best performing model:
+Final acc, selected model:  87.27000000000001
+Time consumed:  0.03690438230832418  hours
+H2O session _sid_a5cc closed.
