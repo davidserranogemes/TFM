@@ -35,7 +35,7 @@ from hyperas.distributions import choice, uniform
 #Hyperas need that you define de model with the boundaries where Hyperas search
 def create_model_feedforward(X_train,y_train,X_test,y_test):
 	num_epoch=1*200
-	num_epoch=1*1
+	
 	nb_classes = y_train.shape[1]
 
 	model = Sequential()
@@ -75,7 +75,7 @@ def create_model_convolutional(X_train,y_train,X_test,y_test):
 	nb_classes = y_train.shape[1]
 
 	num_epoch=1*100
-	num_epoch=1*1
+	
 
 	model = Sequential()
 
@@ -194,7 +194,15 @@ def data_fashion_feed():
 def data_imdb():
 	num_words=10000
 	skip_top= 20
+
+	np_load_old = np.load
+
+	# modify the default parameters of np.load
+	np.load = lambda *a,**k: np_load_old(*a, allow_pickle=True, **k)
+
 	(x_train, y_train), (x_test, y_test) = imdb.load_data(num_words=num_words,skip_top =skip_top)
+	np.load = np_load_old
+
 
 	X_train = np.zeros((len(x_train),num_words))
 	X_test= np.zeros((len(x_test),num_words))

@@ -146,7 +146,6 @@ if __name__=='__main__':
 
 
 	TIME_LIMIT = 12*60*60
-	TIME_LIMIT = 1*2*60
 
 
 

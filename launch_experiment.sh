@@ -207,11 +207,11 @@ fi
 ##############################################################################################################
 
 
-HYPERAS_CPU_CNN=true
-HYPERAS_CPU_MLP=true
+HYPERAS_CPU_CNN=false
+HYPERAS_CPU_MLP=false
 
-HYPERAS_GPU_CNN=true
-HYPERAS_GPU_MLP=true
+HYPERAS_GPU_CNN=false
+HYPERAS_GPU_MLP=false
 
 
 ALGORITHM="HYPERAS"
@@ -365,7 +365,7 @@ fi
 
 
 
-H2O_AUTHOMATIC=true
+H2O_AUTHOMATIC=false
 H2O_GUIDED=true
 
 
@@ -396,9 +396,9 @@ if $H2O_AUTHOMATIC; then
 	python ficherosEjecuciones/ejecuciones_h2o.py fashion Authomatic CPU  > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
 	./res_h2o_model_log_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt
 
-	#echo "Launch imdb Authomatic"
-	#python ficherosEjecuciones/ejecuciones_h2o.py imdb Authomatic CPU  > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
-	#./res_h2o_model_log_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	echo "Launch imdb Authomatic"
+	python ficherosEjecuciones/ejecuciones_h2o.py imdb Authomatic CPU  > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	./res_h2o_model_log_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt
 
 	echo "Launch letters Authomatic"
 	python ficherosEjecuciones/ejecuciones_h2o.py letters Authomatic CPU  > logs/$ALGORITHM/$DATE/$MODE/letters.txt
@@ -423,6 +423,9 @@ if $H2O_GUIDED; then
 	source ~/anaconda3/etc/profile.d/conda.sh
 	conda activate h2o-cpu
 
+	echo "Launch imdb Guided"
+	python ficherosEjecuciones/ejecuciones_h2o.py imdb Guided CPU  > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
+	./res_h2o_model_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt
 
 	echo "Launch mnist Guided"
 	python ficherosEjecuciones/ejecuciones_h2o.py mnist Guided CPU  > logs/$ALGORITHM/$DATE/$MODE/mnist.txt
@@ -432,10 +435,7 @@ if $H2O_GUIDED; then
 	python ficherosEjecuciones/ejecuciones_h2o.py fashion Guided CPU  > logs/$ALGORITHM/$DATE/$MODE/fashion.txt
 	./res_h2o_model_extractor.sh logs/$ALGORITHM/$DATE/$MODE/fashion.txt
 
-	#echo "Launch imdb Guided"
-	#python ficherosEjecuciones/ejecuciones_h2o.py imdb Guided CPU  > logs/$ALGORITHM/$DATE/$MODE/imdb.txt
-	#./res_h2o_model_extractor.sh logs/$ALGORITHM/$DATE/$MODE/imdb.txt
-
+	
 	echo "Launch letters Guided"
 	python ficherosEjecuciones/ejecuciones_h2o.py letters Guided CPU  > logs/$ALGORITHM/$DATE/$MODE/letters.txt
 	./res_h2o_model_extractor.sh logs/$ALGORITHM/$DATE/$MODE/letters.txt
@@ -456,4 +456,4 @@ fi
 
 
 #Aparagamos el ordenador
-#poweroff
+poweroff
