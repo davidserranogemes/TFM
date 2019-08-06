@@ -1,0 +1,2000 @@
+Epoch1 0.5394 0.7036 
+Epoch2 0.6781 0.7652 
+Epoch3 0.7497 0.8004 
+Epoch4 0.7933 0.8228 
+Epoch5 0.8160 0.8328 
+Epoch6 0.8352 0.8472 
+Epoch7 0.8485 0.8528 
+Epoch8 0.8574 0.8576 
+Epoch9 0.8666 0.8636 
+Epoch10 0.8741 0.8652 
+Epoch11 0.8829 0.8720 
+Epoch12 0.8876 0.8724 
+Epoch13 0.8944 0.8748 
+Epoch14 0.8985 0.8732 
+Epoch15 0.9016 0.8768 
+Epoch16 0.9046 0.8816 
+Epoch17 0.9101 0.8800 
+Epoch18 0.9157 0.8788 
+Epoch19 0.9180 0.8816 
+Epoch20 0.9217 0.8824 
+Epoch21 0.9241 0.8844 
+Epoch22 0.9276 0.8856 
+Epoch23 0.9294 0.8876 
+Epoch24 0.9345 0.8888 
+Epoch25 0.9372 0.8844 
+Epoch26 0.9396 0.8892 
+Epoch27 0.9409 0.8892 
+Epoch28 0.9452 0.8868 
+Epoch29 0.9457 0.8860 
+Epoch30 0.9506 0.8900 
+Epoch31 0.9520 0.8892 
+Epoch32 0.9553 0.8872 
+Epoch33 0.9568 0.8908 
+Epoch34 0.9602 0.8896 
+Epoch35 0.9628 0.8884 
+Epoch36 0.9634 0.8880 
+Epoch37 0.9660 0.8888 
+Epoch38 0.9669 0.8876 
+Epoch39 0.9704 0.8900 
+Epoch40 0.9696 0.8872 
+Epoch41 0.9745 0.8888 
+Epoch42 0.9765 0.8880 
+Epoch43 0.9785 0.8876 
+Epoch44 0.9792 0.8864 
+Epoch45 0.9811 0.8860 
+Epoch46 0.9812 0.8868 
+Epoch47 0.9836 0.8868 
+Epoch48 0.9847 0.8888 
+Epoch49 0.9856 0.8876 
+Epoch50 0.9865 0.8868 
+Epoch51 0.9874 0.8856 
+Epoch52 0.9887 0.8884 
+Epoch53 0.9897 0.8844 
+Epoch54 0.9889 0.8860 
+Epoch55 0.9903 0.8864 
+Epoch56 0.9906 0.8844 
+Epoch57 0.9918 0.8864 
+Epoch58 0.9930 0.8868 
+Epoch59 0.9926 0.8860 
+Epoch60 0.9937 0.8844 
+Epoch61 0.9939 0.8872 
+Epoch62 0.9942 0.8836 
+Epoch63 0.9952 0.8856 
+Epoch64 0.9949 0.8856 
+Epoch65 0.9950 0.8864 
+Epoch66 0.9952 0.8872 
+Epoch67 0.9968 0.8848 
+Epoch68 0.9960 0.8864 
+Epoch69 0.9966 0.8884 
+Epoch70 0.9963 0.8860 
+Epoch71 0.9968 0.8844 
+Epoch72 0.9967 0.8856 
+Epoch73 0.9971 0.8832 
+Epoch74 0.9978 0.8848 
+Epoch75 0.9972 0.8860 
+Epoch76 0.9975 0.8824 
+Epoch77 0.9980 0.8892 
+Epoch78 0.9982 0.8872 
+Epoch79 0.9976 0.8864 
+Epoch80 0.9976 0.8856 
+Epoch81 0.9982 0.8848 
+Epoch82 0.9984 0.8860 
+Epoch83 0.9983 0.8852 
+Epoch84 0.9987 0.8852 
+Epoch85 0.9983 0.8856 
+Epoch86 0.9988 0.8852 
+Epoch87 0.9986 0.8844 
+Epoch88 0.9987 0.8860 
+Epoch89 0.9985 0.8856 
+Epoch90 0.9985 0.8856 
+Epoch91 0.9991 0.8856 
+Epoch92 0.9988 0.8852 
+Epoch93 0.9986 0.8844 
+Epoch94 0.9994 0.8848 
+Epoch95 0.9991 0.8864 
+Epoch96 0.9989 0.8868 
+Epoch97 0.9991 0.8868 
+Epoch98 0.9991 0.8864 
+Epoch99 0.9991 0.8864 
+Epoch100 0.9991 0.8864 
+Epoch101 0.9994 0.8848 
+Epoch102 0.9996 0.8856 
+Epoch103 0.9993 0.8872 
+Epoch104 0.9992 0.8856 
+Epoch105 0.9992 0.8852 
+Epoch106 0.9991 0.8852 
+Epoch107 0.9995 0.8856 
+Epoch108 0.9996 0.8876 
+Epoch109 0.9994 0.8864 
+Epoch110 0.9992 0.8860 
+Epoch111 0.9996 0.8848 
+Epoch112 0.9998 0.8848 
+Epoch113 0.9992 0.8844 
+Epoch114 0.9995 0.8872 
+Epoch115 0.9992 0.8852 
+Epoch116 0.9996 0.8856 
+Epoch117 0.9994 0.8852 
+Epoch118 0.9996 0.8852 
+Epoch119 0.9996 0.8860 
+Epoch120 0.9997 0.8872 
+Epoch121 0.9996 0.8864 
+Epoch122 0.9993 0.8872 
+Epoch123 0.9997 0.8868 
+Epoch124 0.9997 0.8876 
+Epoch125 0.9998 0.8884 
+Epoch126 0.9995 0.8876 
+Epoch127 0.9994 0.8872 
+Epoch128 0.9997 0.8868 
+Epoch129 0.9998 0.8872 
+Epoch130 0.9997 0.8876 
+Epoch131 0.9997 0.8876 
+Epoch132 0.9996 0.8864 
+Epoch133 0.9995 0.8868 
+Epoch134 1.0000 0.8864 
+Epoch135 0.9998 0.8868 
+Epoch136 0.9997 0.8860 
+Epoch137 0.9996 0.8868 
+Epoch138 0.9998 0.8860 
+Epoch139 0.9997 0.8860 
+Epoch140 0.9997 0.8868 
+Epoch141 0.9998 0.8872 
+Epoch142 0.9997 0.8872 
+Epoch143 0.9997 0.8860 
+Epoch144 0.9998 0.8864 
+Epoch145 0.9996 0.8852 
+Epoch146 0.9998 0.8856 
+Epoch147 0.9997 0.8852 
+Epoch148 0.9998 0.8864 
+Epoch149 0.9996 0.8856 
+Epoch150 0.9999 0.8876 
+Epoch151 0.9998 0.8872 
+Epoch152 0.9998 0.8868 
+Epoch153 0.9999 0.8864 
+Epoch154 0.9999 0.8876 
+Epoch155 0.9997 0.8880 
+Epoch156 0.9999 0.8884 
+Epoch157 0.9999 0.8888 
+Epoch158 0.9997 0.8888 
+Epoch159 0.9999 0.8868 
+Epoch160 0.9998 0.8876 
+Epoch161 0.9998 0.8872 
+Epoch162 0.9998 0.8868 
+Epoch163 0.9997 0.8884 
+Epoch164 0.9998 0.8852 
+Epoch165 0.9998 0.8884 
+Epoch166 0.9998 0.8864 
+Epoch167 0.9997 0.8872 
+Epoch168 0.9998 0.8868 
+Epoch169 0.9999 0.8876 
+Epoch170 0.9999 0.8868 
+Epoch171 1.0000 0.8868 
+Epoch172 0.9997 0.8872 
+Epoch173 0.9998 0.8892 
+Epoch174 0.9997 0.8864 
+Epoch175 1.0000 0.8864 
+Epoch176 1.0000 0.8872 
+Epoch177 0.9998 0.8872 
+Epoch178 1.0000 0.8884 
+Epoch179 1.0000 0.8880 
+Epoch180 0.9998 0.8884 
+Epoch181 0.9998 0.8876 
+Epoch182 0.9999 0.8876 
+Epoch183 0.9998 0.8864 
+Epoch184 0.9999 0.8872 
+Epoch185 1.0000 0.8864 
+Epoch186 0.9998 0.8880 
+Epoch187 0.9999 0.8880 
+Epoch188 0.9999 0.8856 
+Epoch189 0.9998 0.8860 
+Epoch190 1.0000 0.8860 
+Epoch191 1.0000 0.8864 
+Epoch192 1.0000 0.8880 
+Epoch193 0.9999 0.8872 
+Epoch194 0.9999 0.8868 
+Epoch195 0.9998 0.8868 
+Epoch196 0.9999 0.8864 
+Epoch197 0.9999 0.8860 
+Epoch198 1.0000 0.8852 
+Epoch199 0.9998 0.8860 
+Epoch200 0.9999 0.8848 
+Epoch1 0.8272 0.8896 
+Epoch2 0.9144 0.8916 
+Epoch3 0.9433 0.8876 
+Epoch4 0.9649 0.8812 
+Epoch5 0.9763 0.8816 
+Epoch6 0.9849 0.8764 
+Epoch7 0.9908 0.8864 
+Epoch8 0.9940 0.8808 
+Epoch9 0.9957 0.8840 
+Epoch10 0.9977 0.8756 
+Epoch11 0.9983 0.8744 
+Epoch12 0.9990 0.8780 
+Epoch13 0.9992 0.8792 
+Epoch14 0.9997 0.8804 
+Epoch15 0.9997 0.8736 
+Epoch16 0.9997 0.8820 
+Epoch17 0.9998 0.8808 
+Epoch18 0.9997 0.8784 
+Epoch19 0.9998 0.8820 
+Epoch20 0.9997 0.8820 
+Epoch21 0.9998 0.8808 
+Epoch22 0.9999 0.8788 
+Epoch23 0.9999 0.8764 
+Epoch24 0.9999 0.8772 
+Epoch25 0.9999 0.8776 
+Epoch26 0.9999 0.8788 
+Epoch27 0.9999 0.8796 
+Epoch28 0.9999 0.8804 
+Epoch29 0.9999 0.8788 
+Epoch30 0.9999 0.8768 
+Epoch31 0.9999 0.8800 
+Epoch32 0.9999 0.8800 
+Epoch33 0.9999 0.8764 
+Epoch34 0.9999 0.8800 
+Epoch35 0.9999 0.8784 
+Epoch36 0.9999 0.8756 
+Epoch37 0.9999 0.8788 
+Epoch38 0.9999 0.8792 
+Epoch39 0.9999 0.8804 
+Epoch40 0.9999 0.8796 
+Epoch41 0.9999 0.8796 
+Epoch42 0.9999 0.8780 
+Epoch43 0.9999 0.8780 
+Epoch44 0.9999 0.8804 
+Epoch45 0.9999 0.8808 
+Epoch46 0.9999 0.8816 
+Epoch47 0.9999 0.8784 
+Epoch48 0.9999 0.8800 
+Epoch49 0.9999 0.8772 
+Epoch50 0.9999 0.8780 
+Epoch51 0.9999 0.8796 
+Epoch52 0.9999 0.8788 
+Epoch53 0.9999 0.8796 
+Epoch54 0.9999 0.8796 
+Epoch55 0.9999 0.8772 
+Epoch56 0.9999 0.8744 
+Epoch57 0.9999 0.8776 
+Epoch58 0.9999 0.8792 
+Epoch59 0.9999 0.8776 
+Epoch60 0.9999 0.8768 
+Epoch61 0.9999 0.8768 
+Epoch62 0.9999 0.8776 
+Epoch63 0.9999 0.8768 
+Epoch64 0.9999 0.8776 
+Epoch65 0.9999 0.8776 
+Epoch66 0.9999 0.8768 
+Epoch67 0.9999 0.8776 
+Epoch68 0.9999 0.8780 
+Epoch69 0.9999 0.8792 
+Epoch70 0.9999 0.8764 
+Epoch71 0.9999 0.8784 
+Epoch72 0.9999 0.8776 
+Epoch73 0.9999 0.8792 
+Epoch74 0.9999 0.8788 
+Epoch75 0.9999 0.8756 
+Epoch76 0.9999 0.8768 
+Epoch77 0.9999 0.8772 
+Epoch78 0.9999 0.8772 
+Epoch79 0.9999 0.8768 
+Epoch80 0.9999 0.8768 
+Epoch81 0.9999 0.8784 
+Epoch82 0.9999 0.8772 
+Epoch83 0.9999 0.8776 
+Epoch84 0.9999 0.8780 
+Epoch85 0.9999 0.8768 
+Epoch86 0.9999 0.8772 
+Epoch87 0.9999 0.8764 
+Epoch88 0.9999 0.8772 
+Epoch89 0.9999 0.8772 
+Epoch90 0.9999 0.8780 
+Epoch91 0.9999 0.8756 
+Epoch92 0.9999 0.8780 
+Epoch93 0.9999 0.8796 
+Epoch94 0.9999 0.8796 
+Epoch95 0.9999 0.8796 
+Epoch96 0.9999 0.8796 
+Epoch97 0.9999 0.8796 
+Epoch98 0.9999 0.8796 
+Epoch99 0.9999 0.8784 
+Epoch100 0.9999 0.8768 
+Epoch101 0.9999 0.8780 
+Epoch102 0.9999 0.8776 
+Epoch103 0.9999 0.8780 
+Epoch104 0.9999 0.8796 
+Epoch105 0.9999 0.8760 
+Epoch106 0.9999 0.8776 
+Epoch107 0.9999 0.8804 
+Epoch108 0.9999 0.8800 
+Epoch109 0.9999 0.8808 
+Epoch110 0.9999 0.8800 
+Epoch111 0.9999 0.8788 
+Epoch112 0.9999 0.8788 
+Epoch113 0.9999 0.8804 
+Epoch114 0.9999 0.8764 
+Epoch115 0.9999 0.8760 
+Epoch116 0.9999 0.8784 
+Epoch117 0.9999 0.8796 
+Epoch118 0.9999 0.8764 
+Epoch119 0.9999 0.8796 
+Epoch120 0.9999 0.8788 
+Epoch121 0.9999 0.8796 
+Epoch122 0.9999 0.8792 
+Epoch123 0.9999 0.8788 
+Epoch124 0.9999 0.8788 
+Epoch125 0.9999 0.8776 
+Epoch126 0.9999 0.8784 
+Epoch127 0.9999 0.8780 
+Epoch128 0.9999 0.8792 
+Epoch129 0.9999 0.8784 
+Epoch130 0.9999 0.8780 
+Epoch131 0.9999 0.8768 
+Epoch132 0.9999 0.8772 
+Epoch133 0.9999 0.8760 
+Epoch134 0.9999 0.8772 
+Epoch135 0.9999 0.8768 
+Epoch136 0.9999 0.8776 
+Epoch137 0.9999 0.8772 
+Epoch138 0.9999 0.8760 
+Epoch139 0.9999 0.8760 
+Epoch140 0.9999 0.8760 
+Epoch141 0.9999 0.8780 
+Epoch142 0.9999 0.8776 
+Epoch143 0.9999 0.8796 
+Epoch144 0.9999 0.8792 
+Epoch145 0.9999 0.8792 
+Epoch146 0.9999 0.8780 
+Epoch147 0.9999 0.8788 
+Epoch148 0.9999 0.8788 
+Epoch149 0.9999 0.8784 
+Epoch150 0.9999 0.8784 
+Epoch151 0.9999 0.8788 
+Epoch152 0.9999 0.8784 
+Epoch153 0.9999 0.8788 
+Epoch154 0.9999 0.8788 
+Epoch155 0.9999 0.8804 
+Epoch156 0.9999 0.8788 
+Epoch157 0.9999 0.8780 
+Epoch158 0.9999 0.8780 
+Epoch159 0.9999 0.8772 
+Epoch160 0.9999 0.8780 
+Epoch161 0.9999 0.8776 
+Epoch162 0.9999 0.8784 
+Epoch163 0.9999 0.8772 
+Epoch164 0.9999 0.8772 
+Epoch165 0.9999 0.8788 
+Epoch166 0.9999 0.8784 
+Epoch167 0.9999 0.8792 
+Epoch168 0.9999 0.8804 
+Epoch169 0.9999 0.8804 
+Epoch170 0.9999 0.8796 
+Epoch171 0.9999 0.8780 
+Epoch172 0.9999 0.8772 
+Epoch173 0.9999 0.8772 
+Epoch174 0.9999 0.8776 
+Epoch175 0.9999 0.8776 
+Epoch176 0.9999 0.8776 
+Epoch177 0.9999 0.8776 
+Epoch178 0.9999 0.8780 
+Epoch179 0.9999 0.8780 
+Epoch180 0.9999 0.8780 
+Epoch181 0.9999 0.8804 
+Epoch182 0.9999 0.8792 
+Epoch183 0.9999 0.8760 
+Epoch184 0.9999 0.8780 
+Epoch185 0.9999 0.8780 
+Epoch186 0.9999 0.8776 
+Epoch187 0.9999 0.8780 
+Epoch188 0.9999 0.8776 
+Epoch189 0.9999 0.8748 
+Epoch190 0.9999 0.8776 
+Epoch191 0.9999 0.8776 
+Epoch192 0.9999 0.8780 
+Epoch193 0.9999 0.8792 
+Epoch194 0.9999 0.8788 
+Epoch195 0.9999 0.8776 
+Epoch196 0.9999 0.8792 
+Epoch197 0.9999 0.8804 
+Epoch198 0.9999 0.8796 
+Epoch199 0.9999 0.8792 
+Epoch200 0.9999 0.8792 
+Epoch1 0.8495 0.8892 
+Epoch2 0.9334 0.8800 
+Epoch3 0.9746 0.8816 
+Epoch4 0.9953 0.8828 
+Epoch5 0.9994 0.8800 
+Epoch6 acc:val_acc:
+Epoch7 acc:val_acc:
+Epoch8 acc:val_acc:
+Epoch9 acc:val_acc:
+Epoch10 acc:val_acc:
+Epoch11 acc:val_acc:
+Epoch12 acc:val_acc:
+Epoch13 acc:val_acc:
+Epoch14 acc:val_acc:
+Epoch15 acc:val_acc:
+Epoch16 acc:val_acc:
+Epoch17 acc:val_acc:
+Epoch18 acc:val_acc:
+Epoch19 acc:val_acc:
+Epoch20 acc:val_acc:
+Epoch21 acc:val_acc:
+Epoch22 acc:val_acc:
+Epoch23 acc:val_acc:
+Epoch24 acc:val_acc:
+Epoch25 acc:val_acc:
+Epoch26 acc:val_acc:
+Epoch27 acc:val_acc:
+Epoch28 acc:val_acc:
+Epoch29 acc:val_acc:
+Epoch30 acc:val_acc:
+Epoch31 acc:val_acc:
+Epoch32 acc:val_acc:
+Epoch33 acc:val_acc:
+Epoch34 acc:val_acc:
+Epoch35 acc:val_acc:
+Epoch36 acc:val_acc:
+Epoch37 acc:val_acc:
+Epoch38 acc:val_acc:
+Epoch39 acc:val_acc:
+Epoch40 acc:val_acc:
+Epoch41 0.9949 0.8648 
+Epoch42 0.9800 0.8752 
+Epoch43 acc:val_acc:
+Epoch44 acc:val_acc:
+Epoch45 acc:val_acc:
+Epoch46 acc:val_acc:
+Epoch47 acc:val_acc:
+Epoch48 acc:val_acc:
+Epoch49 acc:val_acc:
+Epoch50 acc:val_acc:
+Epoch51 acc:val_acc:
+Epoch52 acc:val_acc:
+Epoch53 acc:val_acc:
+Epoch54 acc:val_acc:
+Epoch55 acc:val_acc:
+Epoch56 acc:val_acc:
+Epoch57 acc:val_acc:
+Epoch58 acc:val_acc:
+Epoch59 acc:val_acc:
+Epoch60 acc:val_acc:
+Epoch61 acc:val_acc:
+Epoch62 acc:val_acc:
+Epoch63 acc:val_acc:
+Epoch64 acc:val_acc:
+Epoch65 acc:val_acc:
+Epoch66 acc:val_acc:
+Epoch67 acc:val_acc:
+Epoch68 acc:val_acc:
+Epoch69 0.9997 0.8764 
+Epoch70 0.9954 0.8768 
+Epoch71 0.9988 0.8752 
+Epoch72 acc:val_acc:
+Epoch73 acc:val_acc:
+Epoch74 acc:val_acc:
+Epoch75 acc:val_acc:
+Epoch76 acc:val_acc:
+Epoch77 acc:val_acc:
+Epoch78 acc:val_acc:
+Epoch79 acc:val_acc:
+Epoch80 acc:val_acc:
+Epoch81 acc:val_acc:
+Epoch82 acc:val_acc:
+Epoch83 acc:val_acc:
+Epoch84 acc:val_acc:
+Epoch85 acc:val_acc:
+Epoch86 acc:val_acc:
+Epoch87 acc:val_acc:
+Epoch88 acc:val_acc:
+Epoch89 acc:val_acc:
+Epoch90 acc:val_acc:
+Epoch91 acc:val_acc:
+Epoch92 acc:val_acc:
+Epoch93 acc:val_acc:
+Epoch94 acc:val_acc:
+Epoch95 acc:val_acc:
+Epoch96 acc:val_acc:
+Epoch97 acc:val_acc:
+Epoch98 acc:val_acc:
+Epoch99 acc:val_acc:
+Epoch100 acc:val_acc:
+Epoch101 acc:val_acc:
+Epoch102 acc:val_acc:
+Epoch103 acc:val_acc:
+Epoch104 acc:val_acc:
+Epoch105 acc:val_acc:
+Epoch106 acc:val_acc:
+Epoch107 acc:val_acc:
+Epoch108 acc:val_acc:
+Epoch109 acc:val_acc:
+Epoch110 acc:val_acc:
+Epoch111 acc:val_acc:
+Epoch112 acc:val_acc:
+Epoch113 acc:val_acc:
+Epoch114 acc:val_acc:
+Epoch115 acc:val_acc:
+Epoch116 acc:val_acc:
+Epoch117 acc:val_acc:
+Epoch118 0.9963 0.8824 
+Epoch119 0.9992 0.8708 
+Epoch120 acc:val_acc:
+Epoch121 acc:val_acc:
+Epoch122 acc:val_acc:
+Epoch123 acc:val_acc:
+Epoch124 acc:val_acc:
+Epoch125 acc:val_acc:
+Epoch126 acc:val_acc:
+Epoch127 acc:val_acc:
+Epoch128 acc:val_acc:
+Epoch129 acc:val_acc:
+Epoch130 acc:val_acc:
+Epoch131 acc:val_acc:
+Epoch132 acc:val_acc:
+Epoch133 acc:val_acc:
+Epoch134 acc:val_acc:
+Epoch135 acc:val_acc:
+Epoch136 acc:val_acc:
+Epoch137 acc:val_acc:
+Epoch138 acc:val_acc:
+Epoch139 acc:val_acc:
+Epoch140 acc:val_acc:
+Epoch141 acc:val_acc:
+Epoch142 acc:val_acc:
+Epoch143 acc:val_acc:
+Epoch144 acc:val_acc:
+Epoch145 acc:val_acc:
+Epoch146 acc:val_acc:
+Epoch147 acc:val_acc:
+Epoch148 acc:val_acc:
+Epoch149 acc:val_acc:
+Epoch150 acc:val_acc:
+Epoch151 acc:val_acc:
+Epoch152 acc:val_acc:
+Epoch153 acc:val_acc:
+Epoch154 acc:val_acc:
+Epoch155 acc:val_acc:
+Epoch156 acc:val_acc:
+Epoch157 acc:val_acc:
+Epoch158 0.9989 0.8680 
+Epoch159 0.9989 0.8724 
+Epoch160 0.9995 0.8804 
+Epoch161 acc:val_acc:
+Epoch162 acc:val_acc:
+Epoch163 acc:val_acc:
+Epoch164 acc:val_acc:
+Epoch165 acc:val_acc:
+Epoch166 acc:val_acc:
+Epoch167 acc:val_acc:
+Epoch168 acc:val_acc:
+Epoch169 acc:val_acc:
+Epoch170 acc:val_acc:
+Epoch171 acc:val_acc:
+Epoch172 acc:val_acc:
+Epoch173 acc:val_acc:
+Epoch174 acc:val_acc:
+Epoch175 acc:val_acc:
+Epoch176 acc:val_acc:
+Epoch177 acc:val_acc:
+Epoch178 acc:val_acc:
+Epoch179 acc:val_acc:
+Epoch180 acc:val_acc:
+Epoch181 acc:val_acc:
+Epoch182 acc:val_acc:
+Epoch183 acc:val_acc:
+Epoch184 acc:val_acc:
+Epoch185 acc:val_acc:
+Epoch186 acc:val_acc:
+Epoch187 0.9984 0.8816 
+Epoch188 acc:val_acc:
+Epoch189 acc:val_acc:
+Epoch190 acc:val_acc:
+Epoch191 acc:val_acc:
+Epoch192 acc:val_acc:
+Epoch193 acc:val_acc:
+Epoch194 acc:val_acc:
+Epoch195 acc:val_acc:
+Epoch196 acc:val_acc:
+Epoch197 acc:val_acc:
+Epoch198 acc:val_acc:
+Epoch199 acc:val_acc:
+Epoch200 acc:val_acc:
+Epoch1 0.8287 0.8960 
+Epoch2 0.9342 0.8876 
+Epoch3 0.9692 0.8808 
+Epoch4 0.9921 0.8796 
+Epoch5 0.9988 0.8808 
+Epoch6 0.9992 0.8692 
+Epoch7 0.9982 0.8792 
+Epoch8 0.9979 0.8780 
+Epoch9 0.9971 0.8796 
+Epoch10 0.9994 0.8820 
+Epoch11 acc:val_acc:
+Epoch12 acc:val_acc:
+Epoch13 acc:val_acc:
+Epoch14 acc:val_acc:
+Epoch15 acc:val_acc:
+Epoch16 acc:val_acc:
+Epoch17 acc:val_acc:
+Epoch18 acc:val_acc:
+Epoch19 acc:val_acc:
+Epoch20 acc:val_acc:
+Epoch21 acc:val_acc:
+Epoch22 acc:val_acc:
+Epoch23 acc:val_acc:
+Epoch24 acc:val_acc:
+Epoch25 acc:val_acc:
+Epoch26 acc:val_acc:
+Epoch27 acc:val_acc:
+Epoch28 acc:val_acc:
+Epoch29 acc:val_acc:
+Epoch30 acc:val_acc:
+Epoch31 acc:val_acc:
+Epoch32 acc:val_acc:
+Epoch33 acc:val_acc:
+Epoch34 acc:val_acc:
+Epoch35 acc:val_acc:
+Epoch36 acc:val_acc:
+Epoch37 acc:val_acc:
+Epoch38 acc:val_acc:
+Epoch39 acc:val_acc:
+Epoch40 acc:val_acc:
+Epoch41 acc:val_acc:
+Epoch42 acc:val_acc:
+Epoch43 acc:val_acc:
+Epoch44 acc:val_acc:
+Epoch45 acc:val_acc:
+Epoch46 acc:val_acc:
+Epoch47 acc:val_acc:
+Epoch48 acc:val_acc:
+Epoch49 acc:val_acc:
+Epoch50 acc:val_acc:
+Epoch51 acc:val_acc:
+Epoch52 acc:val_acc:
+Epoch53 acc:val_acc:
+Epoch54 acc:val_acc:
+Epoch55 acc:val_acc:
+Epoch56 acc:val_acc:
+Epoch57 acc:val_acc:
+Epoch58 acc:val_acc:
+Epoch59 acc:val_acc:
+Epoch60 acc:val_acc:
+Epoch61 acc:val_acc:
+Epoch62 acc:val_acc:
+Epoch63 acc:val_acc:
+Epoch64 acc:val_acc:
+Epoch65 acc:val_acc:
+Epoch66 acc:val_acc:
+Epoch67 acc:val_acc:
+Epoch68 acc:val_acc:
+Epoch69 acc:val_acc:
+Epoch70 acc:val_acc:
+Epoch71 0.9971 0.8696 
+Epoch72 0.9832 0.8800 
+Epoch73 0.9999 0.8800 
+Epoch74 acc:val_acc:
+Epoch75 acc:val_acc:
+Epoch76 acc:val_acc:
+Epoch77 acc:val_acc:
+Epoch78 acc:val_acc:
+Epoch79 acc:val_acc:
+Epoch80 acc:val_acc:
+Epoch81 acc:val_acc:
+Epoch82 acc:val_acc:
+Epoch83 acc:val_acc:
+Epoch84 acc:val_acc:
+Epoch85 acc:val_acc:
+Epoch86 acc:val_acc:
+Epoch87 acc:val_acc:
+Epoch88 acc:val_acc:
+Epoch89 acc:val_acc:
+Epoch90 acc:val_acc:
+Epoch91 acc:val_acc:
+Epoch92 acc:val_acc:
+Epoch93 acc:val_acc:
+Epoch94 acc:val_acc:
+Epoch95 acc:val_acc:
+Epoch96 acc:val_acc:
+Epoch97 acc:val_acc:
+Epoch98 acc:val_acc:
+Epoch99 acc:val_acc:
+Epoch100 acc:val_acc:
+Epoch101 acc:val_acc:
+Epoch102 acc:val_acc:
+Epoch103 acc:val_acc:
+Epoch104 acc:val_acc:
+Epoch105 acc:val_acc:
+Epoch106 acc:val_acc:
+Epoch107 acc:val_acc:
+Epoch108 acc:val_acc:
+Epoch109 acc:val_acc:
+Epoch110 acc:val_acc:
+Epoch111 acc:val_acc:
+Epoch112 acc:val_acc:
+Epoch113 acc:val_acc:
+Epoch114 acc:val_acc:
+Epoch115 acc:val_acc:
+Epoch116 acc:val_acc:
+Epoch117 acc:val_acc:
+Epoch118 acc:val_acc:
+Epoch119 acc:val_acc:
+Epoch120 acc:val_acc:
+Epoch121 acc:val_acc:
+Epoch122 acc:val_acc:
+Epoch123 acc:val_acc:
+Epoch124 acc:val_acc:
+Epoch125 acc:val_acc:
+Epoch126 acc:val_acc:
+Epoch127 acc:val_acc:
+Epoch128 acc:val_acc:
+Epoch129 acc:val_acc:
+Epoch130 acc:val_acc:
+Epoch131 acc:val_acc:
+Epoch132 acc:val_acc:
+Epoch133 acc:val_acc:
+Epoch134 acc:val_acc:
+Epoch135 acc:val_acc:
+Epoch136 acc:val_acc:
+Epoch137 acc:val_acc:
+Epoch138 acc:val_acc:
+Epoch139 acc:val_acc:
+Epoch140 acc:val_acc:
+Epoch141 acc:val_acc:
+Epoch142 acc:val_acc:
+Epoch143 acc:val_acc:
+Epoch144 acc:val_acc:
+Epoch145 acc:val_acc:
+Epoch146 acc:val_acc:
+Epoch147 acc:val_acc:
+Epoch148 acc:val_acc:
+Epoch149 acc:val_acc:
+Epoch150 acc:val_acc:
+Epoch151 acc:val_acc:
+Epoch152 acc:val_acc:
+Epoch153 acc:val_acc:
+Epoch154 acc:val_acc:
+Epoch155 acc:val_acc:
+Epoch156 acc:val_acc:
+Epoch157 acc:val_acc:
+Epoch158 acc:val_acc:
+Epoch159 acc:val_acc:
+Epoch160 acc:val_acc:
+Epoch161 acc:val_acc:
+Epoch162 acc:val_acc:
+Epoch163 acc:val_acc:
+Epoch164 acc:val_acc:
+Epoch165 acc:val_acc:
+Epoch166 acc:val_acc:
+Epoch167 acc:val_acc:
+Epoch168 acc:val_acc:
+Epoch169 acc:val_acc:
+Epoch170 acc:val_acc:
+Epoch171 0.9940 0.8576 
+Epoch172 0.9982 0.8804 
+Epoch173 acc:val_acc:
+Epoch174 acc:val_acc:
+Epoch175 acc:val_acc:
+Epoch176 acc:val_acc:
+Epoch177 acc:val_acc:
+Epoch178 acc:val_acc:
+Epoch179 acc:val_acc:
+Epoch180 acc:val_acc:
+Epoch181 acc:val_acc:
+Epoch182 acc:val_acc:
+Epoch183 acc:val_acc:
+Epoch184 acc:val_acc:
+Epoch185 acc:val_acc:
+Epoch186 acc:val_acc:
+Epoch187 acc:val_acc:
+Epoch188 acc:val_acc:
+Epoch189 acc:val_acc:
+Epoch190 acc:val_acc:
+Epoch191 acc:val_acc:
+Epoch192 acc:val_acc:
+Epoch193 acc:val_acc:
+Epoch194 acc:val_acc:
+Epoch195 acc:val_acc:
+Epoch196 acc:val_acc:
+Epoch197 acc:val_acc:
+Epoch198 acc:val_acc:
+Epoch199 acc:val_acc:
+Epoch200 acc:val_acc:
+Epoch1 0.8140 0.8928 
+Epoch2 0.9196 0.8932 
+Epoch3 0.9622 0.8872 
+Epoch4 0.9893 0.8904 
+Epoch5 0.9969 0.8856 
+Epoch6 0.9996 0.8852 
+Epoch7 acc:val_acc:
+Epoch8 acc:val_acc:
+Epoch9 acc:val_acc:
+Epoch10 acc:val_acc:
+Epoch11 acc:val_acc:
+Epoch12 acc:val_acc:
+Epoch13 acc:val_acc:
+Epoch14 acc:val_acc:
+Epoch15 acc:val_acc:
+Epoch16 acc:val_acc:
+Epoch17 acc:val_acc:
+Epoch18 acc:val_acc:
+Epoch19 acc:val_acc:
+Epoch20 acc:val_acc:
+Epoch21 acc:val_acc:
+Epoch22 acc:val_acc:
+Epoch23 acc:val_acc:
+Epoch24 acc:val_acc:
+Epoch25 acc:val_acc:
+Epoch26 acc:val_acc:
+Epoch27 acc:val_acc:
+Epoch28 acc:val_acc:
+Epoch29 acc:val_acc:
+Epoch30 acc:val_acc:
+Epoch31 acc:val_acc:
+Epoch32 acc:val_acc:
+Epoch33 acc:val_acc:
+Epoch34 acc:val_acc:
+Epoch35 acc:val_acc:
+Epoch36 acc:val_acc:
+Epoch37 acc:val_acc:
+Epoch38 acc:val_acc:
+Epoch39 acc:val_acc:
+Epoch40 acc:val_acc:
+Epoch41 acc:val_acc:
+Epoch42 acc:val_acc:
+Epoch43 acc:val_acc:
+Epoch44 acc:val_acc:
+Epoch45 acc:val_acc:
+Epoch46 acc:val_acc:
+Epoch47 acc:val_acc:
+Epoch48 acc:val_acc:
+Epoch49 acc:val_acc:
+Epoch50 acc:val_acc:
+Epoch51 acc:val_acc:
+Epoch52 acc:val_acc:
+Epoch53 acc:val_acc:
+Epoch54 acc:val_acc:
+Epoch55 acc:val_acc:
+Epoch56 acc:val_acc:
+Epoch57 acc:val_acc:
+Epoch58 acc:val_acc:
+Epoch59 acc:val_acc:
+Epoch60 acc:val_acc:
+Epoch61 acc:val_acc:
+Epoch62 acc:val_acc:
+Epoch63 acc:val_acc:
+Epoch64 acc:val_acc:
+Epoch65 acc:val_acc:
+Epoch66 acc:val_acc:
+Epoch67 acc:val_acc:
+Epoch68 acc:val_acc:
+Epoch69 acc:val_acc:
+Epoch70 acc:val_acc:
+Epoch71 acc:val_acc:
+Epoch72 acc:val_acc:
+Epoch73 acc:val_acc:
+Epoch74 acc:val_acc:
+Epoch75 acc:val_acc:
+Epoch76 acc:val_acc:
+Epoch77 acc:val_acc:
+Epoch78 acc:val_acc:
+Epoch79 acc:val_acc:
+Epoch80 acc:val_acc:
+Epoch81 acc:val_acc:
+Epoch82 acc:val_acc:
+Epoch83 acc:val_acc:
+Epoch84 acc:val_acc:
+Epoch85 acc:val_acc:
+Epoch86 acc:val_acc:
+Epoch87 acc:val_acc:
+Epoch88 acc:val_acc:
+Epoch89 acc:val_acc:
+Epoch90 acc:val_acc:
+Epoch91 acc:val_acc:
+Epoch92 acc:val_acc:
+Epoch93 acc:val_acc:
+Epoch94 acc:val_acc:
+Epoch95 acc:val_acc:
+Epoch96 acc:val_acc:
+Epoch97 acc:val_acc:
+Epoch98 acc:val_acc:
+Epoch99 acc:val_acc:
+Epoch100 acc:val_acc:
+Epoch101 acc:val_acc:
+Epoch102 acc:val_acc:
+Epoch103 acc:val_acc:
+Epoch104 acc:val_acc:
+Epoch105 acc:val_acc:
+Epoch106 acc:val_acc:
+Epoch107 acc:val_acc:
+Epoch108 acc:val_acc:
+Epoch109 acc:val_acc:
+Epoch110 acc:val_acc:
+Epoch111 acc:val_acc:
+Epoch112 acc:val_acc:
+Epoch113 acc:val_acc:
+Epoch114 acc:val_acc:
+Epoch115 acc:val_acc:
+Epoch116 acc:val_acc:
+Epoch117 acc:val_acc:
+Epoch118 acc:val_acc:
+Epoch119 acc:val_acc:
+Epoch120 acc:val_acc:
+Epoch121 acc:val_acc:
+Epoch122 acc:val_acc:
+Epoch123 acc:val_acc:
+Epoch124 acc:val_acc:
+Epoch125 acc:val_acc:
+Epoch126 acc:val_acc:
+Epoch127 acc:val_acc:
+Epoch128 acc:val_acc:
+Epoch129 acc:val_acc:
+Epoch130 acc:val_acc:
+Epoch131 acc:val_acc:
+Epoch132 acc:val_acc:
+Epoch133 acc:val_acc:
+Epoch134 acc:val_acc:
+Epoch135 acc:val_acc:
+Epoch136 acc:val_acc:
+Epoch137 acc:val_acc:
+Epoch138 acc:val_acc:
+Epoch139 acc:val_acc:
+Epoch140 acc:val_acc:
+Epoch141 acc:val_acc:
+Epoch142 acc:val_acc:
+Epoch143 acc:val_acc:
+Epoch144 acc:val_acc:
+Epoch145 acc:val_acc:
+Epoch146 acc:val_acc:
+Epoch147 acc:val_acc:
+Epoch148 acc:val_acc:
+Epoch149 acc:val_acc:
+Epoch150 acc:val_acc:
+Epoch151 acc:val_acc:
+Epoch152 acc:val_acc:
+Epoch153 acc:val_acc:
+Epoch154 acc:val_acc:
+Epoch155 acc:val_acc:
+Epoch156 acc:val_acc:
+Epoch157 acc:val_acc:
+Epoch158 acc:val_acc:
+Epoch159 acc:val_acc:
+Epoch160 acc:val_acc:
+Epoch161 acc:val_acc:
+Epoch162 acc:val_acc:
+Epoch163 acc:val_acc:
+Epoch164 acc:val_acc:
+Epoch165 acc:val_acc:
+Epoch166 acc:val_acc:
+Epoch167 acc:val_acc:
+Epoch168 acc:val_acc:
+Epoch169 acc:val_acc:
+Epoch170 acc:val_acc:
+Epoch171 acc:val_acc:
+Epoch172 acc:val_acc:
+Epoch173 acc:val_acc:
+Epoch174 acc:val_acc:
+Epoch175 acc:val_acc:
+Epoch176 acc:val_acc:
+Epoch177 acc:val_acc:
+Epoch178 acc:val_acc:
+Epoch179 acc:val_acc:
+Epoch180 acc:val_acc:
+Epoch181 acc:val_acc:
+Epoch182 acc:val_acc:
+Epoch183 acc:val_acc:
+Epoch184 acc:val_acc:
+Epoch185 acc:val_acc:
+Epoch186 acc:val_acc:
+Epoch187 acc:val_acc:
+Epoch188 acc:val_acc:
+Epoch189 acc:val_acc:
+Epoch190 acc:val_acc:
+Epoch191 acc:val_acc:
+Epoch192 acc:val_acc:
+Epoch193 acc:val_acc:
+Epoch194 acc:val_acc:
+Epoch195 acc:val_acc:
+Epoch196 acc:val_acc:
+Epoch197 acc:val_acc:
+Epoch198 acc:val_acc:
+Epoch199 acc:val_acc:
+Epoch200 acc:val_acc:
+Epoch1 0.5026 0.6044 
+Epoch2 0.5144 0.5000 
+Epoch3 0.5261 0.7320 
+Epoch4 0.5332 0.7052 
+Epoch5 0.5556 0.7340 
+Epoch6 0.5731 0.7588 
+Epoch7 0.5947 0.7576 
+Epoch8 0.6167 0.7400 
+Epoch9 0.6320 0.7356 
+Epoch10 0.6614 0.7928 
+Epoch11 0.6816 0.7932 
+Epoch12 0.7078 0.7944 
+Epoch13 0.7283 0.7888 
+Epoch14 0.7427 0.8180 
+Epoch15 0.7593 0.8328 
+Epoch16 0.7717 0.8328 
+Epoch17 0.7785 0.8420 
+Epoch18 0.7909 0.8412 
+Epoch19 0.7983 0.8424 
+Epoch20 0.8045 0.8504 
+Epoch21 0.8116 0.8504 
+Epoch22 0.8187 0.8488 
+Epoch23 0.8221 0.8532 
+Epoch24 0.8288 0.8560 
+Epoch25 0.8329 0.8544 
+Epoch26 0.8343 0.8596 
+Epoch27 0.8399 0.8600 
+Epoch28 0.8432 0.8636 
+Epoch29 0.8438 0.8652 
+Epoch30 0.8500 0.8680 
+Epoch31 0.8525 0.8668 
+Epoch32 0.8550 0.8672 
+Epoch33 0.8563 0.8724 
+Epoch34 0.8572 0.8668 
+Epoch35 0.8620 0.8684 
+Epoch36 0.8633 0.8708 
+Epoch37 0.8665 0.8724 
+Epoch38 0.8665 0.8776 
+Epoch39 0.8696 0.8772 
+Epoch40 0.8719 0.8768 
+Epoch41 0.8728 0.8740 
+Epoch42 0.8764 0.8772 
+Epoch43 0.8765 0.8776 
+Epoch44 0.8795 0.8796 
+Epoch45 0.8811 0.8800 
+Epoch46 0.8801 0.8812 
+Epoch47 0.8803 0.8824 
+Epoch48 0.8844 0.8824 
+Epoch49 0.8855 0.8824 
+Epoch50 0.8874 0.8820 
+Epoch51 0.8906 0.8824 
+Epoch52 0.8902 0.8832 
+Epoch53 0.8921 0.8836 
+Epoch54 0.8895 0.8800 
+Epoch55 0.8911 0.8832 
+Epoch56 0.8925 0.8848 
+Epoch57 0.8933 0.8844 
+Epoch58 0.8964 0.8836 
+Epoch59 0.8948 0.8856 
+Epoch60 0.8964 0.8860 
+Epoch61 0.8988 0.8860 
+Epoch62 0.9004 0.8852 
+Epoch63 0.8982 0.8868 
+Epoch64 0.9006 0.8856 
+Epoch65 0.9006 0.8860 
+Epoch66 0.9017 0.8876 
+Epoch67 0.9057 0.8860 
+Epoch68 0.9048 0.8864 
+Epoch69 0.9032 0.8896 
+Epoch70 0.9086 0.8876 
+Epoch71 0.9087 0.8852 
+Epoch72 0.9088 0.8888 
+Epoch73 0.9103 0.8876 
+Epoch74 0.9110 0.8860 
+Epoch75 0.9117 0.8856 
+Epoch76 0.9114 0.8892 
+Epoch77 0.9122 0.8888 
+Epoch78 0.9132 0.8868 
+Epoch79 0.9151 0.8884 
+Epoch80 0.9166 0.8892 
+Epoch81 0.9139 0.8880 
+Epoch82 0.9165 0.8868 
+Epoch83 0.9170 0.8884 
+Epoch84 0.9158 0.8876 
+Epoch85 0.9191 0.8880 
+Epoch86 0.9179 0.8884 
+Epoch87 0.9181 0.8928 
+Epoch88 0.9212 0.8912 
+Epoch89 0.9214 0.8880 
+Epoch90 0.9217 0.8888 
+Epoch91 0.9213 0.8872 
+Epoch92 0.9253 0.8888 
+Epoch93 0.9220 0.8924 
+Epoch94 0.9247 0.8908 
+Epoch95 0.9269 0.8884 
+Epoch96 0.9259 0.8888 
+Epoch97 0.9260 0.8912 
+Epoch98 0.9237 0.8916 
+Epoch99 0.9253 0.8892 
+Epoch100 0.9290 0.8932 
+Epoch101 0.9294 0.8892 
+Epoch102 0.9292 0.8912 
+Epoch103 0.9289 0.8880 
+Epoch104 0.9318 0.8892 
+Epoch105 0.9313 0.8912 
+Epoch106 0.9303 0.8912 
+Epoch107 0.9318 0.8892 
+Epoch108 0.9326 0.8884 
+Epoch109 0.9322 0.8904 
+Epoch110 0.9324 0.8928 
+Epoch111 0.9341 0.8932 
+Epoch112 0.9345 0.8916 
+Epoch113 0.9370 0.8900 
+Epoch114 0.9357 0.8920 
+Epoch115 0.9356 0.8916 
+Epoch116 0.9360 0.8916 
+Epoch117 0.9399 0.8924 
+Epoch118 0.9403 0.8900 
+Epoch119 0.9388 0.8892 
+Epoch120 0.9402 0.8900 
+Epoch121 0.9412 0.8892 
+Epoch122 0.9415 0.8900 
+Epoch123 0.9408 0.8908 
+Epoch124 0.9422 0.8912 
+Epoch125 0.9433 0.8916 
+Epoch126 0.9436 0.8916 
+Epoch127 0.9427 0.8892 
+Epoch128 0.9448 0.8904 
+Epoch129 0.9455 0.8916 
+Epoch130 0.9456 0.8908 
+Epoch131 0.9460 0.8916 
+Epoch132 0.9474 0.8916 
+Epoch133 0.9465 0.8896 
+Epoch134 0.9466 0.8900 
+Epoch135 0.9492 0.8920 
+Epoch136 0.9470 0.8912 
+Epoch137 0.9492 0.8900 
+Epoch138 0.9478 0.8888 
+Epoch139 0.9516 0.8924 
+Epoch140 0.9495 0.8924 
+Epoch141 0.9509 0.8876 
+Epoch142 0.9523 0.8916 
+Epoch143 0.9501 0.8908 
+Epoch144 0.9515 0.8908 
+Epoch145 0.9504 0.8888 
+Epoch146 0.9534 0.8912 
+Epoch147 0.9532 0.8892 
+Epoch148 0.9553 0.8916 
+Epoch149 0.9562 0.8888 
+Epoch150 0.9569 0.8896 
+Epoch151 0.9547 0.8896 
+Epoch152 0.9569 0.8900 
+Epoch153 0.9565 0.8896 
+Epoch154 0.9566 0.8892 
+Epoch155 0.9572 0.8888 
+Epoch156 0.9576 0.8884 
+Epoch157 0.9572 0.8892 
+Epoch158 0.9580 0.8892 
+Epoch159 0.9595 0.8896 
+Epoch160 0.9599 0.8908 
+Epoch161 0.9618 0.8892 
+Epoch162 0.9604 0.8892 
+Epoch163 0.9631 0.8904 
+Epoch164 0.9611 0.8892 
+Epoch165 0.9620 0.8892 
+Epoch166 0.9632 0.8896 
+Epoch167 0.9625 0.8888 
+Epoch168 0.9627 0.8888 
+Epoch169 0.9626 0.8900 
+Epoch170 0.9620 0.8880 
+Epoch171 0.9636 0.8880 
+Epoch172 0.9635 0.8884 
+Epoch173 0.9645 0.8880 
+Epoch174 0.9660 0.8892 
+Epoch175 0.9653 0.8888 
+Epoch176 0.9649 0.8880 
+Epoch177 0.9665 0.8884 
+Epoch178 0.9663 0.8884 
+Epoch179 0.9684 0.8876 
+Epoch180 0.9688 0.8876 
+Epoch181 0.9676 0.8876 
+Epoch182 0.9678 0.8868 
+Epoch183 0.9685 0.8872 
+Epoch184 0.9701 0.8876 
+Epoch185 0.9688 0.8872 
+Epoch186 0.9694 0.8864 
+Epoch187 0.9708 0.8872 
+Epoch188 0.9717 0.8872 
+Epoch189 0.9708 0.8864 
+Epoch190 0.9712 0.8872 
+Epoch191 0.9713 0.8860 
+Epoch192 0.9720 0.8872 
+Epoch193 0.9733 0.8864 
+Epoch194 0.9732 0.8868 
+Epoch195 0.9733 0.8876 
+Epoch196 0.9742 0.8864 
+Epoch197 0.9741 0.8876 
+Epoch198 0.9738 0.8860 
+Epoch199 0.9763 0.8868 
+Epoch200 0.9740 0.8864 
+Epoch1 0.8512 0.8848 
+Epoch2 0.9402 0.8820 
+Epoch3 0.9807 0.8896 
+Epoch4 0.9947 0.8884 
+Epoch5 0.9971 0.8828 
+Epoch6 0.9979 0.8808 
+Epoch7 0.9976 0.8564 
+Epoch8 0.9973 0.8776 
+Epoch9 0.9980 0.8856 
+Epoch10 0.9986 0.8784 
+Epoch11 0.9984 0.8792 
+Epoch12 0.9985 0.8744 
+Epoch13 0.9990 0.8808 
+Epoch14 0.9992 0.8748 
+Epoch15 0.9996 0.8776 
+Epoch16 0.9991 0.8624 
+Epoch17 0.9993 0.8732 
+Epoch18 0.9994 0.8756 
+Epoch19 0.9988 0.8744 
+Epoch20 0.9989 0.8684 
+Epoch21 0.9988 0.8612 
+Epoch22 0.9983 0.8708 
+Epoch23 0.9990 0.8760 
+Epoch24 0.9988 0.8740 
+Epoch25 0.9985 0.8728 
+Epoch26 0.9989 0.8780 
+Epoch27 0.9994 0.8732 
+Epoch28 0.9995 0.8800 
+Epoch29 0.9994 0.8756 
+Epoch30 0.9995 0.8752 
+Epoch31 0.9987 0.8680 
+Epoch32 0.9994 0.8080 
+Epoch33 0.9992 0.8792 
+Epoch34 0.9992 0.8740 
+Epoch35 0.9997 0.8828 
+Epoch36 0.9996 0.8756 
+Epoch37 0.9994 0.8752 
+Epoch38 0.9996 0.8704 
+Epoch39 0.9998 0.8776 
+Epoch40 0.9998 0.8716 
+Epoch41 0.9996 0.8708 
+Epoch42 0.9997 0.8720 
+Epoch43 0.9998 0.8768 
+Epoch44 0.9998 0.8748 
+Epoch45 0.9996 0.8728 
+Epoch46 0.9998 0.8768 
+Epoch47 0.9998 0.8776 
+Epoch48 0.9998 0.8768 
+Epoch49 0.9998 0.8760 
+Epoch50 0.9998 0.8756 
+Epoch51 0.9998 0.8784 
+Epoch52 0.9997 0.8700 
+Epoch53 0.9998 0.8724 
+Epoch54 0.9998 0.8776 
+Epoch55 0.9997 0.8788 
+Epoch56 0.9998 0.8700 
+Epoch57 0.9997 0.8756 
+Epoch58 0.9998 0.8732 
+Epoch59 0.9998 0.8752 
+Epoch60 0.9998 0.8764 
+Epoch61 0.9998 0.8752 
+Epoch62 0.9998 0.8792 
+Epoch63 0.9998 0.8736 
+Epoch64 0.9998 0.8744 
+Epoch65 0.9998 0.8776 
+Epoch66 0.9998 0.8748 
+Epoch67 0.9998 0.8704 
+Epoch68 0.9998 0.8760 
+Epoch69 0.9998 0.8748 
+Epoch70 0.9998 0.8752 
+Epoch71 0.9998 0.8760 
+Epoch72 0.9998 0.8744 
+Epoch73 0.9998 0.8728 
+Epoch74 0.9998 0.8760 
+Epoch75 0.9998 0.8756 
+Epoch76 0.9998 0.8760 
+Epoch77 0.9998 0.8764 
+Epoch78 0.9998 0.8776 
+Epoch79 0.9998 0.8776 
+Epoch80 0.9998 0.8748 
+Epoch81 0.9998 0.8740 
+Epoch82 0.9998 0.8784 
+Epoch83 0.9998 0.8784 
+Epoch84 0.9998 0.8772 
+Epoch85 0.9998 0.8780 
+Epoch86 0.9998 0.8764 
+Epoch87 0.9998 0.8804 
+Epoch88 0.9998 0.8772 
+Epoch89 0.9998 0.8776 
+Epoch90 0.9998 0.8744 
+Epoch91 0.9998 0.8740 
+Epoch92 0.9997 0.8780 
+Epoch93 0.9998 0.8788 
+Epoch94 0.9997 0.8796 
+Epoch95 0.9998 0.8804 
+Epoch96 0.9995 0.8784 
+Epoch97 0.9998 0.8788 
+Epoch98 0.9998 0.8776 
+Epoch99 0.9998 0.8820 
+Epoch100 0.9998 0.8796 
+Epoch101 0.9998 0.8832 
+Epoch102 0.9998 0.8800 
+Epoch103 0.9998 0.8800 
+Epoch104 0.9998 0.8796 
+Epoch105 0.9998 0.8772 
+Epoch106 0.9998 0.8808 
+Epoch107 0.9998 0.8752 
+Epoch108 0.9998 0.8756 
+Epoch109 0.9998 0.8776 
+Epoch110 0.9998 0.8764 
+Epoch111 0.9998 0.8752 
+Epoch112 0.9998 0.8768 
+Epoch113 0.9998 0.8792 
+Epoch114 0.9998 0.8756 
+Epoch115 0.9998 0.8760 
+Epoch116 0.9998 0.8748 
+Epoch117 0.9998 0.8776 
+Epoch118 0.9998 0.8752 
+Epoch119 0.9998 0.8792 
+Epoch120 0.9998 0.8796 
+Epoch121 0.9998 0.8808 
+Epoch122 0.9998 0.8780 
+Epoch123 0.9998 0.8804 
+Epoch124 0.9998 0.8808 
+Epoch125 0.9998 0.8800 
+Epoch126 0.9998 0.8788 
+Epoch127 0.9998 0.8796 
+Epoch128 0.9998 0.8700 
+Epoch129 0.9996 0.8780 
+Epoch130 0.9998 0.8780 
+Epoch131 0.9998 0.8792 
+Epoch132 0.9998 0.8784 
+Epoch133 0.9998 0.8764 
+Epoch134 0.9998 0.8772 
+Epoch135 0.9998 0.8780 
+Epoch136 0.9998 0.8792 
+Epoch137 0.9998 0.8792 
+Epoch138 0.9998 0.8780 
+Epoch139 0.9998 0.8788 
+Epoch140 0.9998 0.8792 
+Epoch141 0.9998 0.8796 
+Epoch142 0.9998 0.8792 
+Epoch143 0.9998 0.8788 
+Epoch144 0.9998 0.8784 
+Epoch145 0.9998 0.8792 
+Epoch146 0.9998 0.8760 
+Epoch147 0.9998 0.8764 
+Epoch148 0.9998 0.8780 
+Epoch149 0.9998 0.8788 
+Epoch150 0.9998 0.8796 
+Epoch151 0.9998 0.8812 
+Epoch152 0.9997 0.8784 
+Epoch153 0.9998 0.8796 
+Epoch154 0.9998 0.8792 
+Epoch155 0.9998 0.8796 
+Epoch156 0.9998 0.8748 
+Epoch157 0.9998 0.8784 
+Epoch158 0.9998 0.8796 
+Epoch159 0.9998 0.8784 
+Epoch160 0.9998 0.8784 
+Epoch161 0.9998 0.8796 
+Epoch162 0.9998 0.8768 
+Epoch163 0.9998 0.8800 
+Epoch164 0.9998 0.8788 
+Epoch165 0.9998 0.8800 
+Epoch166 0.9998 0.8804 
+Epoch167 0.9998 0.8804 
+Epoch168 0.9998 0.8800 
+Epoch169 0.9998 0.8800 
+Epoch170 0.9998 0.8800 
+Epoch171 0.9998 0.8796 
+Epoch172 0.9998 0.8792 
+Epoch173 0.9998 0.8792 
+Epoch174 0.9998 0.8800 
+Epoch175 0.9998 0.8808 
+Epoch176 0.9998 0.8812 
+Epoch177 0.9998 0.8812 
+Epoch178 0.9998 0.8788 
+Epoch179 0.9998 0.8796 
+Epoch180 0.9998 0.8792 
+Epoch181 0.9998 0.8788 
+Epoch182 0.9998 0.8796 
+Epoch183 0.9998 0.8788 
+Epoch184 0.9998 0.8788 
+Epoch185 0.9998 0.8804 
+Epoch186 0.9998 0.8804 
+Epoch187 0.9998 0.8800 
+Epoch188 0.9998 0.8804 
+Epoch189 0.9998 0.8800 
+Epoch190 0.9998 0.8804 
+Epoch191 0.9998 0.8804 
+Epoch192 0.9998 0.8808 
+Epoch193 0.9998 0.8800 
+Epoch194 0.9998 0.8800 
+Epoch195 0.9998 0.8800 
+Epoch196 0.9998 0.8804 
+Epoch197 0.9998 0.8796 
+Epoch198 0.9998 0.8776 
+Epoch199 0.9998 0.8788 
+Epoch200 0.9998 0.8764 
+Epoch1 0.5033 0.4892 
+Epoch2 0.5086 0.5128 
+Epoch3 0.5174 0.5128 
+Epoch4 0.5264 0.7012 
+Epoch5 0.5328 0.4880 
+Epoch6 0.5397 0.5384 
+Epoch7 0.5549 0.7044 
+Epoch8 0.5678 0.7172 
+Epoch9 0.5812 0.7232 
+Epoch10 0.6039 0.7236 
+Epoch11 0.6256 0.6516 
+Epoch12 0.6632 0.7112 
+Epoch13 0.6958 0.7124 
+Epoch14 0.7252 0.7656 
+Epoch15 0.7507 0.8120 
+Epoch16 0.7731 0.8064 
+Epoch17 0.7866 0.8060 
+Epoch18 0.8068 0.8452 
+Epoch19 0.8144 0.8444 
+Epoch20 0.8221 0.8292 
+Epoch21 0.8292 0.8544 
+Epoch22 0.8364 0.8568 
+Epoch23 0.8404 0.8624 
+Epoch24 0.8486 0.8640 
+Epoch25 0.8524 0.8664 
+Epoch26 0.8600 0.8684 
+Epoch27 0.8592 0.8708 
+Epoch28 0.8655 0.8700 
+Epoch29 0.8696 0.8700 
+Epoch30 0.8692 0.8732 
+Epoch31 0.8751 0.8764 
+Epoch32 0.8766 0.8776 
+Epoch33 0.8800 0.8732 
+Epoch34 0.8824 0.8796 
+Epoch35 0.8821 0.8816 
+Epoch36 0.8882 0.8700 
+Epoch37 0.8885 0.8816 
+Epoch38 0.8884 0.8804 
+Epoch39 0.8938 0.8828 
+Epoch40 0.8943 0.8820 
+Epoch41 0.8948 0.8852 
+Epoch42 0.8985 0.8824 
+Epoch43 0.8963 0.8828 
+Epoch44 0.9000 0.8836 
+Epoch45 0.9028 0.8872 
+Epoch46 0.9039 0.8832 
+Epoch47 0.9038 0.8860 
+Epoch48 0.9069 0.8864 
+Epoch49 0.9080 0.8836 
+Epoch50 0.9079 0.8852 
+Epoch51 0.9112 0.8864 
+Epoch52 0.9117 0.8884 
+Epoch53 0.9146 0.8860 
+Epoch54 0.9135 0.8876 
+Epoch55 0.9139 0.8864 
+Epoch56 0.9188 0.8896 
+Epoch57 0.9177 0.8852 
+Epoch58 0.9184 0.8904 
+Epoch59 0.9206 0.8804 
+Epoch60 0.9215 0.8912 
+Epoch61 0.9206 0.8856 
+Epoch62 0.9236 0.8892 
+Epoch63 0.9263 0.8916 
+Epoch64 0.9256 0.8904 
+Epoch65 0.9262 0.8928 
+Epoch66 0.9273 0.8876 
+Epoch67 0.9285 0.8908 
+Epoch68 0.9299 0.8904 
+Epoch69 0.9335 0.8888 
+Epoch70 0.9311 0.8940 
+Epoch71 0.9323 0.8916 
+Epoch72 0.9339 0.8924 
+Epoch73 0.9336 0.8924 
+Epoch74 0.9377 0.8920 
+Epoch75 0.9380 0.8888 
+Epoch76 0.9398 0.8916 
+Epoch77 0.9403 0.8940 
+Epoch78 0.9418 0.8900 
+Epoch79 0.9428 0.8912 
+Epoch80 0.9432 0.8912 
+Epoch81 0.9444 0.8904 
+Epoch82 0.9427 0.8916 
+Epoch83 0.9452 0.8936 
+Epoch84 0.9481 0.8888 
+Epoch85 0.9468 0.8904 
+Epoch86 0.9468 0.8904 
+Epoch87 0.9492 0.8908 
+Epoch88 0.9484 0.8908 
+Epoch89 0.9503 0.8904 
+Epoch90 0.9523 0.8896 
+Epoch91 0.9554 0.8888 
+Epoch92 0.9536 0.8884 
+Epoch93 0.9565 0.8876 
+Epoch94 0.9552 0.8892 
+Epoch95 0.9565 0.8824 
+Epoch96 0.9550 0.8868 
+Epoch97 0.9560 0.8896 
+Epoch98 0.9600 0.8896 
+Epoch99 0.9600 0.8896 
+Epoch100 0.9596 0.8908 
+Epoch101 0.9610 0.8896 
+Epoch102 0.9617 0.8880 
+Epoch103 0.9639 0.8904 
+Epoch104 0.9644 0.8888 
+Epoch105 0.9636 0.8880 
+Epoch106 0.9652 0.8868 
+Epoch107 0.9636 0.8836 
+Epoch108 0.9642 0.8860 
+Epoch109 0.9670 0.8872 
+Epoch110 0.9656 0.8868 
+Epoch111 0.9675 0.8860 
+Epoch112 0.9698 0.8872 
+Epoch113 0.9696 0.8852 
+Epoch114 0.9712 0.8868 
+Epoch115 0.9706 0.8844 
+Epoch116 0.9717 0.8872 
+Epoch117 0.9737 0.8852 
+Epoch118 0.9731 0.8872 
+Epoch119 0.9741 0.8856 
+Epoch120 0.9737 0.8884 
+Epoch121 0.9735 0.8872 
+Epoch122 0.9742 0.8852 
+Epoch123 0.9754 0.8884 
+Epoch124 0.9752 0.8888 
+Epoch125 0.9782 0.8876 
+Epoch126 0.9776 0.8864 
+Epoch127 0.9784 0.8852 
+Epoch128 0.9778 0.8888 
+Epoch129 0.9791 0.8884 
+Epoch130 0.9802 0.8868 
+Epoch131 0.9796 0.8868 
+Epoch132 0.9796 0.8864 
+Epoch133 0.9810 0.8876 
+Epoch134 0.9824 0.8892 
+Epoch135 0.9815 0.8876 
+Epoch136 0.9810 0.8852 
+Epoch137 0.9818 0.8872 
+Epoch138 0.9830 0.8872 
+Epoch139 0.9824 0.8896 
+Epoch140 0.9849 0.8888 
+Epoch141 0.9844 0.8868 
+Epoch142 0.9830 0.8900 
+Epoch143 0.9836 0.8900 
+Epoch144 0.9851 0.8888 
+Epoch145 0.9844 0.8884 
+Epoch146 0.9871 0.8860 
+Epoch147 0.9869 0.8888 
+Epoch148 0.9872 0.8872 
+Epoch149 0.9871 0.8868 
+Epoch150 0.9873 0.8864 
+Epoch151 0.9881 0.8880 
+Epoch152 0.9878 0.8876 
+Epoch153 0.9879 0.8876 
+Epoch154 0.9892 0.8868 
+Epoch155 0.9896 0.8868 
+Epoch156 0.9892 0.8824 
+Epoch157 0.9882 0.8836 
+Epoch158 0.9881 0.8880 
+Epoch159 0.9897 0.8828 
+Epoch160 0.9887 0.8828 
+Epoch161 0.9901 0.8844 
+Epoch162 0.9889 0.8868 
+Epoch163 0.9908 0.8852 
+Epoch164 0.9897 0.8872 
+Epoch165 0.9908 0.8836 
+Epoch166 0.9898 0.8880 
+Epoch167 0.9907 0.8840 
+Epoch168 0.9914 0.8880 
+Epoch169 0.9912 0.8852 
+Epoch170 0.9910 0.8876 
+Epoch171 0.9912 0.8836 
+Epoch172 0.9902 0.8864 
+Epoch173 0.9913 0.8872 
+Epoch174 0.9920 0.8876 
+Epoch175 0.9917 0.8864 
+Epoch176 0.9932 0.8832 
+Epoch177 0.9928 0.8868 
+Epoch178 0.9940 0.8856 
+Epoch179 0.9936 0.8864 
+Epoch180 0.9928 0.8864 
+Epoch181 0.9925 0.8848 
+Epoch182 0.9921 0.8868 
+Epoch183 0.9931 0.8868 
+Epoch184 0.9928 0.8860 
+Epoch185 0.9933 0.8860 
+Epoch186 0.9934 0.8876 
+Epoch187 0.9928 0.8808 
+Epoch188 0.9928 0.8860 
+Epoch189 0.9939 0.8876 
+Epoch190 0.9940 0.8868 
+Epoch191 0.9944 0.8820 
+Epoch192 0.9941 0.8840 
+Epoch193 0.9940 0.8868 
+Epoch194 0.9934 0.8856 
+Epoch195 0.9944 0.8844 
+Epoch196 0.9945 0.8860 
+Epoch197 0.9937 0.8868 
+Epoch198 0.9944 0.8860 
+Epoch199 0.9954 0.8840 
+Epoch200 0.9942 0.8836 
+Epoch1 0.8216 0.8628 
+Epoch2 0.9219 0.8888 
+Epoch3 0.9571 0.8920 
+Epoch4 0.9811 0.8876 
+Epoch5 0.9925 0.8928 
+Epoch6 0.9972 0.8904 
+Epoch7 0.9986 0.8920 
+Epoch8 acc:val_acc:
+Epoch9 acc:val_acc:
+Epoch10 acc:val_acc:
+Epoch11 acc:val_acc:
+Epoch12 acc:val_acc:
+Epoch13 acc:val_acc:
+Epoch14 acc:val_acc:
+Epoch15 acc:val_acc:
+Epoch16 acc:val_acc:
+Epoch17 acc:val_acc:
+Epoch18 acc:val_acc:
+Epoch19 acc:val_acc:
+Epoch20 acc:val_acc:
+Epoch21 acc:val_acc:
+Epoch22 acc:val_acc:
+Epoch23 acc:val_acc:
+Epoch24 acc:val_acc:
+Epoch25 acc:val_acc:
+Epoch26 acc:val_acc:
+Epoch27 acc:val_acc:
+Epoch28 acc:val_acc:
+Epoch29 acc:val_acc:
+Epoch30 acc:val_acc:
+Epoch31 acc:val_acc:
+Epoch32 acc:val_acc:
+Epoch33 acc:val_acc:
+Epoch34 acc:val_acc:
+Epoch35 acc:val_acc:
+Epoch36 acc:val_acc:
+Epoch37 acc:val_acc:
+Epoch38 acc:val_acc:
+Epoch39 acc:val_acc:
+Epoch40 acc:val_acc:
+Epoch41 acc:val_acc:
+Epoch42 acc:val_acc:
+Epoch43 acc:val_acc:
+Epoch44 acc:val_acc:
+Epoch45 acc:val_acc:
+Epoch46 acc:val_acc:
+Epoch47 acc:val_acc:
+Epoch48 acc:val_acc:
+Epoch49 acc:val_acc:
+Epoch50 acc:val_acc:
+Epoch51 acc:val_acc:
+Epoch52 acc:val_acc:
+Epoch53 acc:val_acc:
+Epoch54 acc:val_acc:
+Epoch55 acc:val_acc:
+Epoch56 acc:val_acc:
+Epoch57 acc:val_acc:
+Epoch58 acc:val_acc:
+Epoch59 acc:val_acc:
+Epoch60 acc:val_acc:
+Epoch61 acc:val_acc:
+Epoch62 acc:val_acc:
+Epoch63 acc:val_acc:
+Epoch64 acc:val_acc:
+Epoch65 acc:val_acc:
+Epoch66 acc:val_acc:
+Epoch67 acc:val_acc:
+Epoch68 acc:val_acc:
+Epoch69 acc:val_acc:
+Epoch70 acc:val_acc:
+Epoch71 acc:val_acc:
+Epoch72 acc:val_acc:
+Epoch73 acc:val_acc:
+Epoch74 acc:val_acc:
+Epoch75 acc:val_acc:
+Epoch76 acc:val_acc:
+Epoch77 acc:val_acc:
+Epoch78 acc:val_acc:
+Epoch79 acc:val_acc:
+Epoch80 acc:val_acc:
+Epoch81 acc:val_acc:
+Epoch82 acc:val_acc:
+Epoch83 acc:val_acc:
+Epoch84 acc:val_acc:
+Epoch85 acc:val_acc:
+Epoch86 acc:val_acc:
+Epoch87 acc:val_acc:
+Epoch88 acc:val_acc:
+Epoch89 acc:val_acc:
+Epoch90 acc:val_acc:
+Epoch91 acc:val_acc:
+Epoch92 acc:val_acc:
+Epoch93 acc:val_acc:
+Epoch94 acc:val_acc:
+Epoch95 acc:val_acc:
+Epoch96 acc:val_acc:
+Epoch97 acc:val_acc:
+Epoch98 acc:val_acc:
+Epoch99 acc:val_acc:
+Epoch100 acc:val_acc:
+Epoch101 acc:val_acc:
+Epoch102 acc:val_acc:
+Epoch103 acc:val_acc:
+Epoch104 acc:val_acc:
+Epoch105 acc:val_acc:
+Epoch106 acc:val_acc:
+Epoch107 acc:val_acc:
+Epoch108 acc:val_acc:
+Epoch109 acc:val_acc:
+Epoch110 acc:val_acc:
+Epoch111 acc:val_acc:
+Epoch112 acc:val_acc:
+Epoch113 acc:val_acc:
+Epoch114 acc:val_acc:
+Epoch115 acc:val_acc:
+Epoch116 acc:val_acc:
+Epoch117 acc:val_acc:
+Epoch118 acc:val_acc:
+Epoch119 acc:val_acc:
+Epoch120 acc:val_acc:
+Epoch121 acc:val_acc:
+Epoch122 acc:val_acc:
+Epoch123 acc:val_acc:
+Epoch124 acc:val_acc:
+Epoch125 acc:val_acc:
+Epoch126 acc:val_acc:
+Epoch127 acc:val_acc:
+Epoch128 acc:val_acc:
+Epoch129 acc:val_acc:
+Epoch130 acc:val_acc:
+Epoch131 acc:val_acc:
+Epoch132 acc:val_acc:
+Epoch133 acc:val_acc:
+Epoch134 acc:val_acc:
+Epoch135 acc:val_acc:
+Epoch136 acc:val_acc:
+Epoch137 acc:val_acc:
+Epoch138 acc:val_acc:
+Epoch139 acc:val_acc:
+Epoch140 acc:val_acc:
+Epoch141 acc:val_acc:
+Epoch142 acc:val_acc:
+Epoch143 acc:val_acc:
+Epoch144 acc:val_acc:
+Epoch145 acc:val_acc:
+Epoch146 acc:val_acc:
+Epoch147 acc:val_acc:
+Epoch148 acc:val_acc:
+Epoch149 acc:val_acc:
+Epoch150 acc:val_acc:
+Epoch151 acc:val_acc:
+Epoch152 acc:val_acc:
+Epoch153 acc:val_acc:
+Epoch154 acc:val_acc:
+Epoch155 acc:val_acc:
+Epoch156 acc:val_acc:
+Epoch157 acc:val_acc:
+Epoch158 acc:val_acc:
+Epoch159 acc:val_acc:
+Epoch160 acc:val_acc:
+Epoch161 acc:val_acc:
+Epoch162 acc:val_acc:
+Epoch163 acc:val_acc:
+Epoch164 acc:val_acc:
+Epoch165 acc:val_acc:
+Epoch166 acc:val_acc:
+Epoch167 acc:val_acc:
+Epoch168 acc:val_acc:
+Epoch169 acc:val_acc:
+Epoch170 acc:val_acc:
+Epoch171 acc:val_acc:
+Epoch172 acc:val_acc:
+Epoch173 acc:val_acc:
+Epoch174 acc:val_acc:
+Epoch175 acc:val_acc:
+Epoch176 acc:val_acc:
+Epoch177 acc:val_acc:
+Epoch178 acc:val_acc:
+Epoch179 acc:val_acc:
+Epoch180 acc:val_acc:
+Epoch181 acc:val_acc:
+Epoch182 acc:val_acc:
+Epoch183 acc:val_acc:
+Epoch184 acc:val_acc:
+Epoch185 acc:val_acc:
+Epoch186 acc:val_acc:
+Epoch187 acc:val_acc:
+Epoch188 acc:val_acc:
+Epoch189 acc:val_acc:
+Epoch190 acc:val_acc:
+Epoch191 acc:val_acc:
+Epoch192 acc:val_acc:
+Epoch193 acc:val_acc:
+Epoch194 acc:val_acc:
+Epoch195 acc:val_acc:
+Epoch196 acc:val_acc:
+Epoch197 acc:val_acc:
+Epoch198 acc:val_acc:
+Epoch199 acc:val_acc:
+Epoch200 acc:val_acc:
+Epoch1 0.8552 0.8928 
+Epoch2 0.9399 0.8884 
+Epoch3 0.9821 0.8756 
+Epoch4 0.9971 0.8808 
+Epoch5 0.9993 0.8768 
+Epoch6 0.9960 0.8752 
+Epoch7 0.9965 0.8836 
+Epoch8 0.9978 0.8808 
+Epoch9 0.9981 0.8764 
+Epoch10 0.9975 0.8772 
+Epoch11 0.9991 0.8764 
+Epoch12 0.9987 0.8768 
+Epoch13 0.9975 0.8784 
+Epoch14 0.9992 0.8776 
+Epoch15 0.9992 0.8832 
+Epoch16 0.9996 0.8824 
+Epoch17 0.9995 0.8804 
+Epoch18 0.9992 0.8656 
+Epoch19 0.9985 0.8780 
+Epoch20 0.9993 0.8800 
+Epoch21 acc:val_acc:
+Epoch22 acc:val_acc:
+Epoch23 0.9997 0.8728 
+Epoch24 0.9994 0.8784 
+Epoch25 0.9996 0.8844 
+Epoch26 0.9992 0.8768 
+Epoch27 0.9993 0.8684 
+Epoch28 acc:val_acc:
+Epoch29 0.9996 0.8724 
+Epoch30 0.9993 0.8552 
+Epoch31 0.9991 0.8784 
+Epoch32 0.9994 0.8808 
+Epoch33 acc:val_acc:
+Epoch34 acc:val_acc:
+Epoch35 acc:val_acc:
+Epoch36 acc:val_acc:
+Epoch37 0.9997 0.8860 
+Epoch38 0.9996 0.8824 
+Epoch39 0.9998 0.8816 
+Epoch40 acc:val_acc:
+Epoch41 acc:val_acc:
+Epoch42 acc:val_acc:
+Epoch43 acc:val_acc:
+Epoch44 acc:val_acc:
+Epoch45 acc:val_acc:
+Epoch46 acc:val_acc:
+Epoch47 0.9988 0.8800 
+Epoch48 0.9992 0.8804 
+Epoch49 0.9996 0.8780 
+Epoch50 acc:val_acc:
+Epoch51 acc:val_acc:
+Epoch52 acc:val_acc:
+Epoch53 acc:val_acc:
+Epoch54 acc:val_acc:
+Epoch55 acc:val_acc:
+Epoch56 acc:val_acc:
+Epoch57 acc:val_acc:
+Epoch58 acc:val_acc:
+Epoch59 0.9995 0.8812 
+Epoch60 0.9992 0.8752 
+Epoch61 acc:val_acc:
+Epoch62 acc:val_acc:
+Epoch63 acc:val_acc:
+Epoch64 acc:val_acc:
+Epoch65 acc:val_acc:
+Epoch66 acc:val_acc:
+Epoch67 acc:val_acc:
+Epoch68 0.9998 0.8792 
+Epoch69 acc:val_acc:
+Epoch70 acc:val_acc:
+Epoch71 0.9995 0.8820 
+Epoch72 acc:val_acc:
+Epoch73 acc:val_acc:
+Epoch74 acc:val_acc:
+Epoch75 acc:val_acc:
+Epoch76 acc:val_acc:
+Epoch77 acc:val_acc:
+Epoch78 acc:val_acc:
+Epoch79 acc:val_acc:
+Epoch80 acc:val_acc:
+Epoch81 acc:val_acc:
+Epoch82 acc:val_acc:
+Epoch83 acc:val_acc:
+Epoch84 acc:val_acc:
+Epoch85 acc:val_acc:
+Epoch86 0.9994 0.8864 
+Epoch87 acc:val_acc:
+Epoch88 acc:val_acc:
+Epoch89 acc:val_acc:
+Epoch90 acc:val_acc:
+Epoch91 acc:val_acc:
+Epoch92 acc:val_acc:
+Epoch93 acc:val_acc:
+Epoch94 acc:val_acc:
+Epoch95 acc:val_acc:
+Epoch96 acc:val_acc:
+Epoch97 acc:val_acc:
+Epoch98 acc:val_acc:
+Epoch99 acc:val_acc:
+Epoch100 acc:val_acc:
+Epoch101 acc:val_acc:
+Epoch102 acc:val_acc:
+Epoch103 0.9990 0.8764 
+Epoch104 0.9992 0.8812 
+Epoch105 0.9996 0.8756 
+Epoch106 acc:val_acc:
+Epoch107 acc:val_acc:
+Epoch108 acc:val_acc:
+Epoch109 acc:val_acc:
+Epoch110 acc:val_acc:
+Epoch111 acc:val_acc:
+Epoch112 acc:val_acc:
+Epoch113 acc:val_acc:
+Epoch114 acc:val_acc:
+Epoch115 acc:val_acc:
+Epoch116 acc:val_acc:
+Epoch117 acc:val_acc:
+Epoch118 acc:val_acc:
+Epoch119 acc:val_acc:
+Epoch120 acc:val_acc:
+Epoch121 acc:val_acc:
+Epoch122 acc:val_acc:
+Epoch123 acc:val_acc:
+Epoch124 acc:val_acc:
+Epoch125 acc:val_acc:
+Epoch126 acc:val_acc:
+Epoch127 acc:val_acc:
+Epoch128 acc:val_acc:
+Epoch129 acc:val_acc:
+Epoch130 acc:val_acc:
+Epoch131 acc:val_acc:
+Epoch132 acc:val_acc:
+Epoch133 acc:val_acc:
+Epoch134 acc:val_acc:
+Epoch135 acc:val_acc:
+Epoch136 acc:val_acc:
+Epoch137 acc:val_acc:
+Epoch138 acc:val_acc:
+Epoch139 acc:val_acc:
+Epoch140 acc:val_acc:
+Epoch141 acc:val_acc:
+Epoch142 acc:val_acc:
+Epoch143 acc:val_acc:
+Epoch144 acc:val_acc:
+Epoch145 acc:val_acc:
+Epoch146 acc:val_acc:
+Epoch147 acc:val_acc:
+Epoch148 acc:val_acc:
+Epoch149 acc:val_acc:
+Epoch150 acc:val_acc:
+Epoch151 acc:val_acc:
+Epoch152 acc:val_acc:
+Epoch153 acc:val_acc:
+Epoch154 acc:val_acc:
+Epoch155 acc:val_acc:
+Epoch156 acc:val_acc:
+Epoch157 acc:val_acc:
+Epoch158 acc:val_acc:
+Epoch159 acc:val_acc:
+Epoch160 acc:val_acc:
+Epoch161 acc:val_acc:
+Epoch162 acc:val_acc:
+Epoch163 acc:val_acc:
+Epoch164 acc:val_acc:
+Epoch165 acc:val_acc:
+Epoch166 acc:val_acc:
+Epoch167 acc:val_acc:
+Epoch168 acc:val_acc:
+Epoch169 acc:val_acc:
+Epoch170 acc:val_acc:
+Epoch171 acc:val_acc:
+Epoch172 acc:val_acc:
+Epoch173 acc:val_acc:
+Epoch174 0.9984 0.8624 
+Epoch175 0.9977 0.8792 
+Epoch176 acc:val_acc:
+Epoch177 acc:val_acc:
+Epoch178 acc:val_acc:
+Epoch179 acc:val_acc:
+Epoch180 acc:val_acc:
+Epoch181 acc:val_acc:
+Epoch182 acc:val_acc:
+Epoch183 acc:val_acc:
+Epoch184 acc:val_acc:
+Epoch185 acc:val_acc:
+Epoch186 acc:val_acc:
+Epoch187 acc:val_acc:
+Epoch188 acc:val_acc:
+Epoch189 acc:val_acc:
+Epoch190 acc:val_acc:
+Epoch191 acc:val_acc:
+Epoch192 acc:val_acc:
+Epoch193 acc:val_acc:
+Epoch194 acc:val_acc:
+Epoch195 acc:val_acc:
+Epoch196 acc:val_acc:
+Epoch197 0.9993 0.8760 
+Epoch198 acc:val_acc:
+Epoch199 acc:val_acc:
+Epoch200 acc:val_acc:
