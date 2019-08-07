@@ -27,10 +27,36 @@
       
     }
     data$Model <- factor(data$Model)
-    gg <- ggplot(data = data, aes(x=Epoch, y=ACC)) + geom_line(aes(colour=Model))
+    data$ACC <- as.numeric(as.character(data$ACC))
+    data <- data[!is.na(data$ACC),]
+    
+    
+    
+    if(length(unique(data$Model))>10){ 
+      #Limitamos la visualización de modelos porque si no la leyenda es demasiado grande
+      gg <- ggplot(data = data[as.numeric(data$Model)<11,], aes(x=Epoch, y=ACC)) + geom_line(aes(colour=Model))
+    }else{
+      gg <- ggplot(data = data, aes(x=Epoch, y=ACC)) + geom_line(aes(colour=Model))  
+    }
+    
     
     file.png <- paste(".",substr(files.list[i],24,10000),sep="")
     file.png <- paste(gsub(".txt","",file.png),".png",sep="")
+    ggsave(file.png, plot = gg)
+    
+    
+    #Evolucion
+    data.improve <- data.frame(sapply(1:length(unique(data$Model)),function(x) max(data[data$Model==x,]$ACC)))
+    data.improve <- cbind(1:nrow(data.improve),data.improve)
+    data.improve <- cbind(data.improve,cummax(data.improve[,2]))
+    colnames(data.improve) <- c("Model", "ACC","MAX_ACC")
+    
+    gg <- ggplot(data.improve,aes(Model)) + 
+      geom_line(aes(y = data.improve[,2]), colour= "red") + 
+      geom_line(aes(y = data.improve[,3]), colour= "green")
+    
+    file.png <- paste(".",substr(files.list[i],24,10000),sep="")
+    file.png <- paste(gsub(".txt","",file.png),"improvement_log.png",sep="")
     ggsave(file.png, plot = gg)
     
   }
