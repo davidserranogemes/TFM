@@ -1,4 +1,4 @@
-    library(ggplot2)
+library(ggplot2)
     route <- "../logs/AUTOKERAS/FINAL/"
     variants <- list.files(route)
     
@@ -63,7 +63,7 @@
         geom_line(aes(y = data.improve[,3]), colour= "green")+
         xlab("Model") +
         ylab("ACC") +
-        ggtitle(paste("Dataset: ", dataset.info, " ---- Best ACC vs current model ACC"))
+        ggtitle(paste(detalles, " ---- Best ACC vs current model ACC"))
       
       
       file.png <- paste(".",substr(files.list[i],24,10000),sep="")
