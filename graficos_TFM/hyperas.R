@@ -33,12 +33,17 @@
     
     if(length(unique(data$Model))>10){ 
       #Limitamos la visualización de modelos porque si no la leyenda es demasiado grande
-      gg <- ggplot(data = data[as.numeric(data$Model)<11,], aes(x=Epoch, y=ACC)) + geom_line(aes(colour=Model))
+      gg <- ggplot(data = data[as.numeric(data$Model)<11,], aes(x=Epoch, y=ACC_VAL)) + geom_line(aes(colour=Model))
       gg$labels$colour <- paste("Model (Limitado.\nNumero real: ",length(unique(data$Model)),")",sep = "" )
     }else{
-      gg <- ggplot(data = data, aes(x=Epoch, y=ACC)) + geom_line(aes(colour=Model))  
+      gg <- ggplot(data = data, aes(x=Epoch, y=ACC_VAL)) + geom_line(aes(colour=Model))  
     }
     
+    aux.detalles <- strsplit(files.list[i],"/")[[1]]
+    dataset.info <- strsplit(aux.detalles[6],"\\.")[[1]][1]
+    other.info <- paste(strsplit(aux.detalles[5],"_")[[1]],collapse = " ")
+    detalles <- paste("Dataset: ",dataset.info," --- Configuration: ", other.info)
+    gg <- gg+ggtitle(detalles)
     
     file.png <- paste(".",substr(files.list[i],22,10000),sep="")
     file.png <- paste(gsub(".txt","",file.png),".png",sep="")
@@ -46,7 +51,7 @@
     
     
     #Evolucion
-    data.improve <- data.frame(sapply(1:length(unique(data$Model)),function(x) max(data[data$Model==x,]$ACC)))
+    data.improve <- data.frame(sapply(1:length(unique(data$Model)),function(x) max(data[data$Model==x,]$ACC_VAL)))
     data.improve <- cbind(1:nrow(data.improve),data.improve)
     data.improve <- cbind(data.improve,cummax(data.improve[,2]))
     colnames(data.improve) <- c("Model", "ACC","MAX_ACC")
@@ -55,7 +60,9 @@
       geom_line(aes(y = data.improve[,2]), colour= "red") + 
       geom_line(aes(y = data.improve[,3]), colour= "green")+
       xlab("Model") +
-      ylab("ACC")
+      ylab("ACC")+
+      ggtitle(paste("Dataset: ", dataset.info, " ---- Best ACC vs current model ACC"))
+    
     
     file.png <- paste(".",substr(files.list[i],22,10000),sep="")
     file.png <- paste(gsub(".txt","",file.png),"improvement_log.png",sep="")

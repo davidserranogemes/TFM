@@ -14,6 +14,7 @@ files.list <- list.files(paste(route,variants, sep=""),full.names = TRUE)
 
 for (i in seq(from=2, to= length(files.list),by=2)) {
     if(length(grep("AUTHOMATIC",files.list[i]))==1){
+      dataset.info <- "H2O AUTHOMATIC"
       if(length(grep("imdb",files.list[i]))!=1){
         
         data <- read.csv(files.list[i], header = FALSE,col.names = c("Model","Mean Per-Class Error"),sep = " ")
@@ -26,6 +27,7 @@ for (i in seq(from=2, to= length(files.list),by=2)) {
 
       
     }else{
+      dataset.info <- "H2O GRID"
       if(length(grep("imdb",files.list[i]))!=1){
         data <- read.csv(files.list[i], header = FALSE,col.names = c("Metric", "Value"),sep = ":")
       }else{
@@ -60,7 +62,9 @@ for (i in seq(from=2, to= length(files.list),by=2)) {
             geom_line(aes(y = data[,2]), colour= "red") + 
             geom_line(aes(y = data[,3]), colour= "green") +
             xlab("Model") +
-            ylab(y.lab)
+            ylab(y.lab) +
+            ggtitle(paste("Dataset: ",dataset.info," ---- Best",y.lab,"vs current model", y.lab))
+    
 
   ggsave(file.png, plot = gg)
   
