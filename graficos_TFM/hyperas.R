@@ -60,8 +60,8 @@
             geom_line(aes(y = data.improve[,2]), colour= "red") + 
             geom_line(aes(y = data.improve[,3]), colour= "green")+
             xlab("Model") +
-            ylab("ACC")+
-            ggtitle(paste(detalles, " ---- Best ACC vs current model ACC"))
+            ylab("ACC_VAL")+
+            ggtitle(paste(detalles, " ---- Best ACC_VAL vs current model ACC_VAL"))
           
           
           file.png <- paste(".",substr(files.list[i],22,10000),sep="")
