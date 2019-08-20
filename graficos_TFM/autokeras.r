@@ -63,7 +63,7 @@ library(ggplot2)
         geom_line(aes(y = data.improve[,3]), colour= "green")+
         xlab("Model") +
         ylab("ACC") +
-        ggtitle(paste(detalles, " ---- Best ACC vs current model ACC"))
+        ggtitle(paste(detalles, " \nBest ACC_VAL vs current model ACC_VAL ----- Nº modelos: ",length(unique(data$Model))))
       
       
       file.png <- paste(".",substr(files.list[i],24,10000),sep="")

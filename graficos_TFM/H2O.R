@@ -42,7 +42,9 @@
         
   
       }
-    
+      aux.detalles <- strsplit(files.list[i],"/")[[1]]
+      dataset.name <- strsplit(aux.detalles[6],"\\.")[[1]][1]
+      dataset.info <- paste(dataset.name,dataset.info)
   
       
       if(as.character(c.name)=="Mean Per-Class Error"){
@@ -63,7 +65,7 @@
               geom_line(aes(y = data[,3]), colour= "green") +
               xlab("Model") +
               ylab(y.lab) +
-              ggtitle(paste("Dataset: ",dataset.info," ---- Best",y.lab,"vs current model", y.lab))
+              ggtitle(paste("Dataset: ",dataset.info," \nBest",y.lab,"vs current model", y.lab," ----- Nº modelos: ",length(unique(data$Model))))
       
   
     ggsave(file.png, plot = gg)
